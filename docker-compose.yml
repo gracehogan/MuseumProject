@@ -5,26 +5,28 @@ networks:
 
 services:
 
-  MuseumAPI:
+  backend:
     image: openjdk:latest
     working_dir: /app
     volumes:
-      - ./MuseumAPI:/app
+      - ./backend:/app
+    depends_on:
+      - db
     ports:
       - "8080:8080"
     command: ./mvnw spring-boot:run
 
-  museum-api:
+  frontend:
     build:
-      context: ./museum-api
+      context: ./frontend
     volumes:
-      - ./museum-api:/app
+      - ./frontend:/app
     ports:
       - "3000:3000"
 
   db:
     image: mysql:8.0.36
-    container_name: museum_container
+    container_name: museum_project_container
     ports:
       - "3306:3306"
     environment:
