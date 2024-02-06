@@ -15,7 +15,7 @@ It allows users to run specific filtering, search and sorting options as well as
 *TODO*
 
 ### ERD Diagram:
-![Alt text](<public/images/ERD Diagram.png>)
+![Alt text](<ERD Diagram.png>)
 
 ### Created By:
 Team *PAGES* for their coding bootcamp capstone project:
