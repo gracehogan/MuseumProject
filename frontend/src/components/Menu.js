@@ -21,6 +21,7 @@ const Menu = () => {
             <Link>Help</Link>
           </li>
         </ul>
+        {/* Search bar added here */}
       </nav>
     </div>
   );
