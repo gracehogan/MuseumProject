@@ -8,7 +8,8 @@
     font-family: "Normal";
     font-size: 50px;
     font-style: normal;
-    padding: 15px 0px;    
+    padding: 15px 0px;   
+    margin: 0px; 
     text-align: center;  
     letter-spacing: 18px;
 }

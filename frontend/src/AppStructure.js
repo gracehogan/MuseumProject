@@ -4,6 +4,7 @@ import Menu from "./components/Menu";
 import HomePage from "./pages/HomePage";
 import MuseumsPage from "./pages/MuseumsPage";
 import VisitPage from "./pages/VisitPage";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom"; 
 
 
