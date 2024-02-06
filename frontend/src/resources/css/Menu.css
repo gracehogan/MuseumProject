@@ -1,12 +1,12 @@
 a {
-    text-decoration: none;
-    font-weight: 500;
-    color: rgb(223, 200, 173);
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    color: rgb(223, 200, 173) !important;
 }
 
 a:hover {
     padding: 0.5em;
-    color: black;
+    color: black !important;
     background-color: rgb(223, 200, 173);
 }
 
@@ -17,7 +17,7 @@ a:hover {
 
 li {
     list-style: none;
-    margin: 4vh 4vh;
+    padding: 3vh 3vh;
 }
 
 ul {
