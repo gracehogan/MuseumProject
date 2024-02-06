@@ -1,8 +1,6 @@
 ## Museum API Project
 This project aims to simulate a website for a Museum Group to showcase the artwork available in each of their museums.
 It allows users to run specific filtering, search and sorting options as well as book a visit to one of the museums.
-> [!NOTE]
-> This repository containts the back-end code for the website. See https://github.com/shonanohs/museum-api for the front-end code.
 
 ### Key Technologies:
 - Spring
@@ -15,7 +13,7 @@ It allows users to run specific filtering, search and sorting options as well as
 *TODO*
 
 ### ERD Diagram:
-![Alt text](<public/images/ERD Diagram.png>)
+*add image here*
 
 ### Created By:
 Team *PAGES* for their coding bootcamp capstone project:
