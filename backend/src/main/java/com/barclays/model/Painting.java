@@ -1,5 +1,6 @@
 package com.barclays.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -18,7 +19,16 @@ public class Painting  {
     private String medium;
     private String backstory;
     private String style;
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "artist_id")
+    private Artist artist;
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "museum_id")
+    private Museum museum;
     private String src;
+
 
 
 

@@ -18,6 +18,12 @@ public class Museum {
     private String name;
     private String location;
     private String curator;
+    @JsonManagedReference
+    @OneToMany(mappedBy = "museum")
+    private List<Painting> paintings;
+    @JsonManagedReference
+    @OneToMany(mappedBy = "museum")
+    private List<Sculpture> sculptures;
 
 
 }

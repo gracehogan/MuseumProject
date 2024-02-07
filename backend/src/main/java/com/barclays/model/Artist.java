@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-public class  Artist {
+public class Artist {
 
     @Id
     @GeneratedValue
@@ -21,7 +21,11 @@ public class  Artist {
     private String name;
     private int yearOfBirth;
     private int yearOfDeath;
-
-
+    @JsonManagedReference
+    @OneToMany(mappedBy = "artist")
+    private List<Painting> paintings;
+    @JsonManagedReference
+    @OneToMany(mappedBy = "artist")
+    private List<Sculpture> sculptures;
 
 }

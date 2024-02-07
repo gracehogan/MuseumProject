@@ -1,8 +1,7 @@
 package com.barclays.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -18,6 +17,14 @@ public class Sculpture  {
     private int yearCompleted;
     private String medium;
     private String backstory;
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "artist_id")
+    private Artist artist;
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "museum_id")
+    private Museum museum;
     private String src;
 
 }

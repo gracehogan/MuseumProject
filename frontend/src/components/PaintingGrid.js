@@ -9,10 +9,11 @@ const PaintingGrid = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8080/paintings");
+        const response = await fetch("http://localhost:8080/paintings"); // Foreign keys not appearing
         const data = await response.json();
         console.log(data);
         setPaintingData(data);
+        console.log(data[0].artistId);
       } catch (error) {
         console.error("Error fetching painting data:", error);
       }
