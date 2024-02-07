@@ -29,8 +29,34 @@ public class PaintingController {
     public Painting getPainting(@PathVariable long id) {
         log.debug("In the getPainting method");
         return paintingService.findById(id);
+    }  @GetMapping("/paintingByTitle")
+    public Painting getPaintingByName(@PathParam("title") String title) {
+        log.debug("In the getPainting method");
+        return paintingService.findByTitle(title);
     }
 
+    @GetMapping("/getPaintingByStyle")
+    public List<Painting> getPaintingByStyle(@PathParam("style") String style) {
+        log.debug("In the getPaintingByStyle method");
+        return paintingService.findByStyle(style);
+    }@GetMapping("/getPaintingByMedium")
+    public List<Painting> getPaintingByMedium(@PathParam("medium") String medium) {
+        log.debug("In the getPaintingByStyle method");
+        return paintingService.findByMedium(medium);
+    }
+    @GetMapping("/sortPaintingsByMedium/{medium}/{sort}")
+    List<Painting> sortAllByMedium(@PathVariable String medium,@PathVariable String sort){
+        return paintingService.sortAllByMedium(medium,sort);
+    } @GetMapping("/sortPaintingsByYearCompleted/{sort}")
+    List<Painting> sortAllByYearCompleted(@PathVariable String sort){
+        return paintingService.sortAllByYearCompleted(sort);
+    }
+
+
+    @GetMapping("/sortPaintingsByStyle/{style}/{sort}")
+    List<Painting> sortAllByStyle(@PathVariable String style,@PathVariable String sort){
+        return paintingService.sortAllByStyle(style,sort);
+    }
     @PostMapping("/paintings")
     public Painting createPainting(@RequestBody Painting painting) {
         log.debug("In the createPaintings method");

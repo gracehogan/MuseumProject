@@ -6,16 +6,14 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @Slf4j
 @AllArgsConstructor
-public class PaintingServiceImpl implements PaintingService{
+public class PaintingServiceImpl implements PaintingService {
 
-     private PaintingRepository paintingRepository;
+    private PaintingRepository paintingRepository;
 
     @Override
     public List<Painting> findAll() {
@@ -32,6 +30,21 @@ public class PaintingServiceImpl implements PaintingService{
     }
 
     @Override
+    public Painting findByTitle(String title) {
+        return paintingRepository.findByTitleContainingIgnoreCase(title);
+    }
+
+    @Override
+    public List<Painting> findByMedium(String medium) {
+        return paintingRepository.findAllByMediumIgnoreCase(medium);
+    }
+
+    @Override
+    public List<Painting> findByStyle(String style) {
+        return paintingRepository.findAllByStyleIgnoreCase(style);
+    }
+
+    @Override
     public Painting save(Painting p) {
         return paintingRepository.save(p);
     }
@@ -41,5 +54,35 @@ public class PaintingServiceImpl implements PaintingService{
         paintingRepository.deleteById(id);
     }
 
+    @Override
+    public List<Painting> sortAllByMedium(String medium, String sort) {
+        return sortListTitle(findByMedium(medium), sort);
+    }
+
+    @Override
+    public List<Painting> sortAllByStyle(String style, String sort) {
+        return sortListTitle(findByStyle(style),sort);
+    }
+
+    @Override
+    public List<Painting> sortAllByYearCompleted(String sort) {
+        return sortListYear(findAll(),sort);
+    }
+
+    public List<Painting> sortListTitle(List<Painting> paintings, String sort) {
+        if (sort.equals("asc")) {
+            Collections.sort(paintings, Comparator.comparing(Painting::getTitle));
+        } else if (sort.equals("desc")) {
+            Collections.sort(paintings, Comparator.comparing(Painting::getTitle).reversed());
+        }
+        return paintings;
+    } public List<Painting> sortListYear(List<Painting> paintings, String sort) {
+        if (sort.equals("asc")) {
+            Collections.sort(paintings, Comparator.comparing(Painting::getYearCompleted));
+        } else if (sort.equals("desc")) {
+            Collections.sort(paintings, Comparator.comparing(Painting::getYearCompleted).reversed());
+        }
+        return paintings;
+    }
 
 }

@@ -56,7 +56,3 @@ VALUES
   ('Apollo Belvedere', 1526, 'Marble', 'An ancient Roman copy of a Greek original depicting the god Apollo.', 18, 2, '/images/apollo_belvedere.jpg'),
   ('The Ecstasy of Saint Teresa', 1652, 'Marble', 'Gian Lorenzo Bernini\'s Baroque masterpiece portraying the mystical experience of Saint Teresa.', 19, 1, '/images/ecstasy_of_saint_theresa.jpg'),
   ('The Burghers of Calais', 1889, 'Bronze', 'Auguste Rodin\'s sculpture commemorating the citizens of Calais who sacrificed themselves during the Hundred Years\' War.', 14, 2, '/images/burghers_of_calais.jpg');
-
--- booking visits
--- create account & send mail
--- view painting info
