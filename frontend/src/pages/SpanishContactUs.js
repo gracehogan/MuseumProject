@@ -85,8 +85,15 @@ const SpanishContactUs = () => {
                     </div>
                 </div>
             </div>
-            <div className='image-container'>
-                <img src="/map.jpg" alt="Mapa" className="map-image" style={{ width: '50%', height: 'auto' }} />
+            <div>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.341023648357!2d-0.8759537000000001!3d52.2190218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48770f32bbd38fbd%3A0x392de42e1f2dc215!2sBarclays%2C%201234%20Pavilion%20Dr%2C%20Northampton%20NN4%207SG!5e0!3m2!1sen!2suk!4v1707332240025!5m2!1sen!2suk" 
+                width="100%" 
+                height="500"
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
             </div>
         </div>
     );
