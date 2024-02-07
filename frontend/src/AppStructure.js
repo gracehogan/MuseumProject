@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './resources/css/AppStructure.css'
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom"; 
 import PagesMuseum from "./pages/Pages";
+import MuseMuseum from "./pages/Muse";
 import FAQPage from "./pages/FAQPage";
 import Exhibitions from "./components/Exhibitions";
 
@@ -28,9 +29,9 @@ function Exhibition() {
   return <Exhibitions />;
 };
 
-// function Muse() {
-//   return <MuseMuseum />;
-// };
+function Muse() {
+  return <MuseMuseum />;
+};
 
 function Pages() {
   return <PagesMuseum/>;
@@ -61,6 +62,7 @@ const AppStructure = () => {
             <Route path="/museums" element={<Museums/>} />
             <Route path="/visit" element={<Visit />} />
             <Route path="/museum/Pages" element={<Pages />} />
+            <Route path="/museum/Muse" element={<Muse />} />
             <Route path="/help/faq" element={<FAQ />} />
             <Route path="/exhibitions" element={<Exhibition />} />
           </Routes>
