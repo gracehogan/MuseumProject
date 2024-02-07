@@ -1,7 +1,5 @@
-import { Carousel } from 'bootstrap';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Exhibitions from '../components/Exhibitions';
 import "../resources/css/Pages.css";
 
 const PagesMuseum = () => {
@@ -10,17 +8,16 @@ const PagesMuseum = () => {
             <div className='pages-box'>
                 <h1 className="museum-heading">Pages Museum</h1>
             </div>
-            <div>
-                <Link to="/booking" className="arrow-link">
-                    Go to Booking Page <i className="fas fa-arrow-right"></i>
-                </Link>
-            </div>
-            <div>
+            <div className='visit-container'>
                 <Link to="/visit" className="arrow-link">
-                     Visit us <i className="fas fa-arrow-right"></i>
+                    Plan a visit<i className="fas fa-arrow-right"></i>
+                </Link>
+                </div>
+                <div className='exhibition-container'>
+                <Link to="/exhibitions" className="arrow-link">
+                    See upcoming exhibitions<i className="fas fa-arrow-right"></i>
                 </Link>
             </div>
-            <Exhibitions/>
         </div>
     );
 };
