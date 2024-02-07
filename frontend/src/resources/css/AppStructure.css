@@ -1,10 +1,10 @@
 #page-container {
     position: relative;
     min-height: 100vh;
-    overflow-y: scroll;
 }
   
 #content-wrap {
     padding-bottom: 2.5rem;
-    position: absolute;
+    overflow-y: auto;
+    max-height: calc(100vh - 100px);
 }

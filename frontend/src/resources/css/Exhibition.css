@@ -1,0 +1,11 @@
+.carousel-image {
+    max-height: 600px;
+    object-fit: cover;
+  }
+
+  .carousel-item img {
+    border: 2px solid #ccc; 
+    border-radius: 5px; 
+  }
+  
+  
