@@ -8,6 +8,8 @@ import BookingPage from "./pages/BookingPage"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './resources/css/AppStructure.css'
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom"; 
+import PagesMuseum from "./pages/Pages";
+import FAQPage from "./pages/FAQPage";
 
 
 function Home() {
@@ -26,17 +28,17 @@ function Visit() {
 //   return <Muse />;
 // };
 
-// function Pages() {
-//   return <Pages />;
-// };
+function Pages() {
+  return <PagesMuseum/>;
+};
 
 // function Contact() {
 //   return <ContactPage />;
 // };
 
-// function FAQ() {
-//   return <FAQPage />;
-// };
+function FAQ() {
+  return <FAQPage/>;
+};
 
 
 // Remember to add imports for Muse & Pages museum 
@@ -55,6 +57,8 @@ const AppStructure = () => {
             <Route path="/visit-us" element={<Visit/>} />
             <Route path="/booking" element={<BookingPage />} />
             <Route path="/visit" element={<VisitPage />} />
+            <Route path="/museum/Pages" element={<Pages />} />
+            <Route path="/help/faq" element={<FAQ />} />
           </Routes>
           </div>
         </div>

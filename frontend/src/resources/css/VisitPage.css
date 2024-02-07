@@ -1,0 +1,24 @@
+.booking-link-container {
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+.arrow-link {
+    border: 1px solid #3f2b35; 
+    padding: 20px 20px; 
+    text-decoration: none; 
+    color: #3f2b35; 
+}
+
+.arrow-link:hover {
+    background-color: #f0f0f0; 
+}
+
+.exhibitions-container {
+    margin-top: 50px;
+}
+
+.heading-container {
+    margin-top: 50px;
+    padding: 20px 30px; 
+}
