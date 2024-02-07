@@ -1,17 +1,17 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './resources/css/AppStructure.css'
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom"; 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Menu from "./components/Menu";
+import Exhibitions from "./components/Exhibitions";
 import HomePage from "./pages/HomePage";
 import MuseumsPage from "./pages/MuseumsPage";
 import VisitPage from "./pages/VisitPage";
 import BookingPage from "./pages/BookingPage"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './resources/css/AppStructure.css'
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom"; 
 import PagesMuseum from "./pages/Pages";
 import MuseMuseum from "./pages/Muse";
 import FAQPage from "./pages/FAQPage";
-import Exhibitions from "./components/Exhibitions";
 import ContactPage from "./pages/ContactPage";
 import AboutUs from "./pages/AboutUs";
 
