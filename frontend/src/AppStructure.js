@@ -13,6 +13,7 @@ import MuseMuseum from "./pages/Muse";
 import FAQPage from "./pages/FAQPage";
 import Exhibitions from "./components/Exhibitions";
 import ContactPage from "./pages/ContactPage";
+import AboutUs from "./pages/AboutUs";
 
 
 function Home() {
@@ -46,6 +47,10 @@ function FAQ() {
   return <FAQPage/>;
 };
 
+function About() {
+  return <AboutUs/>;
+};
+
 
 // Remember to add imports for Muse & Pages museum 
 // and add the routes in the return statement below also
@@ -67,6 +72,7 @@ const AppStructure = () => {
             <Route path="/help/faq" element={<FAQ />} />
             <Route path="/exhibitions" element={<Exhibition />} />
             <Route path="//help/contact-us" element={<Contact />} />
+            <Route path="//help/about-us" element={<About />} />
           </Routes>
           </div>
         </div>

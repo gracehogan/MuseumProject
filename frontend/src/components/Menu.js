@@ -31,7 +31,8 @@ const Menu = () => {
               <Link>Help</Link>
             </li>
             <div className="dropdown-content">
-              <Link to="/help/contact-us">Contact us</Link>
+              <Link to="/help/about-us">ABOUT US</Link>
+              <Link to="/help/contact-us">CONTACT US</Link>
               <Link to="/help/faq">FAQs</Link>
             </div>
           </div>
