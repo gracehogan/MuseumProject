@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import './ImageGrid.css';
 
-const ImageGrid = () => {
+const SculptureGrid = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [paintingData, setPaintingData] = useState(null);
+  const [sculptureData, setSculptureData] = useState(null);
   const [artistData, setArtistData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8080/paintings");
+        const response = await fetch("http://localhost:8080/sculptures");
         const data = await response.json();
-        setPaintingData(data);
+        setSculptureData(data);
       } catch (error) {
         console.error("Error fetching painting data:", error);
       }
@@ -24,7 +24,6 @@ const ImageGrid = () => {
       try {
         const response = await fetch("http://localhost:8080/artists");
         const data = await response.json();
-        console.log(data);
         setArtistData(data);
       } catch (error) {
         console.error("Error fetching artist data:", error);
@@ -32,11 +31,12 @@ const ImageGrid = () => {
     };
     fetchArtistData();
   }, []);
+
 return (
     <div className="image-grid">
-      {paintingData && artistData && paintingData.map((painting, index) => {
-        // Find the corresponding artist for the painting
-        const artist = artistData.find(artist => artist.id === painting.artistId);
+      {sculptureData && artistData && sculptureData.map((sculpture, index) => {
+        // Find the corresponding artist for the sculpture
+        const artist = artistData.find(artist => artist.id === sculpture.artistId);
         return (
           <div
             key={index}
@@ -44,19 +44,17 @@ return (
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <img src={painting.src} alt="Painting" />
+            <img src={sculpture.src} alt="Sculpture" />
             <div className="image-text">
-              Artist: {artist ? artist.name : 'Unknown'}
+                Artist: {artist ? artist.name : 'Unknown'}
               <br />
-              Title: {painting.title}
+              Title: {sculpture.title}
               <br/>
-              Year Completed: {painting.yearCompleted}
+              Year Completed: {sculpture.yearCompleted}
               <br/>
-              Medium: {painting.medium}
+              Medium: {sculpture.medium}
               <br/>
-              Style: {painting.style}
-              <br/>
-              Backstory: {painting.backstory}
+              Backstory: {sculpture.backstory}
             </div>
           </div>
         );
@@ -65,4 +63,4 @@ return (
   );
 };
 
-export default ImageGrid;
+export default SculptureGrid;

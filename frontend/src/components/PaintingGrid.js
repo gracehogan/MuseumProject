@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './ImageGrid.css';
 
-const SculptureGrid = () => {
+const PaintingGrid = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [paintingData, setPaintingData] = useState(null);
   const [artistData, setArtistData] = useState(null);
@@ -9,8 +9,9 @@ const SculptureGrid = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8080/sculptures");
+        const response = await fetch("http://localhost:8080/paintings");
         const data = await response.json();
+        console.log(data);
         setPaintingData(data);
       } catch (error) {
         console.error("Error fetching painting data:", error);
@@ -24,6 +25,7 @@ const SculptureGrid = () => {
       try {
         const response = await fetch("http://localhost:8080/artists");
         const data = await response.json();
+        console.log(data);
         setArtistData(data);
       } catch (error) {
         console.error("Error fetching artist data:", error);
@@ -31,6 +33,7 @@ const SculptureGrid = () => {
     };
     fetchArtistData();
   }, []);
+  
 return (
     <div className="image-grid">
       {paintingData && artistData && paintingData.map((painting, index) => {
@@ -45,13 +48,15 @@ return (
           >
             <img src={painting.src} alt="Painting" />
             <div className="image-text">
-                Artist: {artist ? artist.name : 'Unknown'}
+              Artist: {artistData && artist ? artist.name : 'Unknown'}
               <br />
               Title: {painting.title}
               <br/>
               Year Completed: {painting.yearCompleted}
               <br/>
               Medium: {painting.medium}
+              <br/>
+              Style: {painting.style}
               <br/>
               Backstory: {painting.backstory}
             </div>
@@ -62,4 +67,4 @@ return (
   );
 };
 
-export default SculptureGrid;
+export default PaintingGrid;
