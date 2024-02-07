@@ -58,7 +58,7 @@ const AppStructure = () => {
           <Routes>
             <Route path="/home" element={<Home/>} />
             <Route path="/museums" element={<Museums/>} />
-            <Route path="/visit-us" element={<VisitPage />} />
+            <Route path="/visit" element={<Visit />} />
             <Route path="/museum/Pages" element={<Pages />} />
             <Route path="/help/faq" element={<FAQ />} />
             <Route path="/exhibitions" element={<Exhibition />} />

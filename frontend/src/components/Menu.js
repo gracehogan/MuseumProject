@@ -23,7 +23,7 @@ const Menu = () => {
           </div>
 
           <li className="list-inline-item">
-            <Link to="/visit-us">Plan Your Visit</Link>
+            <Link to="/visit">Plan Your Visit</Link>
           </li>
 
           <div className="dropdown">
