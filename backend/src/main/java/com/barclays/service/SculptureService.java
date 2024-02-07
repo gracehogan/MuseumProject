@@ -2,6 +2,7 @@ package com.barclays.service;
 
 import com.barclays.model.Artist;
 import com.barclays.model.Museum;
+import com.barclays.model.Painting;
 import com.barclays.model.Sculpture;
 import org.springframework.stereotype.Service;
 
@@ -16,4 +17,10 @@ public interface SculptureService {
     Sculpture save(Sculpture sculpture);
 
     void deleteById(long id);
+    Sculpture findByTitle(String title);
+    List<Sculpture> findByMedium(String medium);
+
+    List<Sculpture> sortAllByMedium(String medium, String sort);
+
+    List<Sculpture> sortAllByYearCompleted( String sort);
 }
