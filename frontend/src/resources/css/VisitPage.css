@@ -4,7 +4,6 @@
 }
 
 .booking-link {
-    /* Styles for the link in VisitPage */
     border: 1px solid #3f2b35;
     padding: 20px 20px;
     text-decoration: none;
@@ -23,3 +22,10 @@
     margin-top: 50px;
     padding: 20px 30px; 
 }
+
+.carousel-container {
+    max-width: 10000px;
+    margin: 0 auto;
+    padding: 10 20px; 
+  }
+  

@@ -1,5 +1,5 @@
-import Exhibitions from '../components/Exhibitions';
 import '../resources/css/VisitPage.css';
+import Exhibitions from '../components/Exhibitions';
 import { Link } from 'react-router-dom';
 
 const VisitPage = () => {

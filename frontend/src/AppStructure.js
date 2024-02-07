@@ -50,8 +50,9 @@ function FAQ() {
 
 const AppStructure = () => {
     return (
-      <div className="min-vh-100" id="page-container">
+      <div id="page-container">
         <Header />
+        <div id="content-wrap">
         <Menu />
         <div className="background" id="content-wrap">
           <div>
@@ -64,6 +65,7 @@ const AppStructure = () => {
             <Route path="/exhibitions" element={<Exhibition />} />
           </Routes>
           </div>
+        </div>
         </div>
         <Footer />
       </div>
