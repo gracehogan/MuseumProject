@@ -4,6 +4,7 @@ import Menu from "./components/Menu";
 import HomePage from "./pages/HomePage";
 import MuseumsPage from "./pages/MuseumsPage";
 import VisitPage from "./pages/VisitPage";
+import BookingPage from "./pages/BookingPage"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './resources/css/AppStructure.css'
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom"; 
@@ -52,6 +53,8 @@ const AppStructure = () => {
             <Route path="/home" element={<Home/>} />
             <Route path="/museums" element={<Museums/>} />
             <Route path="/visit-us" element={<Visit/>} />
+            <Route path="/booking" element={<BookingPage />} />
+            <Route path="/visit" element={<VisitPage />} />
           </Routes>
           </div>
         </div>

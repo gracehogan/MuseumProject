@@ -5,8 +5,5 @@
   
 #content-wrap {
     padding-bottom: 2.5rem;
+    overflow: scroll;
 }
-
-/* .background {
-    background-color: purple;
-} */
