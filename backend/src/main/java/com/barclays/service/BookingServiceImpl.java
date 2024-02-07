@@ -61,6 +61,14 @@ public class BookingServiceImpl implements BookingService {
         return bookingDTO;
     }
 
+    @Override
+    public String getFeeOfValidBooking(BookingDTO bookingDTO) {
+        if (this.calculateFee(bookingDTO)>0){
+            Booking newBooking =this.Save(bookingDTO);
+            return String.valueOf(newBooking.getCost());
+        }
+        return ("Invalid booking!!");
+    }
 
 }
 

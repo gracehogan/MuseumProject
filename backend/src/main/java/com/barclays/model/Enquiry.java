@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "booking")
-public class Booking {
+@Table(name = "enquiry")
+public class Enquiry {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,22 +22,18 @@ public class Booking {
     private String name;
     @Column(nullable = false)
     private String email;
-
-    private int numberOfPersons;
-    @Enumerated(EnumType.STRING)
-
-    private BookedMuseum bookedMuseum;
-    @Enumerated(EnumType.STRING)
-
-    private BookingType bookingType;
-
+    @Column(nullable = false)
+    private String enquiryText;
+    @Column(nullable = false)
+    private String enquiryType;
     @Column(columnDefinition = "DATETIME")
-    private LocalDateTime bookingDate;
-    private double cost;
+    private LocalDateTime enquiryDate;
 
-
-
-
+    //name
+    //email
+    //enquiryType
+    //enquiryType
+    //date
 
 
 }
