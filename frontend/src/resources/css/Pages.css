@@ -1,24 +1,18 @@
-/* Pages.css */
-
 @font-face {
     font-family: "Normal";
     src: url('../font-styles/Audrey-Normal.otf') format('opentype');
 }
 
 .museum-heading {
-    color: rgb(223, 200, 173);
+    color: #3f2b35;
     font-family: "Normal";
-    font-size: 50px;
+    font-size: 35px;
     font-style: normal;
     padding: 15px 0px;
-    margin: 0px;
-    text-align: center;
-    letter-spacing: 18px;
+    margin-left: 21px;
+    /* text-align: left; */
 }
 
-.pages-box {
-    background-color: #3f2b35;
-}
 
 .visit-container {
     margin-top: 10px;

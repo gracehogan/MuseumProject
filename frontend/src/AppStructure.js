@@ -44,6 +44,10 @@ function FAQ() {
   return <FAQPage/>;
 };
 
+function Booking() {
+  return <BookingPage/>;
+};
+
 
 // Remember to add imports for Muse & Pages museum 
 // and add the routes in the return statement below also
@@ -52,7 +56,7 @@ const AppStructure = () => {
     return (
       <div id="page-container">
         <Header />
-        <div id="content-wrap">
+        <div>
         <Menu />
         <div className="background" id="content-wrap">
           <div>
@@ -63,6 +67,7 @@ const AppStructure = () => {
             <Route path="/museum/Pages" element={<Pages />} />
             <Route path="/help/faq" element={<FAQ />} />
             <Route path="/exhibitions" element={<Exhibition />} />
+            <Route path="/book" element={<Booking />} />
           </Routes>
           </div>
         </div>
