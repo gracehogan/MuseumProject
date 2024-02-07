@@ -36,37 +36,66 @@ public class PaintingController {
         return new PaintingDTO(painting);
     }
 
-    @GetMapping("/paintingByTitle")
-    public Painting getPaintingByName(@PathParam("title") String title) {
-        log.debug("In the getPainting method");
-        return paintingService.findByTitle(title);
+    @GetMapping("/getPaintingByTitle")
+    public PaintingDTO getPaintingByName(@PathParam("title") String title) {
+        log.debug("In the getPaintingByName method");
+        Painting painting = paintingService.findByTitle(title);
+        return new PaintingDTO(painting);
     }
 
     @GetMapping("/getPaintingByStyle")
-    public List<Painting> getPaintingByStyle(@PathParam("style") String style) {
+    public List<PaintingDTO> getPaintingByStyle(@PathParam("style") String style) {
         log.debug("In the getPaintingByStyle method");
-        return paintingService.findByStyle(style);
+        List<Painting> paintings = paintingService.findByStyle(style);
+        List<PaintingDTO> dtos = new ArrayList<>();
+        for (Painting painting : paintings) {
+            dtos.add(new PaintingDTO(painting));
+        }
+        return dtos;
     }
 
     @GetMapping("/getPaintingByMedium")
-    public List<Painting> getPaintingByMedium(@PathParam("medium") String medium) {
-        log.debug("In the getPaintingByStyle method");
-        return paintingService.findByMedium(medium);
+    public List<PaintingDTO> getPaintingByMedium(@PathParam("medium") String medium) {
+        log.debug("In the getPaintingByMedium method");
+        List<Painting> paintings = paintingService.findByMedium(medium);
+        List<PaintingDTO> dtos = new ArrayList<>();
+        for (Painting painting : paintings) {
+            dtos.add(new PaintingDTO(painting));
+        }
+        return dtos;
     }
 
     @GetMapping("/sortPaintingsByMedium/{medium}/{sort}")
-    List<Painting> sortAllByMedium(@PathVariable String medium,@PathVariable String sort){
-        return paintingService.sortAllByMedium(medium,sort);
+    List<PaintingDTO> sortAllByMedium(@PathVariable String medium, @PathVariable String sort) {
+        log.debug("In the sortPaintingsByMedium method");
+        List<Painting> paintings = paintingService.sortAllByMedium(medium,sort);
+        List<PaintingDTO> dtos = new ArrayList<>();
+        for (Painting painting : paintings) {
+            dtos.add(new PaintingDTO(painting));
+        }
+        return dtos;
     }
 
     @GetMapping("/sortPaintingsByYearCompleted/{sort}")
-    List<Painting> sortAllByYearCompleted(@PathVariable String sort){
-        return paintingService.sortAllByYearCompleted(sort);
+    List<PaintingDTO> sortAllByYearCompleted(@PathVariable String sort) {
+        log.debug("In the sortPaintingsByYearCompleted method");
+        List<Painting> paintings = paintingService.sortAllByYearCompleted(sort);
+        List<PaintingDTO> dtos = new ArrayList<>();
+        for (Painting painting : paintings) {
+            dtos.add(new PaintingDTO(painting));
+        }
+        return dtos;
     }
 
     @GetMapping("/sortPaintingsByStyle/{style}/{sort}")
-    List<Painting> sortAllByStyle(@PathVariable String style,@PathVariable String sort){
-        return paintingService.sortAllByStyle(style,sort);
+    List<PaintingDTO> sortAllByStyle(@PathVariable String style, @PathVariable String sort) {
+        log.debug("In the sortPaintingsByStyle method");
+        List<Painting> paintings = paintingService.sortAllByStyle(style,sort);
+        List<PaintingDTO> dtos = new ArrayList<>();
+        for (Painting painting : paintings) {
+            dtos.add(new PaintingDTO(painting));
+        }
+        return dtos;
     }
 
     @PostMapping("/paintings")
