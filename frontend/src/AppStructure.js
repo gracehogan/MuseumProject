@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import MuseumsPage from "./pages/MuseumsPage";
 import VisitPage from "./pages/VisitPage";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './resources/css/AppStructure.css'
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom"; 
 
 
@@ -42,10 +43,10 @@ function Visit() {
 
 const AppStructure = () => {
     return (
-      <div className="min-vh-100 page-container">
+      <div className="min-vh-100" id="page-container">
         <Header />
         <Menu />
-        <div className='content-wrap'>
+        <div className="background" id="content-wrap">
           <div>
           <Routes>
             <Route path="/home" element={<Home/>} />
