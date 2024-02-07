@@ -29,7 +29,8 @@ const FAQPage = () => {
   };
 
   return (
-    <div className="FAQ">
+    <div className="heading-container">
+      <h2>FAQs</h2>
       <div>
         <button
           className={`question-section ${active ? 'active' : ''}`}

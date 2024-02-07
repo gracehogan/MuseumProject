@@ -15,6 +15,7 @@ const VisitPage = () => {
                 </Link>
             </div>
             <div className="exhibitions-container">
+                <h2>Exhibitions</h2>
                 <Exhibitions />
             </div>
         </div>
