@@ -10,8 +10,8 @@ const VisitPage = () => {
                 <p>Find everything you need for your next visit to one of our museums</p>
             </div>
             <div className="booking-link-container">
-                <Link to="/booking" className="booking-link">
-                    Go to Booking Page <i className="fas fa-arrow-right"></i>
+                <Link to="/book" className="booking-link">
+                    Book your tickets <i className="fas fa-arrow-right"></i>
                 </Link>
             </div>
             <div className="exhibitions-container">

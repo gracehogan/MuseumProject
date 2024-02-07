@@ -49,6 +49,10 @@ function FAQ() {
 
 function About() {
   return <AboutUs/>;
+}
+
+function Booking() {
+  return <BookingPage/>;
 };
 
 
@@ -59,7 +63,7 @@ const AppStructure = () => {
     return (
       <div id="page-container">
         <Header />
-        <div id="content-wrap">
+        <div>
         <Menu />
         <div className="background" id="content-wrap">
           <div>
@@ -73,6 +77,7 @@ const AppStructure = () => {
             <Route path="/exhibitions" element={<Exhibition />} />
             <Route path="//help/contact-us" element={<Contact />} />
             <Route path="//help/about-us" element={<About />} />
+            <Route path="/book" element={<Booking />} />
           </Routes>
           </div>
         </div>
