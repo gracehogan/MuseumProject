@@ -7,19 +7,33 @@ const Menu = () => {
   return (
     <div className="bg1">
       <nav>
-        <ul className='list-inline'>
+        <ul className="list-inline">
           <li className="list-inline-item">
             <Link to="/home">Home</Link>
           </li>
-          <li className="list-inline-item">
-            <Link to="/museums">Museums</Link>
-          </li>
+
+          <div className="dropdown">
+            <li className="list-inline-item dropbtn">
+              <Link to="/museums">Museums</Link>
+            </li>
+            <div className="dropdown-content">
+              <Link to="/museum/Muse">MUSE</Link>
+              <Link to="/museum/Pages">PAGES</Link>
+            </div>
+          </div>
+
           <li className="list-inline-item">
             <Link to="/visit-us">Plan Your Visit</Link>
           </li>
-          <li className="list-inline-item">
-            <Link>Help</Link>
-          </li>
+
+          <div className="dropdown">
+            <li className="list-inline-item dropbtn">Help</li>
+            <div className="dropdown-content">
+              <Link to="/help/contact-us">Contact us</Link>
+              <Link to="/help/faq">FAQs</Link>
+            </div>
+          </div>
+
         </ul>
         {/* Search bar added here */}
       </nav>
