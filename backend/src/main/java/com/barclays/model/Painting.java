@@ -18,6 +18,7 @@ public class Painting  {
     private String medium;
     private String backstory;
     private String style;
+    private String src;
 
 
 

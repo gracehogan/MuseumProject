@@ -18,4 +18,6 @@ public class Sculpture  {
     private int yearCompleted;
     private String medium;
     private String backstory;
+    private String src;
+
 }

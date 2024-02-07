@@ -21,7 +21,8 @@ CREATE TABLE IF NOT EXISTS SCULPTURE(
     artist_id BIGINT,
     museum_id BIGINT,
     foreign key (artist_id) references ARTIST(id),
-    foreign key (museum_id) references MUSEUM(id)
+    foreign key (museum_id) references MUSEUM(id),
+    src VARCHAR(255)
     );
 
 CREATE TABLE IF NOT EXISTS PAINTING(
@@ -34,5 +35,6 @@ CREATE TABLE IF NOT EXISTS PAINTING(
     artist_id BIGINT,
     museum_id BIGINT,
     foreign key (artist_id) references ARTIST(id),
-    foreign key (museum_id) references MUSEUM(id)
+    foreign key (museum_id) references MUSEUM(id),
+    src VARCHAR(255)
     );

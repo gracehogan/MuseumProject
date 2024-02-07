@@ -9,10 +9,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
-@CrossOrigin()
 @RestController
 @Slf4j
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class MuseumController {
     private final MuseumService museumService;
 
