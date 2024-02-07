@@ -27,6 +27,7 @@ function Museums() {
 function Visit() {
   return <VisitPage />;
 };
+
 function Exhibition() {
   return <Exhibitions />;
 };
@@ -55,9 +56,6 @@ function Booking() {
   return <BookingPage/>;
 };
 
-
-// Remember to add imports for Muse & Pages museum 
-// and add the routes in the return statement below also
 
 const AppStructure = () => {
     return (
