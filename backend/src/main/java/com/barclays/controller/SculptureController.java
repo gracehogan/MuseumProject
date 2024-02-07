@@ -1,17 +1,14 @@
 package com.barclays.controller;
 
-import com.barclays.model.Artist;
-import com.barclays.model.Museum;
-import com.barclays.model.Painting;
+import com.barclays.dto.SculptureDTO;
 import com.barclays.model.Sculpture;
-import com.barclays.service.ArtistService;
-import com.barclays.service.MuseumService;
 import com.barclays.service.SculptureService;
 import jakarta.websocket.server.PathParam;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -21,16 +18,23 @@ import java.util.List;
 public class SculptureController {
     private SculptureService sculptureService;
 
+
     @GetMapping("/sculptures")
-    public List<Sculpture> getAllSculptures() {
-        log.debug("In the getAllSculptures method");
-        return sculptureService.findAll();
+    public List<SculptureDTO> getSculptures() {
+        log.debug("In the getSculptures method");
+        List<Sculpture> sculptures = sculptureService.findAll();
+        List<SculptureDTO> dtos = new ArrayList<>();
+        for (Sculpture sculpture : sculptures) {
+            dtos.add(new SculptureDTO(sculpture));
+        }
+        return dtos;
     }
 
     @GetMapping("/sculptures/{id}")
-    public Sculpture getSculpture(@PathVariable long id) {
+    public SculptureDTO getSculpture(@PathVariable long id) {
         log.debug("In the getSculpture method");
-        return sculptureService.findById(id);
+        Sculpture sculpture = sculptureService.findById(id);
+        return new SculptureDTO(sculpture);
     }
 
 

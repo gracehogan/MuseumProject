@@ -4,7 +4,6 @@ import './ImageGrid.css';
 const SculptureGrid = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [sculptureData, setSculptureData] = useState(null);
-  const [artistData, setArtistData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,30 +12,15 @@ const SculptureGrid = () => {
         const data = await response.json();
         setSculptureData(data);
       } catch (error) {
-        console.error("Error fetching painting data:", error);
+        console.error("Error fetching sculpture data:", error);
       }
     };
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const fetchArtistData = async () => {
-      try {
-        const response = await fetch("http://localhost:8080/artists");
-        const data = await response.json();
-        setArtistData(data);
-      } catch (error) {
-        console.error("Error fetching artist data:", error);
-      }
-    };
-    fetchArtistData();
-  }, []);
-
 return (
     <div className="image-grid">
-      {sculptureData && artistData && sculptureData.map((sculpture, index) => {
-        // Find the corresponding artist for the sculpture
-        const artist = artistData.find(artist => artist.id === sculpture.artistId);
+      {sculptureData && sculptureData.map((sculpture, index) => {
         return (
           <div
             key={index}
@@ -46,13 +30,15 @@ return (
           >
             <img src={sculpture.src} alt="Sculpture" />
             <div className="image-text">
-                Artist: {artist ? artist.name : 'Unknown'}
+              Artist: {sculpture.artistName}
               <br />
               Title: {sculpture.title}
               <br/>
               Year Completed: {sculpture.yearCompleted}
               <br/>
               Medium: {sculpture.medium}
+              <br/>
+              Style: {sculpture.style}
               <br/>
               Backstory: {sculpture.backstory}
             </div>

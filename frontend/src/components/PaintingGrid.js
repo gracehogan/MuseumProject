@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './ImageGrid.css';
 
-const ImageGrid = () => {
+const PaintingGrid = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [paintingData, setPaintingData] = useState(null);
 
@@ -17,7 +17,7 @@ const ImageGrid = () => {
     };
     fetchData();
   }, []);
-  
+
 return (
     <div className="image-grid">
       {paintingData && paintingData.map((painting, index) => {
@@ -49,4 +49,4 @@ return (
   );
 };
 
-export default ImageGrid;
+export default PaintingGrid;

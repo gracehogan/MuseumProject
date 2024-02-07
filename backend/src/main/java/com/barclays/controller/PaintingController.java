@@ -1,17 +1,14 @@
 package com.barclays.controller;
 
 import com.barclays.dto.PaintingDTO;
-import com.barclays.model.Artist;
 import com.barclays.model.Painting;
 import com.barclays.service.PaintingService;
-import io.micrometer.common.util.StringUtils;
 import jakarta.websocket.server.PathParam;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -24,7 +21,6 @@ public class PaintingController {
     @GetMapping("/paintings")
     public List<PaintingDTO> getPaintings() {
         log.debug("In the getPaintings method");
-//        return paintingService.findAll();
         List<Painting> paintings = paintingService.findAll();
         List<PaintingDTO> dtos = new ArrayList<>();
         for (Painting painting : paintings) {
