@@ -1,5 +1,6 @@
 package com.barclays.controller;
 
+import com.barclays.dto.PaintingDTO;
 import com.barclays.model.Artist;
 import com.barclays.model.Painting;
 import com.barclays.service.PaintingService;
@@ -9,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -20,15 +22,22 @@ public class PaintingController {
     private PaintingService paintingService;
 
     @GetMapping("/paintings")
-    public List<Painting> getPaintings() {
+    public List<PaintingDTO> getPaintings() {
         log.debug("In the getPaintings method");
-        return paintingService.findAll();
+//        return paintingService.findAll();
+        List<Painting> paintings = paintingService.findAll();
+        List<PaintingDTO> dtos = new ArrayList<>();
+        for (Painting painting : paintings) {
+            dtos.add(new PaintingDTO(painting));
+        }
+        return dtos;
     }
 
     @GetMapping("/paintings/{id}")
-    public Painting getPainting(@PathVariable long id) {
+    public PaintingDTO getPainting(@PathVariable long id) {
         log.debug("In the getPainting method");
-        return paintingService.findById(id);
+        Painting painting = paintingService.findById(id);
+        return new PaintingDTO(painting);
     }
 
     @GetMapping("/paintingByTitle")
@@ -63,7 +72,7 @@ public class PaintingController {
     List<Painting> sortAllByStyle(@PathVariable String style,@PathVariable String sort){
         return paintingService.sortAllByStyle(style,sort);
     }
-    
+
     @PostMapping("/paintings")
     public Painting createPainting(@RequestBody Painting painting) {
         log.debug("In the createPaintings method");

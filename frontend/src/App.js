@@ -1,11 +1,11 @@
 import './App.css';
 import SculptureGrid from './components/SculptureGrid';
-import PaintingGrid from './components/PaintingGrid';
+import ImageGrid from './components/PaintingGrid';
 
 function App() {
   return (
     <div className="App">
-      <PaintingGrid/>
+      <ImageGrid/>
       <br />
       <SculptureGrid/>
     </div>
