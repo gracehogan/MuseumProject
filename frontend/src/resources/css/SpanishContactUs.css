@@ -51,6 +51,7 @@
     transform: translateY(-50%);
     display: flex;
     gap: 10px;
+    font: 1em sans-serif;
 }
 
 

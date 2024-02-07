@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../resources/css/ContactPage.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Link } from 'react-router-dom';
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -34,6 +35,12 @@ const ContactPage = () => {
         <div>
             <div className='heading-container'>
                 <h2>Get in touch with us</h2>
+                <div className="language-buttons">
+                    <Link to="/spanish" className="language-button">Spanish</Link>
+                    <button className="language-button">Hindi</button>
+                    <button className="language-button">French</button>
+                    <button className="language-button">Catalan</button>
+                </div>
             </div>
             <div className='enquiry-container'>
             <form onSubmit={handleSubmit} className='form-container'>
