@@ -23,11 +23,11 @@ function Visit() {
 };
 
 // function Muse() {
-//   return <Muse />;
+//   return <MuseMuseum />;
 // };
 
 // function Pages() {
-//   return <Pages />;
+//   return <PagesMuseum />;
 // };
 
 // function Contact() {
@@ -52,9 +52,8 @@ const AppStructure = () => {
           <Routes>
             <Route path="/home" element={<Home/>} />
             <Route path="/museums" element={<Museums/>} />
-            <Route path="/visit-us" element={<Visit/>} />
-            <Route path="/booking" element={<BookingPage />} />
             <Route path="/visit" element={<VisitPage />} />
+            <Route path="/booking" element={<BookingPage />} />
           </Routes>
           </div>
         </div>
