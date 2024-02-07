@@ -38,3 +38,14 @@ CREATE TABLE IF NOT EXISTS PAINTING(
     foreign key (museum_id) references MUSEUM(id),
     src VARCHAR(255)
     );
+
+    CREATE TABLE IF NOT EXISTS BOOKING (
+        id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        bookedMuseum VARCHAR(255) NOT NULL,
+        bookingType VARCHAR(255) NOT NULL,
+        numberOfPersons INT,
+        bookingDate DATETIME,
+        cost double
+        );
