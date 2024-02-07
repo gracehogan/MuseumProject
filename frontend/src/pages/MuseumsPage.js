@@ -1,6 +1,5 @@
 import '../resources/css/MuseumsPage.css';
-import FAQPage from './FAQPage';
-import Pages from './Pages';
+import PagesMuseum from './Pages';
 
 const MuseumPage = () => {
 
@@ -8,7 +7,7 @@ const MuseumPage = () => {
     <div>
       <h2>Museums</h2>
       <p>this is a test</p>
-      <Pages/>
+      <PagesMuseum/>
     </div>
   );
 };

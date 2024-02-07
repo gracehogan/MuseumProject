@@ -21,12 +21,14 @@ function Visit() {
   return <VisitPage />;
 };
 
+
+
 const AppStructure = () => {
     return (
-      <div className="min-vh-100 page-container">
+      <div className="min-vh-100" id="page-container">
         <Header />
         <Menu />
-        <div className='content-wrap'>
+        <div className="background" id="content-wrap">
           <div>
           <Routes>
             <Route path="/home" element={<Home/>} />

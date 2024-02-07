@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Exhibitions from '../components/Exhibitions';
 import "../resources/css/Pages.css";
 
-const Pages = () => {
+const PagesMuseum = () => {
     return (
         <div>
             <div className='pages-box'>
@@ -25,4 +25,4 @@ const Pages = () => {
     );
 };
 
-export default Pages;
+export default PagesMuseum;
