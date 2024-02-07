@@ -22,6 +22,14 @@
     padding: 0px 10px;
 }
 
+.pages-box {
+    background-color: rgb(223, 200, 173, 0.7); 
+}
+
+.pages-box h1 {
+    color: black;
+}
+
 .arrow-link {
     text-decoration: none;
     color: #000;

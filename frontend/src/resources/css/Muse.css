@@ -17,7 +17,11 @@
 }
 
 .muse-box {
-    background-color: #3f2b35;
+    background-color: rgb(223, 200, 173, 0.7); 
+}
+
+.muse-box h1 {
+    color: black;
 }
 
 .visit-container {

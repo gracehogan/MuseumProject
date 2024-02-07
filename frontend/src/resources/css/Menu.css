@@ -4,86 +4,79 @@
 }
 
 a {
-    font-family: "Normal";
-    font-size: 28px;
-    text-decoration: none !important;
-    font-weight: 500 !important;
-    color: rgb(223, 200, 173) !important;
-}
-
-a:hover {
-    padding: 0.5em;
-    color: black !important;
-    background-color: rgb(223, 200, 173);
+  font-family: "Normal";
+  font-size: 18px; /* Adjust font size */
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  color: rgb(223, 200, 173) !important;
 }
 
 .bg1 {
-    background-color: #3f2b35;
-    text-align: center;
+  background-color: #3f2b35; /* Background color */
+  text-align: center;
+  padding: 20px 0; 
+  margin-top: -30px; 
 }
 
+
+
 li {
-    list-style: none;
-    padding: 3vh 3vh;
+  list-style: none;
+  padding: 1vh 1vh; 
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-
+  margin: 0;
+  padding: 0;
+  display: inline-block;
 }
 
 .style {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
-  /* Dropdown tab - "Museum" & "Help" */
 .dropbtn {
-    color: rgb(223, 200, 173) !important;
-    padding: 16px;
-    font-weight: 500;
-    border: none;
+  color: rgb(0, 0, 0) !important; 
+  padding: 9px;
+  font-weight: 500;
+  border: none;
 }
 
-  /* The over-arching div */
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
-  
-  /* The dropdown box itself */
+
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #3f2b35;
-    min-width: 300px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #3f2b35; 
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
-  
-  /* Links inside the dropdown - "Contact us", "FAQ" etc */
+
 .dropdown-content a {
-    font-size: 20px;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+  font-size: 14px;
+  color: rgb(223, 200, 173);
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
 }
-  
-  /* Change color of dropdown links on hover */
+
 .dropdown-content a:hover {
-    background-color: rgb(223, 200, 173);
+  background-color: rgb(223, 200, 173);
 }
-  
-  /* Show the dropdown menu on hover */
+
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
-  
-  /* Change the background color of the page-link li 
-  when the link is hovered */
+
 .dropdown:hover .dropbtn {
-    color: black;
-    background-color: rgb(223, 200, 173);
+  color: black;
+  background-color: rgb(223, 200, 173);
+}
+
+nav ul li a {
+  color: rgb(223, 200, 173); 
 }

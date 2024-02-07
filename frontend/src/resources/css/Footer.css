@@ -4,12 +4,12 @@ footer {
     margin-top: 146px;
     position: fixed;
     bottom: 0;
-    height: 2.5rem;
+    height: 2rem; 
 }
 
 p.footer-text {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size:large;
+    font-size: small; 
     color: rgb(223, 200, 173);
     text-align: center;
     padding: 5px;
