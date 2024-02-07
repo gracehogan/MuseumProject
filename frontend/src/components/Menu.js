@@ -27,7 +27,9 @@ const Menu = () => {
           </li>
 
           <div className="dropdown">
-            <li className="list-inline-item dropbtn">Help</li>
+            <li className="list-inline-item dropbtn">
+              <Link>Help</Link>
+            </li>
             <div className="dropdown-content">
               <Link to="/help/contact-us">Contact us</Link>
               <Link to="/help/faq">FAQs</Link>

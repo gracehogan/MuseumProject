@@ -7,7 +7,9 @@ footer {
     height: 2.5rem;
 }
 
-p {
+p.footer-text {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:large;
     color: rgb(223, 200, 173);
     text-align: center;
     padding: 5px;

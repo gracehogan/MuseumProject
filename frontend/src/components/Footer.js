@@ -4,7 +4,7 @@ import '../resources/css/Footer.css';
 const Footer = () => {
     return (
       <footer className="footer">
-        <p>&copy; 2024 PAGES </p>
+        <p className="footer-text">&copy; 2024 PAGES </p>
       </footer>
     );
   };
