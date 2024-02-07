@@ -9,7 +9,7 @@ public interface BookingService {
     Booking save(BookingDTO bookingDTO);
 
     double calculateFee(BookingDTO bookingDTO);
-    BookingDTO createBookingDTO(String name,int number, String bookingType, String email, String bookedMuseum);
+    BookingDTO createBookingDTO(String name,int number, String bookingType, String email, String bookedMuseum,String bookingSlot);
 
     String setFeeOfBooking(BookingDTO bookingDTO);
 }

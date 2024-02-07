@@ -20,5 +20,6 @@ public class BookingDTO {
     private BookedMuseum bookedMuseum;
     private BookingType bookingType;
     private LocalDateTime bookingDate;
+    private String bookingSlot;
     private double cost;
 }

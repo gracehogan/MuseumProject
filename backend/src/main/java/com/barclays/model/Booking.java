@@ -30,6 +30,7 @@ public class Booking {
     @Enumerated(EnumType.STRING)
 
     private BookingType bookingType;
+    private String bookingSlot;
 
     @Column(columnDefinition = "DATETIME")
     private LocalDateTime bookingDate;

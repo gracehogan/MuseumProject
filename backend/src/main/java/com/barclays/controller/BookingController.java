@@ -14,18 +14,18 @@ public class BookingController {
 
     private final BookingService bookingService;
 
-    @PostMapping("/saveBooking/{name}/{numberOfPersons}/{bookingType}/{email}/{bookedMuseum}")
+    @PostMapping("/saveBooking/{name}/{numberOfPersons}/{bookingType}/{email}/{bookedMuseum}/{bookingSlot}")
     public Booking saveBooking(@PathVariable String name,@PathVariable int numberOfPersons,@PathVariable  String bookingType,
-                                     @PathVariable  String email,@PathVariable  String bookedMuseum) {
-        BookingDTO bookingDTO = bookingService.createBookingDTO(name,numberOfPersons, bookingType, email, bookedMuseum);
+                                     @PathVariable  String email,@PathVariable  String bookedMuseum,@PathVariable String bookingSlot) {
+        BookingDTO bookingDTO = bookingService.createBookingDTO(name,numberOfPersons, bookingType, email, bookedMuseum,bookingSlot);
         return bookingService.save(bookingDTO);
     }
 
 
-    @PostMapping("/estimateFee/{name}/{numberOfPersons}/{bookingType}/{email}/{bookedMuseum}")
+    @GetMapping("/estimateFee/{name}/{numberOfPersons}/{bookingType}/{email}/{bookedMuseum}/{bookingSlot}")
     public String estimateBookingFee(@PathVariable String name,@PathVariable int numberOfPersons,@PathVariable  String bookingType,
-                                     @PathVariable  String email,@PathVariable  String bookedMuseum) {
-        BookingDTO bookingDTO = bookingService.createBookingDTO(name,numberOfPersons, bookingType, email, bookedMuseum);
+                                     @PathVariable  String email,@PathVariable  String bookedMuseum,@PathVariable String bookingSlot) {
+        BookingDTO bookingDTO = bookingService.createBookingDTO(name,numberOfPersons, bookingType, email, bookedMuseum,bookingSlot);
         return bookingService.setFeeOfBooking(bookingDTO);
     }
 

@@ -35,6 +35,7 @@ public class BookingServiceImpl implements BookingService {
         booking.setBookingDate(bookingDTO.getBookingDate());
         booking.setNumberOfPersons(bookingDTO.getNumberOfPersons());
         booking.setCost(calculateFee(bookingDTO));
+        booking.setBookingSlot(bookingDTO.getBookingSlot());
         booking.setEmail(bookingDTO.getEmail());
         booking.setBookingType(bookingDTO.getBookingType());
         return bookingRepository.save(booking);
@@ -48,12 +49,13 @@ public class BookingServiceImpl implements BookingService {
         }
 
     @Override
-    public BookingDTO createBookingDTO(String name,int number, String bookingType, String email, String bookedMuseum) {
+    public BookingDTO createBookingDTO(String name,int number, String bookingType, String email, String bookedMuseum,String bookingSlot) {
 
         BookingDTO bookingDTO= new BookingDTO();
         bookingDTO.setNumberOfPersons(number);
         bookingDTO.setBookingType(BookingType.valueOf(bookingType));
         bookingDTO.setEmail(email);
+        bookingDTO.setBookingSlot(bookingSlot);
         bookingDTO.setName(name);
         bookingDTO.setBookedMuseum(BookedMuseum.valueOf(bookedMuseum));
         bookingDTO.setBookingDate(LocalDateTime.now());
