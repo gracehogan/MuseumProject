@@ -17,8 +17,10 @@ const Menu = () => {
               <Link to="/museums">Museums</Link>
             </li>
             <div className="dropdown-content">
-              <Link to="/museum/Muse">MUSE</Link>
               <Link to="/museum/Pages">PAGES</Link>
+              <Link to="/museum/Muse">MUSE</Link>
+              <Link to="/museum/Xplore">XPLORE</Link>
+              <Link to="/museum/Horizons">HORIZONS</Link>
             </div>
           </div>
 
