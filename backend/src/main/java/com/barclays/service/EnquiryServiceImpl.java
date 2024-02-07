@@ -1,15 +1,8 @@
 package com.barclays.service;
 
-import com.barclays.dto.BookingDTO;
 import com.barclays.dto.EnquiryDTO;
-import com.barclays.exception.InvalidBookingException;
-import com.barclays.model.Booking;
 import com.barclays.model.Enquiry;
-import com.barclays.model.enums.BookedMuseum;
-import com.barclays.model.enums.BookingType;
 import com.barclays.repository.EnquiryRepository;
-import com.barclays.strategy.BookingStrategy;
-import com.barclays.strategy.BookingStrategyFactory;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -36,29 +29,26 @@ public class EnquiryServiceImpl implements EnquiryService {
     }
 
     @Override
-    public Enquiry Save(EnquiryDTO enquiryDTO) {
+    public Enquiry save(EnquiryDTO enquiryDTO) {
         Enquiry enquiry = new Enquiry();
         enquiry.setName(enquiryDTO.getName());
         enquiry.setEmail(enquiryDTO.getEmail());
-        enquiry.setName(enquiryDTO.getName());
+        enquiry.setEnquiryText(enquiryDTO.getEnquiryText());
         enquiry.setEnquiryDate(enquiryDTO.getEnquiryDate());
         enquiry.setEnquiryType(enquiryDTO.getEnquiryType());
-//        if (checkValidEmail(enquiry.getEmail())) {
             return enquiryRepository.save(enquiry);
-//        } else throw new InvalidBookingException("invalid email");
     }
 
 
     @Override
-    public EnquiryDTO createEnquiryDTO(String name, String email, String enquiryType, String enquiryText, String enquiryDate) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        EnquiryDTO bookingDTO = new EnquiryDTO();
-        bookingDTO.setEmail(email);
-        bookingDTO.setName(name);
-        bookingDTO.setEnquiryType(enquiryType);
-        bookingDTO.setEnquiryText(enquiryText);
-        bookingDTO.setEnquiryDate(LocalDateTime.parse(enquiryDate, formatter));
-        return bookingDTO;
+    public EnquiryDTO createEnquiryDTO(String name, String email, String enquiryType, String enquiryText) {
+        EnquiryDTO enquiryDTO = new EnquiryDTO();
+        enquiryDTO.setName(name);
+        enquiryDTO.setEmail(email);
+        enquiryDTO.setEnquiryType(enquiryType);
+        enquiryDTO.setEnquiryText(enquiryText);
+        enquiryDTO.setEnquiryDate(LocalDateTime.now());
+        return enquiryDTO;
     }
 
     public Boolean checkValidEmail(String email) {

@@ -1,7 +1,5 @@
 package com.barclays.model;
 
-import com.barclays.model.enums.BookedMuseum;
-import com.barclays.model.enums.BookingType;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,8 +1,6 @@
 package com.barclays.controller;
 
-import com.barclays.dto.BookingDTO;
 import com.barclays.dto.EnquiryDTO;
-import com.barclays.model.Booking;
 import com.barclays.model.Enquiry;
 import com.barclays.service.EnquiryService;
 import lombok.AllArgsConstructor;
@@ -18,14 +16,16 @@ public class EnquiryController {
 
     private final EnquiryService enquiryService;
 
-    @PostMapping("/sendEnquiry/{name}/{email}/{enquiryType}/{enquiryText}/{enquiryDate}")
-    public String sendEnquiry(@PathVariable String name, @PathVariable  String enquiryType,
-                               @PathVariable  String email, @PathVariable  String enquiryText, @PathVariable  String enquiryDate) {
-        EnquiryDTO enquiryDTO = enquiryService.createEnquiryDTO(name, enquiryType, email, enquiryText, enquiryDate);
-         enquiryService.Save(enquiryDTO);
-         return "enquiry saved";
+    @PostMapping("/sendEnquiry/{name}/{email}/{enquiryType}/{enquiryText}")
+    public String saveCustomerEnquiry(@PathVariable String name, @PathVariable String email,
+                                       @PathVariable String enquiryType, @PathVariable String enquiryText) {
+        EnquiryDTO enquiryDTO = enquiryService.createEnquiryDTO(name, enquiryType, email, enquiryText);
+         enquiryService.save(enquiryDTO);
+         return "Enquiry Sent";
+
     }
 }
+
 //name
 //email
 //enquiryType
