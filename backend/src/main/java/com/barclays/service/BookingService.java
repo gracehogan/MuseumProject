@@ -15,6 +15,7 @@ public interface BookingService {
     double calculateFee(BookingDTO bookingDTO);
     BookingDTO createBookingDTO(String name,int number, String bookingType, String email, String bookedMuseum, String bookingDate);
 
+    String getFeeOfValidBooking(BookingDTO bookingDTO);
 }
 
 

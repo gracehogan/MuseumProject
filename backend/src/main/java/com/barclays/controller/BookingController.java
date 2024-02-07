@@ -29,12 +29,9 @@ public class BookingController {
     public String estimateBookingFee(@PathVariable String name,@PathVariable int numberOfPersons,@PathVariable  String bookingType,
                                      @PathVariable  String email,@PathVariable  String bookedMuseum,@PathVariable  String bookingDate) {
         BookingDTO bookingDTO = bookingService.createBookingDTO(name,numberOfPersons, bookingType, email, bookedMuseum, bookingDate);
-
-      if (bookingService.calculateFee(bookingDTO)>0){
-          Booking newBooking =bookingService.Save(bookingDTO);
-          return String.valueOf(newBooking.getCost());
-      }
-        return ("Invalid booking!!");
+        return bookingService.getFeeOfValidBooking(bookingDTO);
     }
+
+
 }
 
