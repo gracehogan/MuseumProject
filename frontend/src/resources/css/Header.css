@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Normal";
-    src: url('../font-styles/Audrey-Normal.otf') format('otf');
+    src: url('../font-styles/Audrey-Normal.otf') format('opentype');
 }
 
 .heading {
