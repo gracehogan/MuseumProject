@@ -1,17 +1,18 @@
 .booking-link-container {
-    text-align: center; 
-    margin-top: 20px; 
+    text-align: center;
+    margin-top: 20px;
 }
 
-.arrow-link {
-    border: 1px solid #3f2b35; 
-    padding: 20px 20px; 
-    text-decoration: none; 
-    color: #3f2b35; 
+.booking-link {
+    /* Styles for the link in VisitPage */
+    border: 1px solid #3f2b35;
+    padding: 20px 20px;
+    text-decoration: none;
+    color: #3f2b35;
 }
 
-.arrow-link:hover {
-    background-color: #f0f0f0; 
+.booking-link:hover {
+    background-color: #f0f0f0;
 }
 
 .exhibitions-container {

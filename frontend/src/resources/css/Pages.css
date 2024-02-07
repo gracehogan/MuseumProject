@@ -1,3 +1,5 @@
+/* Pages.css */
+
 @font-face {
     font-family: "Normal";
     src: url('../font-styles/Audrey-Normal.otf') format('opentype');
@@ -8,9 +10,9 @@
     font-family: "Normal";
     font-size: 50px;
     font-style: normal;
-    padding: 15px 0px;   
-    margin: 0px; 
-    text-align: center;  
+    padding: 15px 0px;
+    margin: 0px;
+    text-align: center;
     letter-spacing: 18px;
 }
 
@@ -18,3 +20,24 @@
     background-color: #3f2b35;
 }
 
+.visit-container {
+    margin-top: 10px;
+    padding: 0px 10px;
+}
+
+.exhibition-container {
+    padding: 0px 10px;
+}
+
+.arrow-link {
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    padding: 10px 10px;
+    font-family: "Normal";
+    font-size: 25px;
+}
+
+.arrow-link:hover {
+    background-color: #f0f0f0;
+}
