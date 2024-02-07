@@ -37,8 +37,6 @@ public class SculptureController {
         return new SculptureDTO(sculpture);
     }
 
-
-
     @GetMapping("/getSculpturesByMedium")
     public List<Sculpture> getPaintingByMedium(@PathParam("medium") String medium) {
         log.debug("In the getPaintingByStyle method");

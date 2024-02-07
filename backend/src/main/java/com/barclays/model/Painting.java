@@ -14,23 +14,27 @@ public class Painting  {
     @Id
     @GeneratedValue
     private Long id;
+
     private String title;
+
     private int yearCompleted;
+
     private String medium;
+
     private String backstory;
+
     private String style;
+
     @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "artist_id")
     private Artist artist;
+
     @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "museum_id")
     private Museum museum;
+
     private String src;
-
-
-
-
 
 }
