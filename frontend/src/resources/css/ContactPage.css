@@ -18,3 +18,27 @@
 .enquiry-heading-container{
     padding: 10px 0px; 
 }
+
+.contact-info-and-opening-hours-container {
+    display: flex; 
+    justify-content: space-between; 
+}
+
+.contact-info-container,
+.opening-hour-container {
+    flex: 1; 
+    padding: 0px 30px; 
+    background-color: rgba(228, 226, 226, 0.338);
+    margin-top: 20px;
+}
+
+.contact-hours-container{
+    padding: 10px 30px; 
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 10px 10px;
+}

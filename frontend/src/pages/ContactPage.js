@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../resources/css/ContactPage.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-
 const ContactPage = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -61,6 +60,26 @@ const ContactPage = () => {
                 </div>
                 <button type='submit'><i className="fas fa-paper-plane"></i> Submit</button>
             </form>
+            </div>
+            <div className='heading-container'>
+              <h3>Contact information</h3>
+            </div>
+            <div className='contact-info-and-opening-hours-container'>
+              <div className='contact-info-container'>
+                  <p>Name: PAGES Group</p>
+                  <p>Phone Number: 7828122</p>
+                  <p>Email: pages@bootcamp.com</p>
+                  <p>Address: PAGES Group Ltd, Floor 16, Northampton</p>
+              </div>
+              <div className='opening-hour-container'>
+                <div className='contact-hours-container'>
+                  <h5>PAGES office opening time:</h5>
+                  <p>Monday- Friday: 9am to 6pm</p>
+                </div>
+              </div>
+            </div>
+            <div className='image-container'>
+              <img src="/map.jpg" alt="Map" className="map-image" style={{ width: '50%', height: 'auto' }} />
             </div>
         </div>
     );
