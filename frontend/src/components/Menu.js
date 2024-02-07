@@ -9,7 +9,7 @@ const Menu = () => {
       <nav>
         <ul className="list-inline">
           <li className="list-inline-item">
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
           </li>
 
           <div className="dropdown">
