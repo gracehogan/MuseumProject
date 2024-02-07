@@ -1,14 +1,16 @@
 import './App.css';
+import SculptureGrid from './components/Sculptures';
+import ImageTrial from './components/images';
 
 function App() {
   return (
     <div className="App">
-      <h1>Works on my box
-      </h1>
+      <ImageTrial/>
+      <br />
+      <SculptureGrid/>
     </div>
   );
 }
 
 export default App;
 
-//Test for github 2
