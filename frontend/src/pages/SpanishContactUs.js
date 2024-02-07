@@ -36,10 +36,10 @@ const SpanishContactUs = () => {
             <div className='heading-container'>
                 <h2>Póngase en contacto con nosotros</h2>
                 <div className="language-buttons">
-                    <Link to="/contact-us" className="language-button">English</Link>
-                    <button className="language-button">Hindi</button>
-                    <button className="language-button">Francés</button>
-                    <button className="language-button">Catalán</button>
+                    <Link to="/contact-us" className="language-button">EN</Link>
+                    <Link to="/hindi" className="language-button">HI</Link>
+                    <Link to="/french" className="language-button">FR</Link>
+                    <Link to="/catalan" className="language-button">CA</Link>
                 </div>
             </div>
             <div className='enquiry-container'>

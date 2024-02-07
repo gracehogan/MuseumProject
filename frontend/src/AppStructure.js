@@ -16,6 +16,8 @@ import ContactPage from "./pages/ContactPage";
 import AboutUs from "./pages/AboutUs";
 import SpanishContactUs from "./pages/SpanishContactUs";
 import FrenchContactUs from "./pages/FrenchContactUs";
+import CatalanContactUs from "./pages/CatalanContactUs";
+import HindiContactUs from "./pages/HindiContactUs";
 
 
 function Home() {
@@ -61,6 +63,14 @@ function FrenchContact() {
   return <FrenchContactUs />;
 }
 
+function CatalanContact() {
+  return <CatalanContactUs />;
+}
+
+function HindiContact() {
+  return <HindiContactUs />;
+}
+
 
 // Remember to add imports for Muse & Pages museum 
 // and add the routes in the return statement below also
@@ -85,6 +95,8 @@ const AppStructure = () => {
             <Route path="//help/about-us" element={<About />} />
             <Route path="/spanish" element={<SpanishContact />} />
             <Route path="/french" element={<FrenchContact />} />
+            <Route path="/catalan" element={<CatalanContact />} />
+            <Route path="/hindi" element={<HindiContact />} />
             <Route path="/contact-us" element={<Contact />} />
           </Routes>
           </div>

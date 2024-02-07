@@ -4,7 +4,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Link } from 'react-router-dom';
 import "../resources/css/FrenchContactUs.css";
 
-const ContactPage = () => {
+const FrenchContactUs = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -37,10 +37,10 @@ const ContactPage = () => {
             <div className='heading-container'>
                 <h2>Contactez-nous</h2>
                 <div className="language-buttons">
-                    <Link to="/contact-us" className="language-button">English</Link>
-                    <Link to="/spanish" className="language-button">Espagnol</Link>
-                    <button className="language-button">Hindi</button>
-                    <button className="language-button">Catalan</button>
+                    <Link to="/spanish" className="language-button">ES</Link>
+                    <Link to="/hindi" className="language-button">HI</Link>
+                    <Link to="/contact-us" className="language-button">EN</Link>
+                    <Link to="/catalan" className="language-button">CA</Link>
                 </div>
             </div>
             <div className='enquiry-container'>
@@ -93,4 +93,4 @@ const ContactPage = () => {
     );
 };
 
-export default ContactPage;
+export default FrenchContactUs;

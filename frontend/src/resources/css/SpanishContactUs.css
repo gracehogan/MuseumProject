@@ -6,7 +6,7 @@
 
 .enquiry-container {
     padding: 10px 800px; 
-    background-color: rgba(109, 104, 104, 0.338); /* White with 70% opacity */
+    background-color: rgba(109, 104, 104, 0.338); 
     border-radius: 10px;
     margin-top: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -50,20 +50,23 @@
     right: 20px; 
     transform: translateY(-50%);
     display: flex;
-    gap: 10px;
-    font: 1em sans-serif;
+    flex-direction: row !important; 
+    gap: 5px; 
 }
 
-
 .language-button {
-    padding: 5px 10px;
-    background-color: #373c42;
-    color: #fff;
-    border: none;
+    padding: 3px 8px;
+    font-size: 14px; 
+    background-color: #ffffff !important; 
+    color: #000000 !important; 
+    border: 1px solid #000000 !important; 
     border-radius: 5px;
     cursor: pointer;
 }
 
+
 .language-button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3 !important;
 }
+
+
