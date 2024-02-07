@@ -18,8 +18,8 @@ It allows users to run specific filtering, search and sorting options as well as
 
 ### Created By:
 Team *PAGES* for their coding bootcamp capstone project:
-- **Ani** (anidesai1) - https://github.com/anidesai1
-- **Eddy** (iamedddie) - https://github.com/iamedddie
-- **Grace** (gracehogan) - https://github.com/gracehogan
 - **Pelumi** (Pelumi-98) - https://github.com/Pelumi-98
+- **Ani** (anidesai1) - https://github.com/anidesai1
+- **Grace** (gracehogan) - https://github.com/gracehogan
+- **Eddy** (iamedddie) - https://github.com/iamedddie
 - **Shona** (shonanohs) - https://github.com/shonanohs
