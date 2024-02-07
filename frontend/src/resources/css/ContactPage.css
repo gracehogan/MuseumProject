@@ -1,0 +1,20 @@
+.heading-container {
+    margin-top: 10px;
+    padding: 0px 30px; 
+}
+
+.enquiry-container {
+    padding: 10px 800px; 
+    background-color: rgba(109, 104, 104, 0.338); /* White with 70% opacity */
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.text-container{
+    padding: 10px 30px; 
+}
+
+.enquiry-heading-container{
+    padding: 10px 0px; 
+}

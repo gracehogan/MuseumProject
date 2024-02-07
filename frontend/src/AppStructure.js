@@ -12,6 +12,7 @@ import PagesMuseum from "./pages/Pages";
 import MuseMuseum from "./pages/Muse";
 import FAQPage from "./pages/FAQPage";
 import Exhibitions from "./components/Exhibitions";
+import ContactPage from "./pages/ContactPage";
 
 
 function Home() {
@@ -37,9 +38,9 @@ function Pages() {
   return <PagesMuseum/>;
 };
 
-// function Contact() {
-//   return <ContactPage />;
-// };
+function Contact() {
+  return <ContactPage />;
+};
 
 function FAQ() {
   return <FAQPage/>;
@@ -65,6 +66,7 @@ const AppStructure = () => {
             <Route path="/museum/Muse" element={<Muse />} />
             <Route path="/help/faq" element={<FAQ />} />
             <Route path="/exhibitions" element={<Exhibition />} />
+            <Route path="//help/contact-us" element={<Contact />} />
           </Routes>
           </div>
         </div>
