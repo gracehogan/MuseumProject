@@ -56,7 +56,7 @@ const AppStructure = () => {
         <div className="background" id="content-wrap">
           <div>
           <Routes>
-            <Route path="/home" element={<Home/>} />
+            <Route path="/" element={<Home/>} />
             <Route path="/museums" element={<Museums/>} />
             <Route path="/visit" element={<Visit />} />
             <Route path="/museum/Pages" element={<Pages />} />
