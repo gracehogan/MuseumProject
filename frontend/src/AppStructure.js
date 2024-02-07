@@ -14,6 +14,10 @@ import MuseMuseum from "./pages/Muse";
 import FAQPage from "./pages/FAQPage";
 import ContactPage from "./pages/ContactPage";
 import AboutUs from "./pages/AboutUs";
+import SpanishContactUs from "./pages/SpanishContactUs";
+import FrenchContactUs from "./pages/FrenchContactUs";
+import CatalanContactUs from "./pages/CatalanContactUs";
+import HindiContactUs from "./pages/HindiContactUs";
 
 
 function Home() {
@@ -56,6 +60,22 @@ function Booking() {
   return <BookingPage/>;
 };
 
+function SpanishContact() {
+  return <SpanishContactUs />;
+}
+
+function FrenchContact() {
+  return <FrenchContactUs />;
+}
+
+function CatalanContact() {
+  return <CatalanContactUs />;
+}
+
+function HindiContact() {
+  return <HindiContactUs />;
+}
+
 
 const AppStructure = () => {
     return (
@@ -76,6 +96,11 @@ const AppStructure = () => {
             <Route path="//help/contact-us" element={<Contact />} />
             <Route path="//help/about-us" element={<About />} />
             <Route path="/book" element={<Booking />} />
+            <Route path="/spanish" element={<SpanishContact />} />
+            <Route path="/french" element={<FrenchContact />} />
+            <Route path="/catalan" element={<CatalanContact />} />
+            <Route path="/hindi" element={<HindiContact />} />
+            <Route path="/contact-us" element={<Contact />} />
           </Routes>
           </div>
         </div>
