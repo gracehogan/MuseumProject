@@ -1,11 +1,7 @@
 package com.barclays.service;
 
 import com.barclays.dto.BookingDTO;
-import com.barclays.model.Artist;
 import com.barclays.model.Booking;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 public interface BookingService {
 
