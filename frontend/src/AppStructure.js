@@ -14,13 +14,6 @@ import MuseMuseum from "./pages/Muse";
 import FAQPage from "./pages/FAQPage";
 import ContactPage from "./pages/ContactPage";
 import AboutUs from "./pages/AboutUs";
-import SpanishContactUs from "./pages/SpanishContactUs";
-import FrenchContactUs from "./pages/FrenchContactUs";
-import CatalanContactUs from "./pages/CatalanContactUs";
-import HindiContactUs from "./pages/HindiContactUs";
-import i18n from './i18n';
-import { withNamespaces } from 'react-i18next';
-
 
 function Home() {
   return <HomePage />;
@@ -62,23 +55,6 @@ function Booking() {
   return <BookingPage/>;
 };
 
-// function SpanishContact() {
-//   return <SpanishContactUs />;
-// }
-
-// function FrenchContact() {
-//   return <FrenchContactUs />;
-// }
-
-// function CatalanContact() {
-//   return <CatalanContactUs />;
-// }
-
-// function HindiContact() {
-//   return <HindiContactUs />;
-// }
-
-
 const AppStructure = () => {
     return (
       <div id="page-container">
@@ -99,10 +75,6 @@ const AppStructure = () => {
             <Route path="//help/about-us" element={<About />} />
             <Route path="/book" element={<Booking />} />
             <Route path="/contact-us" element={<ContactPage />} />
-            {/* <Route path="/contact-us/spanish" element={<SpanishContactUs />} />
-            <Route path="/contact-us/french" element={<FrenchContactUs />} />
-            <Route path="/contact-us/catalan" element={<CatalanContactUs />} />
-            <Route path="/contact-us/hindi" element={<HindiContactUs />} /> */}
           </Routes>
           </div>
         </div>
