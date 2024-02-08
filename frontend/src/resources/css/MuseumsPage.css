@@ -6,7 +6,7 @@
 .flex-page {
     display: flex;
     flex-direction: row;
-    gap: 20%;
+    gap: 5%;
 }
 
 .tile-margin {
