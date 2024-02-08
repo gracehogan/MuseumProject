@@ -21,6 +21,7 @@ a:hover {
     background-color: #3f2b35;
     display: flex;
     justify-content: center;
+    gap: 35px;
 }
 
 li {

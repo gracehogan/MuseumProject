@@ -6,16 +6,20 @@
 .flex-page {
     display: flex;
     flex-direction: row;
-    gap: 5%;
+    gap: 3.5%;
+    margin-top: 40px;
 }
 
 .tile-margin {
-    margin-left: 30px;
+    margin-left: 5px;
 }
 
 .sub-heading {
     font-family: "Normal";
     font-size: 25px;
+    background-color: #3f2b35;
+    color: rgb(223, 200, 173);
+    text-align: center;
 }
 
 p {
