@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next'; // Import the useTranslation hook
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../resources/css/ContactPage.css';
 
-const ContactPage = () => {
-  const { t } = useTranslation(); // Destructure t from useTranslation hook to access translations
+function ContactPage() {
+  const { t } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng); // Use the changeLanguage function from the i18n instance
+  };
 
   const [formData, setFormData] = useState({
     name: '',
@@ -34,22 +38,18 @@ const ContactPage = () => {
     });
   };
 
-  const changeLanguage = (lng) => {
-    console.log('Changing language to:', lng);
-    console.log('i18n:', i18n);
-    i18n.changeLanguage(lng);
-  };
-
   return (
     <div>
       <div className='heading-container'>
-        <button onClick={() => changeLanguage('en')}>en</button>
-        <button onClick={() => changeLanguage('hi')}>hi</button>
-        <button onClick={() => changeLanguage('es')}>es</button>
-        <button onClick={() => changeLanguage('fr')}>fr</button>
-        <button onClick={() => changeLanguage('ca')}>ca</button>
-        <h2>{t('Get in touch with us')}</h2>
+      <div className="language-buttons">
+        <button onClick={() => changeLanguage('en')}>English</button>
+        <button onClick={() => changeLanguage('fr')}>French</button>
+        <button onClick={() => changeLanguage('ca')}>Catalan</button>
+        <button onClick={() => changeLanguage('hi')}>Hindi</button>
+        <button onClick={() => changeLanguage('es')}>Spanish</button>
       </div>
+        <h2>{t('Get in touch with us')}</h2>
+          </div>
             <div className='enquiry-container'>
             <form onSubmit={handleSubmit} className='form-container'>
               <div className='enquiry-heading-container'>

@@ -1,16 +1,14 @@
 {
-  "en": {
-    "Enquiry Form": "Enquiry Form",
-    "Name:": "Name:",
-    "Email": "Email:",
-    "Enquiry:": "Enquiry:",
-    "Submit": "Submit",
-    "Contact information": "Contact information",
-    "Name: PAGES Group": "Name: PAGES Group",
-    "Phone Number: 7828122": "Phone Number: 7828122",
-    "Email: pages@bootcamp.com": "Email: pages@bootcamp.com",
-    "Address: PAGES Group Ltd, Floor 16, Northampton": "Address: PAGES Group Ltd, Floor 16, Northampton",
-    "PAGES office opening time:": "PAGES office opening time:",
-    "Monday- Friday: 9am to 6pm": "Monday- Friday: 9am to 6pm"
-  }
+  "Enquiry Form": "Enquiry Form",
+  "Name:": "Name:",
+  "Email": "Email:",
+  "Enquiry:": "Enquiry:", 
+  "Submit": "Submit",
+  "Contact information": "Contact information",
+  "Name: PAGES Group": "Name: PAGES Group",
+  "Phone Number: 7828122": "Phone Number: 7828122",
+  "Email: pages@bootcamp.com": "Email: pages@bootcamp.com",
+  "Address: PAGES Group Ltd, Floor 16, Northampton": "Address: PAGES Group Ltd, Floor 16, Northampton",
+  "PAGES office opening time:": "PAGES office opening time:",
+  "Monday- Friday: 9am to 6pm": "Monday- Friday: 9am to 6pm"
 }
