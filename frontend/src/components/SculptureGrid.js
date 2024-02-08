@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './ImageGrid.css';
+import '../resources/css/ImageGrid.css';
 
 const SculptureGrid = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);

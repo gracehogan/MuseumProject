@@ -1,5 +1,7 @@
 import '../resources/css/MuseumsPage.css';
 import '../resources/css/BookingPage.css';
+import PaintingGrid from '../components/PaintingGrid';
+import SculptureGrid from '../components/SculptureGrid';
 
 const MuseumPage = () => {
 
@@ -27,8 +29,13 @@ const MuseumPage = () => {
           <p className="sub-heading">Horizons</p>
           <img src='/horizons-tile-image-second.jpg' alt='horizons-image' height="350px" width="300px"/>
         </section>
-
       </section>
+      <div>
+          <h2 className="page-heading margin-align">Our Paintings</h2>
+          <PaintingGrid/>
+          <h2 className="page-heading margin-align">Our Sculptures</h2>
+          <SculptureGrid/>
+        </div>
     </div>
   );
 };

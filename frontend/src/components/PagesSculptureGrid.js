@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import '../resources/css/ImageGrid.css';
 
-const PaintingGrid = () => {
+const PagesSculptureGrid = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [paintingData, setPaintingData] = useState(null);
+  const [sculptureData, setSculptureData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8080/paintings");
+        const response = await fetch("http://localhost:8080/sculptures/getByMuseum/Pages");
         const data = await response.json();
-        setPaintingData(data);
+        setSculptureData(data);
       } catch (error) {
-        console.error("Error fetching painting data:", error);
+        console.error("Error fetching sculpture data:", error);
       }
     };
     fetchData();
@@ -20,7 +20,7 @@ const PaintingGrid = () => {
 
 return (
     <div className="image-grid">
-      {paintingData && paintingData.map((painting, index) => {
+      {sculptureData && sculptureData.map((sculpture, index) => {
         return (
           <div
             key={index}
@@ -28,19 +28,19 @@ return (
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <img src={painting.src} alt="Painting" />
+            <img src={sculpture.src} alt="Sculpture" />
             <div className="image-text">
-              Artist: {painting.artistName}
+              Artist: {sculpture.artistName}
               <br />
-              Title: {painting.title}
+              Title: {sculpture.title}
               <br/>
-              Year Completed: {painting.yearCompleted}
+              Year Completed: {sculpture.yearCompleted}
               <br/>
-              Medium: {painting.medium}
+              Medium: {sculpture.medium}
               <br/>
-              Style: {painting.style}
+              Style: {sculpture.style}
               <br/>
-              Backstory: {painting.backstory}
+              Backstory: {sculpture.backstory}
             </div>
           </div>
         );
@@ -49,4 +49,4 @@ return (
   );
 };
 
-export default PaintingGrid;
+export default PagesSculptureGrid;

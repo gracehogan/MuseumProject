@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import '../resources/css/ImageGrid.css';
 
-const PaintingGrid = () => {
+const PagesPaintingGrid = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [paintingData, setPaintingData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8080/paintings");
+        const response = await fetch("http://localhost:8080/paintings/getByMuseum/pages");
         const data = await response.json();
         setPaintingData(data);
       } catch (error) {
@@ -49,4 +49,4 @@ return (
   );
 };
 
-export default PaintingGrid;
+export default PagesPaintingGrid;
