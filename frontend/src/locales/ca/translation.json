@@ -1,15 +1,17 @@
 {
-    "Enquiry Form": "Formulari de consulta",
-    "Name:": "Nom :",
-    "Email": "Correu electrònic :",
-    "Enquiry:": "Consulta :",
-    "Submit": "Enviar",
-    "Contact information": "Informació de contacte",
-    "Name: PAGES Group": "Nom : Grup PAGES",
-    "Phone Number: 7828122": "Número de telèfon : 7828122",
-    "Email: pages@bootcamp.com": "Correu electrònic : pages@bootcamp.com",
-    "Address: PAGES Group Ltd, Floor 16, Northampton": "Adreça : PAGES Group Ltd, Planta 16, Northampton",
-    "PAGES office opening time:": "Horari d'obertura de l'oficina PAGES :",
-    "Monday- Friday: 9am to 6pm": "Dilluns - Divendres: 9h a 18h"
-  }
+  "GetInTouch": "Posa't en contacte",
+  "Form": "Formulari de consulta",
+  "Name": "Nom :",
+  "Email": "Correu electrònic",
+  "Enquiry": "Consulta :",
+  "Submit": "Enviar",
+  "Information": "Informació de contacte",
+  "PAGESName": "Nom : Grup PAGES",
+  "PhoneNumber": "Número de telèfon : 7828122",
+  "PAGESEmail": "Correu electrònic : pages@bootcamp.com",
+  "Address": "Adreça : PAGES Group Ltd, Planta 16, Northampton",
+  "OpeningTime": "Horari d'obertura de l'oficina PAGES :",
+  "OfficeHours": "Dilluns - Divendres: 9h a 18h"
+}
+
 
