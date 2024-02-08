@@ -34,6 +34,7 @@ public class Booking {
     @Column(name = "bookingDate",columnDefinition = "DATETIME")
     private LocalDateTime bookingDate;
     private double cost;
+    private String bookingSlot;
 
 
 

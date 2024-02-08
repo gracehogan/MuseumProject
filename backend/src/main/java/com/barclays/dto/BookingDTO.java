@@ -21,4 +21,5 @@ public class BookingDTO {
     private BookingType bookingType;
     private LocalDateTime bookingDate;
     private double cost;
+    private String bookingSlot;
 }

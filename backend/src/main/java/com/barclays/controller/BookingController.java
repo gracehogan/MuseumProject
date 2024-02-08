@@ -14,16 +14,23 @@ public class BookingController {
 
     private final BookingService bookingService;
 
-    @PostMapping("/estimateFee/{name}/{numberOfPersons}/{bookingType}/{email}/{bookedMuseum}/{bookingDate}")
-    public String estimateBookingFee(@PathVariable String name,@PathVariable int numberOfPersons,@PathVariable  String bookingType,
-                                     @PathVariable  String email,@PathVariable  String bookedMuseum,@PathVariable  String bookingDate) {
-        BookingDTO bookingDTO = bookingService.createBookingDTO(name,numberOfPersons, bookingType, email, bookedMuseum, bookingDate);
+    @PostMapping("/saveBooking/{name}/{numberOfPersons}/{bookingType}/{email}/{bookedMuseum}/{bookingSlot}")
+    public Booking saveBooking(@PathVariable String name,@PathVariable int numberOfPersons,@PathVariable  String bookingType,
+                               @PathVariable  String email,@PathVariable  String bookedMuseum,@PathVariable String bookingSlot) {
+        BookingDTO bookingDTO = bookingService.createBookingDTO(name,numberOfPersons, bookingType, email, bookedMuseum,bookingSlot);
+        return bookingService.save(bookingDTO);
+    }
 
-      if (bookingService.calculateFee(bookingDTO)>0){
-          Booking newBooking =bookingService.Save(bookingDTO);
-          return String.valueOf(newBooking.getCost());
-      }
-        return ("Invalid booking!!");
+    @GetMapping("/estimateFee/{name}/{numberOfPersons}/{bookingType}/{email}/{bookedMuseum}/{bookingSlot}")
+    public String estimateBookingFee(@PathVariable String name,@PathVariable int numberOfPersons,@PathVariable  String bookingType,
+                                     @PathVariable  String email,@PathVariable  String bookedMuseum,@PathVariable String bookingSlot) {
+        BookingDTO bookingDTO = bookingService.createBookingDTO(name,numberOfPersons, bookingType, email, bookedMuseum,bookingSlot);
+        return bookingService.setFeeOfBooking(bookingDTO);
+    }
+    @DeleteMapping("/deleteBooking/{id}")
+    public void deleteBookingById(@PathVariable Long id) {
+        log.debug("deleteBookingById method logged");
+        bookingService.deleteById(id);
     }
 }
 
