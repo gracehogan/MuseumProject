@@ -1,12 +1,13 @@
 import React from 'react';
 import '../resources/css/AboutUs.css';
+import "../resources/css/BookingPage.css";
 
 const AboutUs = () => {
     return (
         <div>
             <div className="about-us-container">
                 <img src="/museum.jpg" alt="Museum" className="about-us-image" />
-            <div className="overlay-text">About Us</div>
+            <p className="overlay-text">About Us</p>
         </div>
         <div className='content-container'>
             <p>Welcome to PAGES, where art meets history and creativity knows no bounds. Established in August 2023 by a group of passionate individuals including Pelumi, Ani, Grace, Edward, and Shona, PAGES stands as a testament to their dedication and love for art.</p>
