@@ -72,14 +72,8 @@ public class PaintingServiceImpl implements PaintingService {
     }
 
     @Override
-    public List<PaintingDTO> findByArtistName(List<PaintingDTO> paintings, String name) {
-        List<PaintingDTO> paintingsByArtistName = new ArrayList<>();
-        for(PaintingDTO painting : paintings) {
-            if (painting.getArtistName().equalsIgnoreCase(name)) {
-                paintingsByArtistName.add(painting);
-            }
-        }
-        return paintingsByArtistName;
+    public List<Painting> findByArtistNameContainingIgnoreCase(String artistName) {
+        return paintingRepository.findByArtistNameContainsIgnoreCase(artistName);
     }
 
     public List<Painting> sortListTitle(List<Painting> paintings, String sort) {

@@ -18,7 +18,7 @@ const MusePaintingGrid = () => {
     fetchData();
   }, []);
 
-return (
+  return (
     <div className="image-grid">
       {paintingData && paintingData.map((painting, index) => {
         return (
@@ -30,17 +30,25 @@ return (
           >
             <img src={painting.src} alt="Painting" />
             <div className="image-text">
-              Artist: {painting.artistName}
+            <center>
+              <b><font size="+40">{painting.title}</font></b>
+              <br/>
+              <font size="+5">({painting.yearCompleted})</font>
               <br />
-              Title: {painting.title}
+              <font size="+5">by</font>
+              <br />
+              <b><font size="+5">{painting.artistName}</font></b>
+              <br />
               <br/>
-              Year Completed: {painting.yearCompleted}
               <br/>
-              Medium: {painting.medium}
+              <b>Medium: </b>{painting.medium}
               <br/>
-              Style: {painting.style}
               <br/>
-              Backstory: {painting.backstory}
+              <b>Style:</b> {painting.style}
+              <br/>
+              <br/>
+              <b>Description:</b> {painting.backstory}
+              </center>
             </div>
           </div>
         );

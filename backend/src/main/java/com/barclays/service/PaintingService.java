@@ -16,7 +16,7 @@ public interface PaintingService {
     List<Painting> findByStyle(String style);
     List<Painting> findByMuseum(String museum);
     List<Painting> sortAllByTitle(String sort);
-    List<PaintingDTO> findByArtistName(List<PaintingDTO> paintings, String name);
+    List<Painting> findByArtistNameContainingIgnoreCase(String artistName);
     Painting save(Painting p);
     void deletePaintingById(Long id);
     List<Painting> sortAllByYearCompleted( String sort);

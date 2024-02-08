@@ -1,14 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import '../resources/css/ImageGrid.css';
+import { SculptureButtonContext } from "./SculptureButtonContext";
 
 const SculptureGrid = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [sculptureData, setSculptureData] = useState(null);
+  const {sculptureButtonClicked, setSculptureButtonClicked} = useContext(SculptureButtonContext);
+  const [url, setURL] = useState("http://localhost:8080/sculptures");
+
+  useEffect(() => {
+    const selectButton = () => {
+      if (sculptureButtonClicked === "title-asc") {
+        setURL("http://localhost:8080/sculptures/sortAllByTitle/asc");
+      }
+      else if (sculptureButtonClicked === "title-desc") {
+        setURL("http://localhost:8080/sculptures/sortAllByTitle/desc");
+      }
+      else if (sculptureButtonClicked === "year-asc") {
+        setURL("http://localhost:8080/sculptures/sortAllByYearCompleted/asc");
+      }
+      else if (sculptureButtonClicked === "year-desc") {
+        setURL("http://localhost:8080/sculptures/sortAllByYearCompleted/desc");
+      }
+      else if (sculptureButtonClicked === "sort-by") {
+        setURL("http://localhost:8080/sculptures");
+      }
+    };
+    selectButton();
+  }, [sculptureButtonClicked]); // Update URL when buttonClicked changes
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8080/sculptures");
+        const response = await fetch(url);
         const data = await response.json();
         setSculptureData(data);
       } catch (error) {
@@ -16,7 +40,7 @@ const SculptureGrid = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [url]); // Only refetch data when URL changes
 
 return (
     <div className="image-grid">
@@ -30,17 +54,23 @@ return (
           >
             <img src={sculpture.src} alt="Sculpture" />
             <div className="image-text">
-              Artist: {sculpture.artistName}
+            <center>
+              <b><font size="+40">{sculpture.title}</font></b>
+              <br/>
+              <font size="+5">({sculpture.yearCompleted})</font>
               <br />
-              Title: {sculpture.title}
+              <font size="+5">by</font>
+              <br />
+              <b><font size="+5">{sculpture.artistName}</font></b>
+              <br />
               <br/>
-              Year Completed: {sculpture.yearCompleted}
               <br/>
-              Medium: {sculpture.medium}
+              <b>Medium: </b>{sculpture.medium}
               <br/>
-              Style: {sculpture.style}
               <br/>
-              Backstory: {sculpture.backstory}
+              <br/>
+              <b>Description:</b> {sculpture.backstory}
+              </center>
             </div>
           </div>
         );

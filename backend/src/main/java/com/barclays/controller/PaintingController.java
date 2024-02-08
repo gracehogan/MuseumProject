@@ -89,12 +89,11 @@ public class PaintingController {
     @GetMapping("/paintings/getByArtistName/{artistName}")
     List<PaintingDTO> getByArtistName(@PathVariable String artistName) {
         log.debug("In the getPaintingsByArtistName method");
-        List<Painting> paintings = paintingService.findAll();
+        List<Painting> paintings = paintingService.findByArtistNameContainingIgnoreCase(artistName);
         List<PaintingDTO> dtos = new ArrayList<>();
         for (Painting painting : paintings) {
             dtos.add(new PaintingDTO(painting));
         }
-        dtos = paintingService.findByArtistName(dtos, artistName);
         return dtos;
     }
 

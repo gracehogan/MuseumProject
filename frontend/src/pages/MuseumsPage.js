@@ -1,7 +1,14 @@
 import '../resources/css/MuseumsPage.css';
 import '../resources/css/BookingPage.css';
+import '../resources/css/Menu.css';
 import PaintingGrid from '../components/PaintingGrid';
 import SculptureGrid from '../components/SculptureGrid';
+import PaintingSortByDropdown from '../components/PaintingSortByDropdown';
+import SculptureSortByDropdown from '../components/SculptureSortByDropdown';
+import { PaintingButtonProvider } from '../components/PaintingButtonContext';
+import { SculptureButtonProvider } from '../components/SculptureButtonContext';
+import PaintingSearchBar from '../components/PaintingSearchBar';
+import { PaintingSearchBarProvider } from '../components/PaintingSearchBarContext';
 
 const MuseumPage = () => {
 
@@ -30,12 +37,23 @@ const MuseumPage = () => {
           <img src='/horizons-tile-image-second.jpg' alt='horizons-image' height="350px" width="300px"/>
         </section>
       </section>
-      <div>
-          <h2 className="page-heading margin-align">Our Paintings</h2>
-          <PaintingGrid/>
-          <h2 className="page-heading margin-align">Our Sculptures</h2>
-          <SculptureGrid/>
-      </div>
+
+        <div>
+        <PaintingSearchBarProvider>
+          <PaintingButtonProvider> 
+          <PaintingSearchBar/>
+            <h2 className="page-heading margin-align">Our Paintings</h2>
+            <PaintingSortByDropdown/>
+            <PaintingGrid/>
+          </PaintingButtonProvider>
+          </PaintingSearchBarProvider>
+
+          <SculptureButtonProvider>
+            <h2 className="page-heading margin-align">Our Sculptures</h2>
+            <SculptureSortByDropdown/> 
+            <SculptureGrid/>
+          </SculptureButtonProvider>
+        </div>
       <br/>
     </div>
   );

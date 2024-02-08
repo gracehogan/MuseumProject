@@ -28,19 +28,25 @@ return (
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <img src={sculpture.src} alt="Sculpture" />
+           <img src={sculpture.src} alt="Sculpture" />
             <div className="image-text">
-              Artist: {sculpture.artistName}
+            <center>
+              <b><font size="+40">{sculpture.title}</font></b>
+              <br/>
+              <font size="+5">({sculpture.yearCompleted})</font>
               <br />
-              Title: {sculpture.title}
+              <font size="+5">by</font>
+              <br />
+              <b><font size="+5">{sculpture.artistName}</font></b>
+              <br />
               <br/>
-              Year Completed: {sculpture.yearCompleted}
               <br/>
-              Medium: {sculpture.medium}
+              <b>Medium: </b>{sculpture.medium}
               <br/>
-              Style: {sculpture.style}
               <br/>
-              Backstory: {sculpture.backstory}
+              <br/>
+              <b>Description:</b> {sculpture.backstory}
+              </center>
             </div>
           </div>
         );
