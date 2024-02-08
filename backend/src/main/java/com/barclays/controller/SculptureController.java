@@ -37,7 +37,7 @@ public class SculptureController {
         return new SculptureDTO(sculpture);
     }
 
-    @GetMapping("/getSculptureByMedium")
+    @GetMapping("/getByMedium")
     public List<SculptureDTO> getSculptureByMedium(@PathParam("medium") String medium) {
         log.debug("In the getSculptureByMedium method");
         List<Sculpture> sculptures = sculptureService.findByMedium(medium);
@@ -48,10 +48,17 @@ public class SculptureController {
         return dtos;
     }
 
-    @GetMapping("/sortSculpturesByMedium/{medium}/{sort}")
-    List<SculptureDTO> sortAllByMedium(@PathVariable String medium, @PathVariable String sort) {
-        log.debug("In the sortSculpturesByMedium method");
-        List<Sculpture> sculptures = sculptureService.sortAllByMedium(medium, sort);
+    @GetMapping("/getByTitle")
+    public SculptureDTO getSculptureByTitle(@PathParam("title") String title) {
+        log.debug("In the getSculptureByTitle method");
+        Sculpture sculpture = sculptureService.findByTitle(title);
+        return new SculptureDTO(sculpture);
+    }
+
+    @GetMapping("/sortByTitle/{sort}")
+    List<SculptureDTO> sortAllByTitle(@PathVariable String sort) {
+        log.debug("In the sortSculpturesByTitle method");
+        List<Sculpture> sculptures = sculptureService.sortAllByTitle(sort);
         List<SculptureDTO> dtos = new ArrayList<>();
         for (Sculpture sculpture : sculptures) {
             dtos.add(new SculptureDTO(sculpture));
@@ -59,7 +66,20 @@ public class SculptureController {
         return dtos;
     }
 
-    @GetMapping("/sortSculpturesByYearCompleted/{sort}")
+    @GetMapping("/getByArtistName/{name}")
+    List<SculptureDTO> getByArtistName(@PathVariable String name) {
+        log.debug("In the getSculpturesByArtistName method");
+        List<Sculpture> sculptures = sculptureService.findAll();
+        List<SculptureDTO> dtos = new ArrayList<>();
+        for (Sculpture sculpture : sculptures) {
+            dtos.add(new SculptureDTO(sculpture));
+        }
+        sculptureService.findByArtistName(dtos, name);
+        return dtos;
+    }
+
+
+    @GetMapping("/sortByYearCompleted/{sort}")
     List<SculptureDTO> sortAllByYearCompleted(@PathVariable String sort) {
         log.debug("In the sortSculpturesByYearCompleted method");
         List<Sculpture> sculptures = sculptureService.sortAllByYearCompleted(sort);

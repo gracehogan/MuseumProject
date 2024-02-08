@@ -15,8 +15,6 @@ public interface PaintingService {
     List<Painting> findByStyle(String style);
     Painting save(Painting p);
     void deletePaintingById(Long id);
-    List<Painting> sortAllByMedium(String medium, String sort);
-    List<Painting> sortAllByStyle(String style, String sort);
     List<Painting> sortAllByYearCompleted( String sort);
 
 

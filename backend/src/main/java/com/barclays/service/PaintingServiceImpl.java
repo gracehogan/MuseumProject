@@ -55,16 +55,6 @@ public class PaintingServiceImpl implements PaintingService {
     }
 
     @Override
-    public List<Painting> sortAllByMedium(String medium, String sort) {
-        return sortListTitle(findByMedium(medium), sort);
-    }
-
-    @Override
-    public List<Painting> sortAllByStyle(String style, String sort) {
-        return sortListTitle(findByStyle(style),sort);
-    }
-
-    @Override
     public List<Painting> sortAllByYearCompleted(String sort) {
         return sortListYear(findAll(),sort);
     }

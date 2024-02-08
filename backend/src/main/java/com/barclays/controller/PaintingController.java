@@ -65,17 +65,6 @@ public class PaintingController {
         return dtos;
     }
 
-    @GetMapping("/sortPaintingsByMedium/{medium}/{sort}")
-    List<PaintingDTO> sortAllByMedium(@PathVariable String medium, @PathVariable String sort) {
-        log.debug("In the sortPaintingsByMedium method");
-        List<Painting> paintings = paintingService.sortAllByMedium(medium,sort);
-        List<PaintingDTO> dtos = new ArrayList<>();
-        for (Painting painting : paintings) {
-            dtos.add(new PaintingDTO(painting));
-        }
-        return dtos;
-    }
-
     @GetMapping("/sortPaintingsByYearCompleted/{sort}")
     List<PaintingDTO> sortAllByYearCompleted(@PathVariable String sort) {
         log.debug("In the sortPaintingsByYearCompleted method");
@@ -87,16 +76,6 @@ public class PaintingController {
         return dtos;
     }
 
-    @GetMapping("/sortPaintingsByStyle/{style}/{sort}")
-    List<PaintingDTO> sortAllByStyle(@PathVariable String style, @PathVariable String sort) {
-        log.debug("In the sortPaintingsByStyle method");
-        List<Painting> paintings = paintingService.sortAllByStyle(style,sort);
-        List<PaintingDTO> dtos = new ArrayList<>();
-        for (Painting painting : paintings) {
-            dtos.add(new PaintingDTO(painting));
-        }
-        return dtos;
-    }
 
     @PostMapping("/paintings")
     public Painting createPainting(@RequestBody Painting painting) {
