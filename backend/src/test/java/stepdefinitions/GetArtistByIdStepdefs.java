@@ -1,28 +1,36 @@
 package stepdefinitions;
 
 import com.barclays.controller.ArtistController;
+import com.barclays.dto.ArtistDTO;
+import com.barclays.dto.PaintingDTO;
 import com.barclays.model.Artist;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.client.RestClient;
 
 public class GetArtistByIdStepdefs {
 
-    @Autowired
-    ArtistController artistController;
+    RestClient restClient;
 
-    Artist artist;
+    String uriBase;
+
+    ArtistDTO artist;
 
     @Given("I have a get artist by id Spring endpoint")
     public void iHaveAGetArtistByIdSpringEndpoint() {
-        Assertions.assertNotNull(artistController);
+        uriBase = "http://localhost:8080";
+        restClient = RestClient.create();
     }
 
     @When("I call the get artist by {int} endpoint")
     public void iCallTheGetArtistByIdEndpoint(int id) {
-        artist = artistController.getArtistById((long) id);
+        artist = restClient.get()
+                .uri(uriBase + "/artist/" + id)
+                .retrieve()
+                .body(ArtistDTO.class);
     }
 
     @Then("I should get back the {string}, {int} and {int} of the artist")

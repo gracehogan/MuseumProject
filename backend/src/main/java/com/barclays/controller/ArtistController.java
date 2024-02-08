@@ -1,6 +1,9 @@
 package com.barclays.controller;
 
+import com.barclays.dto.ArtistDTO;
+import com.barclays.dto.MuseumDTO;
 import com.barclays.model.Artist;
+import com.barclays.model.Museum;
 import com.barclays.service.ArtistService;
 import io.micrometer.common.util.StringUtils;
 import jakarta.websocket.server.PathParam;
@@ -25,10 +28,16 @@ public class ArtistController {
         return artistService.findAllArtists();
     }
 
+//    @GetMapping("/artist/{id}")
+//    public Artist getArtistById(@PathVariable Long id) {
+//        log.debug("In the getArtistById method: "+id);
+//        return artistService.findArtistById(id);
+//    }
     @GetMapping("/artist/{id}")
-    public Artist getArtistById(@PathVariable Long id) {
-        log.debug("In the getArtistById method: "+id);
-        return artistService.findArtistById(id);
+    public ArtistDTO getArtistById(@PathVariable long id) {
+        log.debug("In the getArtistById method");
+        Artist artist = artistService.findArtistById(id);
+        return new ArtistDTO(artist);
     }
 
     @GetMapping("/artist")

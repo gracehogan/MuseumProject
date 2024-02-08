@@ -1,6 +1,8 @@
 package stepdefinitions;
 
 import com.barclays.controller.MuseumController;
+import com.barclays.dto.ArtistDTO;
+import com.barclays.dto.MuseumDTO;
 import com.barclays.model.Museum;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -8,24 +10,32 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.web.client.RestClient;
 
 import java.util.List;
 
 public class GetAllMuseumsStepdefs {
 
-    @Autowired
-    MuseumController museumController;
+    RestClient restClient;
 
-    List<Museum> museums;
+    String uriBase;
+
+
+    List<MuseumDTO> museums;
 
     @Given("I have a get all museums Spring endpoint")
     public void iHaveAGetAllMuseumsSpringEndpoint() {
-        Assertions.assertNotNull(museumController);
+        uriBase = "http://localhost:8080";
+        restClient = RestClient.create();
     }
 
     @When("I call the get all museums endpoint")
     public void iCallTheGetAllMuseumsEndpoint() {
-        museums = museumController.getAllMuseums();
+        museums = restClient.get()
+                .uri(uriBase + "/museums")
+                .retrieve()
+                .body(new ParameterizedTypeReference<List<MuseumDTO>>() {});
     }
 
     @Then("I should get back a list of museums")

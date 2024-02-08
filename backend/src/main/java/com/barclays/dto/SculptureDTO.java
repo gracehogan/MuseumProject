@@ -2,9 +2,11 @@ package com.barclays.dto;
 
 import com.barclays.model.Sculpture;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.BeanUtils;
 
 @Data
+@NoArgsConstructor
 public class SculptureDTO {
 
     private Long id;

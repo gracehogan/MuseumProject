@@ -2,9 +2,11 @@ package com.barclays.dto;
 
 import com.barclays.model.Painting;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.BeanUtils;
 
 @Data
+@NoArgsConstructor
 public class PaintingDTO {
 
     private Long id;
@@ -22,4 +24,6 @@ public class PaintingDTO {
         this.artistId = painting.getArtist().getId();
         this.artistName = painting.getArtist().getName();
     }
+
+
 }
