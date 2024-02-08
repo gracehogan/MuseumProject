@@ -1,6 +1,7 @@
 package com.barclays.controller;
 
 
+import com.barclays.dto.MuseumDTO;
 import com.barclays.model.Museum;
 import com.barclays.service.MuseumService;
 import jakarta.websocket.server.PathParam;
@@ -17,15 +18,21 @@ public class MuseumController {
     private final MuseumService museumService;
 
     @GetMapping("/museums")
-    public List<Museum> getAllMuseums() {
+    public List<MuseumDTO> getAllMuseums() {
         log.debug("In the getAllMuseums method");
-        return museumService.findAll();
+        List<Museum> museums = museumService.findAll();
+        List<MuseumDTO> dtos = new ArrayList<>();
+        for (Museum museum : museums) {
+            dtos.add(new MuseumDTO(museum));
+        }
+        return dtos;
     }
 
     @GetMapping("/museums/{id}")
-    public Museum getMuseum(@PathVariable Long id) {
+    public MuseumDTO getMuseum(@PathVariable long id) {
         log.debug("In the getMuseum method");
-        return museumService.findById(id);
+        Museum museum = museumService.findById(id);
+        return new MuseumDTO(museum);
     }
 
     @PostMapping("/museums")
