@@ -19,7 +19,9 @@ a:hover {
 
 .bg1 {
     background-color: #3f2b35;
-    text-align: center;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
 }
 
 li {
@@ -87,3 +89,7 @@ ul {
     color: black;
     background-color: rgb(223, 200, 173);
 }
+
+  /* Breadcrumb */
+  
+  

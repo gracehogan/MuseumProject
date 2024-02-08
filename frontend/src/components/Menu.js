@@ -7,7 +7,7 @@ const Menu = () => {
   return (
     <div className="bg1">
       <nav>
-        <ul className="list-inline">
+        <ul className="list-inline breadcrumb">
           <li className="list-inline-item">
             <Link to="/">Home</Link>
           </li>
