@@ -1,8 +1,6 @@
 package com.barclays.controller;
 
-import com.barclays.dto.PaintingDTO;
 import com.barclays.dto.SculptureDTO;
-import com.barclays.model.Painting;
 import com.barclays.model.Sculpture;
 import com.barclays.service.SculptureService;
 import jakarta.websocket.server.PathParam;
