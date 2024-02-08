@@ -6,19 +6,24 @@ const MuseumPage = () => {
     return (
     <div>
       <h2 className="page-heading margin-align">Museums</h2>
-      <section className="margin-align">
-        <section className="pages-museum">
-          {/* Pages column here */}
+      <section className="margin-align flex-page">
+        
+        <section className="pages-museum tile-margin">
+          <p className="sub-heading">Pages</p>
         </section>
+
         <section className="muse-museum">
-          {/* Muse column here */}
+          <p className="sub-heading">Muse</p>
         </section>
+
         <section className="xplore-museum">
-          {/* Xplore column here */}
+          <p className="sub-heading">Xplore</p>
         </section>
+
         <section className="horizons-museum">
-          {/* Horizon column here */}
+          <p className="sub-heading">Horizons</p>
         </section>
+
       </section>
     </div>
   );
