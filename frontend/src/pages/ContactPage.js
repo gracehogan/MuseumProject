@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../resources/css/ContactPage.css';
+import { Link } from 'react-router-dom';
 
 function ContactPage() {
   const { t } = useTranslation();
@@ -47,6 +48,12 @@ function ContactPage() {
           <button onClick={() => changeLanguage('hi')}>Hindi</button>
           <button onClick={() => changeLanguage('es')}>Spanish</button>
         </div>
+        <nav aria-label="breadcrumb">
+          <ol className="breadcrumb">
+              <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+              <li className="breadcrumb-item"><Link to="/help/contact-us">Contact us</Link></li>
+          </ol>
+      </nav>
         <h2>{t('GetInTouch')}</h2>
       </div>
       <div className='enquiry-container'>
