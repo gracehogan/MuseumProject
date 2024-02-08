@@ -39,13 +39,23 @@ CREATE TABLE IF NOT EXISTS PAINTING (
     src VARCHAR(255)
     );
 
-CREATE TABLE IF NOT EXISTS BOOKING (
+CREATE TABLE IF NOT EXISTS BOOKING(
     id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     booked_museum VARCHAR(255) NOT NULL,
     booking_type VARCHAR(255) NOT NULL,
+    booking_slot VARCHAR(255) NOT NULL,
     number_of_persons INT,
     booking_date DATETIME,
     cost double
+    );
+
+CREATE TABLE IF NOT EXISTS ENQUIRY(
+    id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    enquiry_type VARCHAR(255) ,
+    enquiry_text VARCHAR(255),
+    enquiry_date DATETIME
     );
