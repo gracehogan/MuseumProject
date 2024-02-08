@@ -33,6 +33,12 @@ const ContactPage = () => {
 
     return (
         <div>
+            <nav aria-label="breadcrumb">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                    <li className="breadcrumb-item"><Link to="/help/contact-us">Contact us</Link></li>
+                </ol>
+            </nav>
             <div className='heading-container'>
                 <h2>Get in touch with us</h2>
                 <div className="language-buttons">

@@ -6,6 +6,12 @@ import { Link } from 'react-router-dom';
 const VisitPage = () => {
     return (
         <div>
+            <nav aria-label="breadcrumb">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                    <li className="breadcrumb-item"><Link to="/visit">Visit us</Link></li>
+                </ol>
+            </nav>
             <h2 className="page-heading margin-align">Plan Your Visit</h2>
             <section className="link-container">
             <p className="link-container">
