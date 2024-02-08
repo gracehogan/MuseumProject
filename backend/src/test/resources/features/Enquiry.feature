@@ -3,11 +3,11 @@ Feature:
 
   Scenario Outline:
     Given I have a Rest Spring <Endpoint>
-    When I call the <roomEndpoint> by name for rooms
-    Then <Enquiry> is the result from the server
+    When I send an enquiry calling  <name> <email> <enquiryType> <enquiryText>
+    Then I should get the <name> <email> <enquiryType> <enquiryText> of the customer
 
     Examples:
-      |Endpoint|name|email|enquiryType|enquiryText|
-      |"http://localhost:8080/sendEnquiry"|"/edward"|"edward@gmail.com"|"/Ticket Enquiry"|"How much do they cost?"|
+      | Endpoint                            | name      | email              | enquiryType       | enquiryText              |
+      | "http://localhost:8080/sendEnquiry" | "edward" | "edward@gmail.com" | "Ticket Enquiry" | "How much do they cost?" |
 
-#  /sendEnquiry/{name}/{email}/{enquiryType}/{enquiryText}
+
