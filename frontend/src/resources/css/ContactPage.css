@@ -83,5 +83,8 @@
     background-color: rgb(169, 168, 168) !important; /* Change the background color to grey */
   }
   
+  .map-container{
+    padding: 20px 20px;;
+  }
   
   
