@@ -30,7 +30,7 @@ function ContactPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    alert(t('Confirmation'));
+    alert(t('Email confirmation sent'));
     setFormData({
       name: '',
       email: '',
