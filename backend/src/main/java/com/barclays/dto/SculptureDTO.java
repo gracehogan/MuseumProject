@@ -16,11 +16,15 @@ public class SculptureDTO {
     private String backstory;
     private Long artistId;
     private String artistName;
+    private Long museumId;
+    private String museumName;
     private String src;
 
     public SculptureDTO(Sculpture sculpture) {
         BeanUtils.copyProperties(sculpture,this);
         this.artistId = sculpture.getArtist().getId();
         this.artistName = sculpture.getArtist().getName();
+        this.museumId = sculpture.getMuseum().getId();
+        this.museumName = sculpture.getMuseum().getName();
     }
 }

@@ -47,6 +47,11 @@ public class PaintingServiceImpl implements PaintingService {
     }
 
     @Override
+    public List<Painting> findByMuseum(String museum) {
+        return paintingRepository.findAllByMuseumNameIgnoreCase(museum);
+    }
+
+    @Override
     public Painting save(Painting p) {
         return paintingRepository.save(p);
     }

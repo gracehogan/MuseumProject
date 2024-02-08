@@ -53,6 +53,17 @@ public class PaintingController {
         return dtos;
     }
 
+    @GetMapping("/paintings/getByMuseum/{museum}")
+    public List<PaintingDTO> getPaintingByMuseum(@PathVariable String museum) {
+        log.debug("In the getPaintingByMuseum method");
+        List<Painting> paintings = paintingService.findByMuseum(museum);
+        List<PaintingDTO> dtos = new ArrayList<>();
+        for (Painting painting : paintings) {
+            dtos.add(new PaintingDTO(painting));
+        }
+        return dtos;
+    }
+
     @GetMapping("/paintings/getByMedium/{medium}")
     public List<PaintingDTO> getPaintingByMedium(@PathVariable String medium) {
         log.debug("In the getPaintingByMedium method");

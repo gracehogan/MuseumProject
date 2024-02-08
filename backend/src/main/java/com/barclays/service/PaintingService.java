@@ -14,6 +14,7 @@ public interface PaintingService {
     Painting findByTitle(String title);
     List<Painting> findByMedium(String medium);
     List<Painting> findByStyle(String style);
+    List<Painting> findByMuseum(String museum);
     List<Painting> sortAllByTitle(String sort);
     List<PaintingDTO> findByArtistName(List<PaintingDTO> paintings, String name);
     Painting save(Painting p);

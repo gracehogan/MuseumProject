@@ -64,6 +64,11 @@ public class SculptureServiceImpl implements SculptureService {
     }
 
     @Override
+    public List<Sculpture> findByMuseum(String museum) {
+        return sculptureRepository.findAllByMuseumNameIgnoreCase(museum);
+    }
+
+    @Override
     public List<SculptureDTO> findByArtistName(List<SculptureDTO> sculptures, String name) {
         List<SculptureDTO> sculpturesByArtistName = new ArrayList<>();
         for(SculptureDTO sculpture : sculptures) {

@@ -23,6 +23,8 @@ public interface SculptureService {
 
     Sculpture findByTitle(String title);
 
+    List<Sculpture> findByMuseum(String museum);
+
     List<SculptureDTO> findByArtistName(List<SculptureDTO> sculptures, String name);
 
     List<Sculpture> sortAllByYearCompleted(String sort);
