@@ -70,6 +70,6 @@ public class BookingTestsWithMockHttpRequest {
                 .andExpect(status().isOk());
         MvcResult result = resultActions.andReturn();
         String contentAsString = result.getResponse().getContentAsString();
-        assertEquals(400, Double.parseDouble(contentAsString));
+        assertEquals(400, Double.parseDouble(contentAsString),0.1);
     }
 }
