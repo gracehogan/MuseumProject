@@ -1,5 +1,7 @@
 package com.barclays.service;
 
+import com.barclays.dto.PaintingDTO;
+import com.barclays.dto.SculptureDTO;
 import com.barclays.model.Painting;
 import com.barclays.repository.PaintingRepository;
 import lombok.AllArgsConstructor;
@@ -55,18 +57,24 @@ public class PaintingServiceImpl implements PaintingService {
     }
 
     @Override
-    public List<Painting> sortAllByMedium(String medium, String sort) {
-        return sortListTitle(findByMedium(medium), sort);
-    }
-
-    @Override
-    public List<Painting> sortAllByStyle(String style, String sort) {
-        return sortListTitle(findByStyle(style),sort);
-    }
-
-    @Override
     public List<Painting> sortAllByYearCompleted(String sort) {
         return sortListYear(findAll(),sort);
+    }
+
+    @Override
+    public List<Painting> sortAllByTitle(String sort) {
+        return sortListTitle(findAll(),sort);
+    }
+
+    @Override
+    public List<PaintingDTO> findByArtistName(List<PaintingDTO> paintings, String name) {
+        List<PaintingDTO> paintingsByArtistName = new ArrayList<>();
+        for(PaintingDTO painting : paintings) {
+            if (painting.getArtistName().equalsIgnoreCase(name)) {
+                paintingsByArtistName.add(painting);
+            }
+        }
+        return paintingsByArtistName;
     }
 
     public List<Painting> sortListTitle(List<Painting> paintings, String sort) {

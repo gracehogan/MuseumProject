@@ -1,5 +1,6 @@
 package com.barclays.service;
 
+import com.barclays.dto.SculptureDTO;
 import com.barclays.model.Artist;
 import com.barclays.model.Museum;
 import com.barclays.model.Painting;
@@ -17,10 +18,15 @@ public interface SculptureService {
     Sculpture save(Sculpture sculpture);
 
     void deleteById(long id);
-    Sculpture findByTitle(String title);
+
     List<Sculpture> findByMedium(String medium);
 
-    List<Sculpture> sortAllByMedium(String medium, String sort);
+    Sculpture findByTitle(String title);
 
-    List<Sculpture> sortAllByYearCompleted( String sort);
+    List<SculptureDTO> findByArtistName(List<SculptureDTO> sculptures, String name);
+
+    List<Sculpture> sortAllByYearCompleted(String sort);
+
+    List<Sculpture> sortAllByTitle(String sort);
+
 }

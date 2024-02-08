@@ -3,7 +3,6 @@ package com.barclays.controller;
 import com.barclays.dto.SculptureDTO;
 import com.barclays.model.Sculpture;
 import com.barclays.service.SculptureService;
-import jakarta.websocket.server.PathParam;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -30,15 +29,15 @@ public class SculptureController {
         return dtos;
     }
 
-    @GetMapping("/sculptures/{id}")
+    @GetMapping("/sculptures/getById/{id}")
     public SculptureDTO getSculpture(@PathVariable long id) {
         log.debug("In the getSculpture method");
         Sculpture sculpture = sculptureService.findById(id);
         return new SculptureDTO(sculpture);
     }
 
-    @GetMapping("/getSculptureByMedium")
-    public List<SculptureDTO> getSculptureByMedium(@PathParam("medium") String medium) {
+    @GetMapping("/sculptures/getByMedium/{medium}")
+    public List<SculptureDTO> getSculptureByMedium(@PathVariable String medium) {
         log.debug("In the getSculptureByMedium method");
         List<Sculpture> sculptures = sculptureService.findByMedium(medium);
         List<SculptureDTO> dtos = new ArrayList<>();
@@ -48,10 +47,17 @@ public class SculptureController {
         return dtos;
     }
 
-    @GetMapping("/sortSculpturesByMedium/{medium}/{sort}")
-    List<SculptureDTO> sortAllByMedium(@PathVariable String medium, @PathVariable String sort) {
-        log.debug("In the sortSculpturesByMedium method");
-        List<Sculpture> sculptures = sculptureService.sortAllByMedium(medium, sort);
+    @GetMapping("/sculptures/getByTitle/{title}")
+    public SculptureDTO getSculptureByTitle(@PathVariable String title) {
+        log.debug("In the getSculptureByTitle method");
+        Sculpture sculpture = sculptureService.findByTitle(title);
+        return new SculptureDTO(sculpture);
+    }
+
+    @GetMapping("/sculptures/sortAllByTitle/{sort}")
+    List<SculptureDTO> sortAllByTitle(@PathVariable String sort) {
+        log.debug("In the sortSculpturesByTitle method");
+        List<Sculpture> sculptures = sculptureService.sortAllByTitle(sort);
         List<SculptureDTO> dtos = new ArrayList<>();
         for (Sculpture sculpture : sculptures) {
             dtos.add(new SculptureDTO(sculpture));
@@ -59,7 +65,20 @@ public class SculptureController {
         return dtos;
     }
 
-    @GetMapping("/sortSculpturesByYearCompleted/{sort}")
+    @GetMapping("/sculptures/getByArtistName/{artistName}")
+    List<SculptureDTO> getByArtistName(@PathVariable String artistName) {
+        log.debug("In the getSculpturesByArtistName method");
+        List<Sculpture> sculptures = sculptureService.findAll();
+        List<SculptureDTO> dtos = new ArrayList<>();
+        for (Sculpture sculpture : sculptures) {
+            dtos.add(new SculptureDTO(sculpture));
+        }
+        dtos = sculptureService.findByArtistName(dtos, artistName);
+        return dtos;
+    }
+
+
+    @GetMapping("/sculptures/sortAllByYearCompleted/{sort}")
     List<SculptureDTO> sortAllByYearCompleted(@PathVariable String sort) {
         log.debug("In the sortSculpturesByYearCompleted method");
         List<Sculpture> sculptures = sculptureService.sortAllByYearCompleted(sort);

@@ -1,5 +1,6 @@
 package com.barclays.service;
 
+import com.barclays.dto.SculptureDTO;
 import com.barclays.model.Artist;
 import com.barclays.model.Museum;
 import com.barclays.model.Painting;
@@ -14,7 +15,7 @@ import java.util.*;
 @Service
 @Slf4j
 @AllArgsConstructor
-public class SculptureServiceImpl implements SculptureService{
+public class SculptureServiceImpl implements SculptureService {
 
     private SculptureRepository sculptureRepository;
 
@@ -53,28 +54,41 @@ public class SculptureServiceImpl implements SculptureService{
     }
 
     @Override
-    public List<Sculpture> sortAllByMedium(String medium, String sort) {
-        return sortListTitle(findByMedium(medium), sort);
-    }
-
-    @Override
     public List<Sculpture> sortAllByYearCompleted(String sort) {
         return sortListYear(findAll(),sort);
     }
 
-    public List<Sculpture> sortListTitle(List<Sculpture> paintings, String sort) {
-        if (sort.equals("asc")) {
-            Collections.sort(paintings, Comparator.comparing(Sculpture::getTitle));
-        } else if (sort.equals("desc")) {
-            Collections.sort(paintings, Comparator.comparing(Sculpture::getTitle).reversed());
+    @Override
+    public List<Sculpture> sortAllByTitle(String sort) {
+        return sortListTitle(findAll(),sort);
+    }
+
+    @Override
+    public List<SculptureDTO> findByArtistName(List<SculptureDTO> sculptures, String name) {
+        List<SculptureDTO> sculpturesByArtistName = new ArrayList<>();
+        for(SculptureDTO sculpture : sculptures) {
+            if (sculpture.getArtistName().equalsIgnoreCase(name)) {
+                sculpturesByArtistName.add(sculpture);
+            }
         }
-        return paintings;
-    } public List<Sculpture> sortListYear(List<Sculpture> paintings, String sort) {
+        return sculpturesByArtistName;
+    }
+
+    public List<Sculpture> sortListTitle(List<Sculpture> sculptures, String sort) {
         if (sort.equals("asc")) {
-            Collections.sort(paintings, Comparator.comparing(Sculpture::getYearCompleted));
+            Collections.sort(sculptures, Comparator.comparing(Sculpture::getTitle));
         } else if (sort.equals("desc")) {
-            Collections.sort(paintings, Comparator.comparing(Sculpture::getYearCompleted).reversed());
+            Collections.sort(sculptures, Comparator.comparing(Sculpture::getTitle).reversed());
         }
-        return paintings;
+        return sculptures;
+    }
+
+    public List<Sculpture> sortListYear(List<Sculpture> sculptures, String sort) {
+        if (sort.equals("asc")) {
+            Collections.sort(sculptures, Comparator.comparing(Sculpture::getYearCompleted));
+        } else if (sort.equals("desc")) {
+            Collections.sort(sculptures, Comparator.comparing(Sculpture::getYearCompleted).reversed());
+        }
+        return sculptures;
     }
 }
