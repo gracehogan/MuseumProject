@@ -26,6 +26,10 @@
     font-size: 25px;
 }
 
+.arrow-link a {
+    color: #3f2b35 !important;
+}
+
 /* .arrow-link:hover {
     background-color: #f0f0f0;
 } */

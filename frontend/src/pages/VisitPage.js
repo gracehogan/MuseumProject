@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const VisitPage = () => {
     return (
         <div>
-            <h2 className="page-heading margin-align">Plan Your Visit</h2>
+            <h2 className="page-heading margin-align" id="visit-page">Plan Your Visit</h2>
             <section className="link-container">
             <p className="link-container">
                 Embark on a captivating journey through time and culture at our museum. As you step into our hallowed halls, 
