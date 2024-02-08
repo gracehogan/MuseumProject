@@ -18,6 +18,8 @@ import SpanishContactUs from "./pages/SpanishContactUs";
 import FrenchContactUs from "./pages/FrenchContactUs";
 import CatalanContactUs from "./pages/CatalanContactUs";
 import HindiContactUs from "./pages/HindiContactUs";
+import i18n from './i18n';
+import { withNamespaces } from 'react-i18next';
 
 
 function Home() {
@@ -60,21 +62,21 @@ function Booking() {
   return <BookingPage/>;
 };
 
-function SpanishContact() {
-  return <SpanishContactUs />;
-}
+// function SpanishContact() {
+//   return <SpanishContactUs />;
+// }
 
-function FrenchContact() {
-  return <FrenchContactUs />;
-}
+// function FrenchContact() {
+//   return <FrenchContactUs />;
+// }
 
-function CatalanContact() {
-  return <CatalanContactUs />;
-}
+// function CatalanContact() {
+//   return <CatalanContactUs />;
+// }
 
-function HindiContact() {
-  return <HindiContactUs />;
-}
+// function HindiContact() {
+//   return <HindiContactUs />;
+// }
 
 
 const AppStructure = () => {
@@ -96,11 +98,11 @@ const AppStructure = () => {
             <Route path="//help/contact-us" element={<Contact />} />
             <Route path="//help/about-us" element={<About />} />
             <Route path="/book" element={<Booking />} />
-            <Route path="/spanish" element={<SpanishContact />} />
-            <Route path="/french" element={<FrenchContact />} />
-            <Route path="/catalan" element={<CatalanContact />} />
-            <Route path="/hindi" element={<HindiContact />} />
-            <Route path="/contact-us" element={<Contact />} />
+            <Route path="/contact-us" element={<ContactPage />} />
+            {/* <Route path="/contact-us/spanish" element={<SpanishContactUs />} />
+            <Route path="/contact-us/french" element={<FrenchContactUs />} />
+            <Route path="/contact-us/catalan" element={<CatalanContactUs />} />
+            <Route path="/contact-us/hindi" element={<HindiContactUs />} /> */}
           </Routes>
           </div>
         </div>
