@@ -72,3 +72,7 @@
 .language-button:hover {
     background-color: #0056b3 !important;
 }
+
+.map-container {
+    padding: 20px 20px;
+}
