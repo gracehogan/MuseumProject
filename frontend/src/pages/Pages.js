@@ -26,7 +26,8 @@ const PagesMuseum = () => {
                 <PagesPaintingGrid/>
                 <h2 className="page-heading margin-align">Our Sculptures</h2>
                 <PagesSculptureGrid/>
-                </div>
+            </div>
+            <br/>
             </section>
         </div>
     );

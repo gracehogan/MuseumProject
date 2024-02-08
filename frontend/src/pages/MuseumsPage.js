@@ -35,7 +35,8 @@ const MuseumPage = () => {
           <PaintingGrid/>
           <h2 className="page-heading margin-align">Our Sculptures</h2>
           <SculptureGrid/>
-        </div>
+      </div>
+      <br/>
     </div>
   );
 };
