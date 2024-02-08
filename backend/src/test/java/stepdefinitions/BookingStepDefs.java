@@ -4,11 +4,14 @@ import com.barclays.dto.BookingDTO;
 import com.barclays.model.Booking;
 import com.barclays.model.enums.BookedMuseum;
 import com.barclays.model.enums.BookingType;
+import com.barclays.repository.BookingRepository;
 import com.barclays.service.BookingService;
+import com.barclays.service.BookingServiceImpl;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 import java.util.List;
@@ -21,21 +24,16 @@ public class BookingStepDefs {
     private List<Map<String, String>> availableMuseums;
     private List<Map<String, String>> availableTickets;
     private List<Map<String, String>> registeredBookings;
-    //RestClient restClient;
-    BookingService service;
 
-    public BookingStepDefs(BookingService service) {
-        this.service = service;
-    }
+    BookingRepository bookingRepository;
+    BookingService service = new BookingServiceImpl(bookingRepository);
 
-    //String uriBase="http://localhost:8080";
+
+
+
     BookingDTO booking;
     BookingDTO newBooking;
-//    @Given("I have a Rest Spring Endpoint")
-//    public void iHaveARestSpringEndpoint(String uriBase) {
-//        this.uriBase=uriBase;
-//        restClient=RestClient.create();
-//    }
+
 
     @Given("the following museum are available to book")
     public void theFollowingMuseumAreAvailableToBook(DataTable museumTable) {
@@ -51,7 +49,7 @@ public class BookingStepDefs {
                 return booking;
             }
         }
-        throw new RuntimeException(name + "has no bookings !!");
+        throw new RuntimeException(name + " has no bookings !!");
     }
 
     @Given("I am a registered user with a booking")
@@ -70,7 +68,7 @@ public class BookingStepDefs {
 
     @Then("the total fee for is {double}")
     public void theTotalFeeForIsAmount(double fee) {
-        assertEquals(fee,service.calculateFee(newBooking));
+        assertEquals(fee,service.calculateFee(newBooking),0.1);
     }
 
     @Given("the following ticket types are available")
@@ -83,7 +81,7 @@ public class BookingStepDefs {
                 return BookingType.valueOf(ticket.get("Ticket type"));
             }
         }
-        throw new RuntimeException(type + "is not a valid ticket type !!");
+        throw new RuntimeException(type + " is not a valid ticket type !!");
     }
     private BookedMuseum findMuseum(String bookedMuseum) {
         for (Map<String, String> museum : availableMuseums) {
@@ -93,7 +91,7 @@ public class BookingStepDefs {
                 return newBookedMuseum;
             }
         }
-        throw new RuntimeException(bookedMuseum + "is not a valid museum !!");
+        throw new RuntimeException(bookedMuseum + " is not a valid museum !!");
     }
 
 
