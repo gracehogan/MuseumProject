@@ -1,16 +1,12 @@
-import './App.css';
-import SculptureGrid from './components/SculptureGrid';
-import PaintingGrid from './components/PaintingGrid';
+import AppStructure from "./AppStructure";
+import './resources/css/App.css'
 
 function App() {
   return (
-    <div className="App">
-      <PaintingGrid/>
-      <br />
-      <SculptureGrid/>
+    <div className="background-sizing">
+      <AppStructure />
     </div>
   );
 }
 
 export default App;
-

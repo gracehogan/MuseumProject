@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Normal";
+    src: url('../font-styles/Audrey-Normal.otf') format('opentype');
+}
+
+.flex-page {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
+
+.tile-margin {
+    margin-left: 30px;
+}
+
+.sub-heading {
+    font-family: "Normal";
+    font-size: 25px;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
