@@ -6,7 +6,7 @@ const BookingPage = () => {
       <div>
         <h2 className="page-heading margin-align">Book your tickets</h2>
         <section className="margin-align">
-          <form>
+          <form action="/saveBooking" method="post">
             <label for="name">Name</label>
             <input type="text" name="customer-name" id="name" required minLength="5" />
             <br />
@@ -20,21 +20,26 @@ const BookingPage = () => {
             <br />
 
             <label>Museum</label>
+
             <input type="radio" name="museum-name" value="Horizons" id="horizons" />
-            <label for="pages">Horizons</label>
+            <label for="horizons">Horizons</label>
             <input type="radio" name="museum-name" value="Muse" id="muse" />
             <label for="muse">Muse</label>
             <input type="radio" name="museum-name" value="Pages" id="pages" />
             <label for="pages">PAGES</label>
             <input type="radio" name="museum-name" value="Xplore" id="xplore" />
-            <label for="pages">Xplore</label>
+            <label for="xplore">Xplore</label>
             <br />
 
             <label>Ticket type</label>
-            <input type="radio" name="ticket-type" value="Adult" id="adult" />
-            <label for="pages">Adult (18+)</label>
-            <input type="radio" name="ticket-type" value="Child" id="child" />
-            <label for="muse">Child</label>
+            <input type="radio" name="ticket-type" value="Single Adult" id="single-adult" />
+            <label for="single-adult">Single - Adult</label>
+            <input type="radio" name="ticket-type" value="Single Child" id="single-child" />
+            <label for="single-child">Single - Child</label>
+            <input type="radio" name="ticket-type" value="Group Adult" id="group-adult" />
+            <label for="group-adult">Group - Adult</label>
+            <input type="radio" name="ticket-type" value="Group Child" id="group-child" />
+            <label for="group-child">Group - Child</label>
             <br />
 
             <label for="group-size">How many people are in your group?</label>
