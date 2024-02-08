@@ -25,7 +25,7 @@ public class GetPaintingByIdStepdefs {
     @When("I call the get painting by {int} endpoint")
     public void iCallTheGetPaintingByIdEndpoint(int id) {
         painting = restClient.get()
-                .uri(uriBase + "/paintings/" + id)
+                .uri(uriBase + "/paintings/getById/" + id)
                 .retrieve()
                 .body(PaintingDTO.class);
     }
