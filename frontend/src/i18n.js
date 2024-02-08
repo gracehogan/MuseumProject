@@ -16,14 +16,14 @@ const resources = {
 };
 
 i18n
-  .use(initReactI18next) // Use initReactI18next directly
+  .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: "en",
-    keySeparator: false,
+    lng: 'en',
+    fallbackLng: 'en',
     interpolation: {
-      escapeValue: false
-    }
+      escapeValue: false,
+    },
   });
 
 export default i18n;

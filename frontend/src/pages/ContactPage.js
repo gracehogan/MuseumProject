@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next'; // Import the useTranslation hook
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import i18n from 'i18n';
+import i18n from '../i18n';
 import '../resources/css/ContactPage.css';
 
 const ContactPage = () => {
