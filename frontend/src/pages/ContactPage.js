@@ -35,7 +35,8 @@ const ContactPage = () => {
   };
 
   const changeLanguage = (lng) => {
-    console.log('hello');
+    console.log('Changing language to:', lng);
+    console.log('i18n:', i18n);
     i18n.changeLanguage(lng);
   };
 
