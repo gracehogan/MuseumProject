@@ -19,6 +19,9 @@
 }
 
 /* Search bar component*/
+.search-container {
+    margin-top: 15px;
+}
 
 .flex-container {
     display: flex;
