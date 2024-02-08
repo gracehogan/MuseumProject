@@ -6,7 +6,7 @@ import com.barclays.repository.MuseumRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public class MuseumServiceImpl implements MuseumService {
     }
 
     @Override
-    public Museum findById(@PathVariable Long id) {
+    public Museum findById(Long id) {
         Optional<Museum> museum=repository.findById(id);
         log.debug("findById method logged");
         return museum.orElseGet(()-> new Museum());

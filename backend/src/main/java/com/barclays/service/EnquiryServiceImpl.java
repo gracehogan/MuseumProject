@@ -51,6 +51,11 @@ public class EnquiryServiceImpl implements EnquiryService {
         return enquiryDTO;
     }
 
+    @Override
+    public void deleteById(Long id) {
+        enquiryRepository.deleteById(id);
+    }
+
     public Boolean checkValidEmail(String email) {
         final Pattern pattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$");
         return pattern.matcher(email).matches();

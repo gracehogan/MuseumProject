@@ -28,7 +28,11 @@ public class BookingController {
         BookingDTO bookingDTO = bookingService.createBookingDTO(name,numberOfPersons, bookingType, email, bookedMuseum,bookingSlot);
         return bookingService.setFeeOfBooking(bookingDTO);
     }
-
+    @DeleteMapping("/deleteBooking/{id}")
+    public void deleteBookingById(@PathVariable Long id) {
+        log.debug("deleteBookingById method logged");
+        bookingService.deleteById(id);
+    }
 
 }
 

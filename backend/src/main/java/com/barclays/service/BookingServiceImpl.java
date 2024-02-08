@@ -72,5 +72,10 @@ public class BookingServiceImpl implements BookingService {
         return ("Invalid booking!!");
     }
 
+    @Override
+    public void deleteById(Long id) {
+        bookingRepository.deleteById(id);
+    }
+
 }
 

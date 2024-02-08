@@ -12,6 +12,8 @@ public interface BookingService {
     BookingDTO createBookingDTO(String name,int number, String bookingType, String email, String bookedMuseum,String bookingSlot);
 
     String setFeeOfBooking(BookingDTO bookingDTO);
+
+    void deleteById(Long id);
 }
 
 

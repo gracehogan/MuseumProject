@@ -9,6 +9,16 @@ public enum BookedMuseum {
     BLOB("B.L.O.B");
 
     private final String name;
+    private double fee;
+
+    public double getFee() {
+        return fee;
+    }
+
+    public void setFee(double fee) {
+        this.fee = fee;
+    }
+
     BookedMuseum(String name) {
         this.name = name;
     }

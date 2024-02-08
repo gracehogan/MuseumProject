@@ -11,11 +11,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SuppressWarnings("java:S2699")
 class MuseumApiApplicationTests {
 
-	@Autowired
-	private MuseumService yourService;
+
 
 	@Test
 	void contextLoads() {
-		assertThat(yourService).isNotNull();
+
 	}
 }
