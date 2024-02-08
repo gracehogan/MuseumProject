@@ -1,5 +1,6 @@
 package com.barclays.service;
 
+import com.barclays.dto.PaintingDTO;
 import com.barclays.model.Painting;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,8 @@ public interface PaintingService {
     Painting findByTitle(String title);
     List<Painting> findByMedium(String medium);
     List<Painting> findByStyle(String style);
+    List<Painting> sortAllByTitle(String sort);
+    List<PaintingDTO> findByArtistName(List<PaintingDTO> paintings, String name);
     Painting save(Painting p);
     void deletePaintingById(Long id);
     List<Painting> sortAllByYearCompleted( String sort);

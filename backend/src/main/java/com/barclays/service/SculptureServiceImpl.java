@@ -63,6 +63,7 @@ public class SculptureServiceImpl implements SculptureService {
         return sortListTitle(findAll(),sort);
     }
 
+    @Override
     public List<SculptureDTO> findByArtistName(List<SculptureDTO> sculptures, String name) {
         List<SculptureDTO> sculpturesByArtistName = new ArrayList<>();
         for(SculptureDTO sculpture : sculptures) {

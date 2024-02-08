@@ -21,9 +21,9 @@ public interface SculptureService {
 
     List<Sculpture> findByMedium(String medium);
 
-    public Sculpture findByTitle(String title);
+    Sculpture findByTitle(String title);
 
-    public List<SculptureDTO> findByArtistName(List<SculptureDTO> sculptures, String name);
+    List<SculptureDTO> findByArtistName(List<SculptureDTO> sculptures, String name);
 
     List<Sculpture> sortAllByYearCompleted(String sort);
 
