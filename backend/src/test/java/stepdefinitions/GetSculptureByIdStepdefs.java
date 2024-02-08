@@ -27,7 +27,7 @@ public class GetSculptureByIdStepdefs {
     @When("I call the get sculpture by {int} endpoint")
     public void iCallTheGetSculptureByIdEndpoint(int id) {
         sculpture = restClient.get()
-                .uri(uriBase + "/sculptures/" + id)
+                .uri(uriBase + "/sculptures/getById/" + id)
                 .retrieve()
                 .body(SculptureDTO.class);
     }
