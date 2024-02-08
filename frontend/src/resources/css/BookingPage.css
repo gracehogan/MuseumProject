@@ -3,7 +3,7 @@
     src: url('../font-styles/Audrey-Normal.otf') format('opentype');
 }
 
-.book-heading {
+.page-heading {
     color: #3f2b35;
     font-family: "Normal";
     font-size: 35px;
@@ -11,6 +11,6 @@
     font-weight: bolder;
 }
 
-.book-margin {
+.margin-align {
     margin-left: 21px;
 }

@@ -7,18 +7,13 @@
     color: #3f2b35;
     font-family: "Normal";
     font-size: 35px;
-    font-style: normal;
     padding: 15px 0px;
     margin-left: 21px;
 }
 
 
-.visit-container {
+.link-container {
     margin-top: 10px;
-    padding: 0px 10px;
-}
-
-.exhibition-container {
     padding: 0px 10px;
 }
 
@@ -31,6 +26,6 @@
     font-size: 25px;
 }
 
-.arrow-link:hover {
+/* .arrow-link:hover {
     background-color: #f0f0f0;
-}
+} */
