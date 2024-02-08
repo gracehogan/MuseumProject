@@ -4,18 +4,23 @@
 }
 
 a {
-  font-family: "Normal";
-  font-size: 18px; /* Adjust font size */
-  text-decoration: none !important;
-  font-weight: 500 !important;
-  color: rgb(223, 200, 173) !important;
+    font-family: "Normal";
+    font-size: 20px;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    color: rgb(223, 200, 173) !important;
+}
+
+a:hover {
+    padding: 0.5em;
+    color: black !important;
+    background-color: rgb(223, 200, 173);
 }
 
 .bg1 {
-  background-color: #3f2b35; /* Background color */
-  text-align: center;
-  padding: 20px 0; 
-  margin-top: -30px; 
+    background-color: #3f2b35;
+    display: flex;
+    justify-content: center;
 }
 
 li {
@@ -53,20 +58,20 @@ nav ul li a {
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #3f2b35; 
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: #3f2b35;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
 .dropdown-content a {
-  font-size: 14px;
-  color: rgb(223, 200, 173);
-  padding: 8px 12px;
-  text-decoration: none;
-  display: block;
+    font-size: 15px;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 .dropdown-content a:hover {
@@ -74,11 +79,23 @@ nav ul li a {
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
+    color: #3f2b35;
 }
 
+div.dropbtn:hover {
+    color: #3f2b35;
+}
+
+
+  
+  /* Change the background color of the page-link li 
+  when the link is hovered */
 .dropdown:hover .dropbtn {
-  color: black;
-  background-color: rgb(223, 200, 173);
+    color: black;
+    background-color: rgb(223, 200, 173);
 }
 
+  /* Breadcrumb */
+  
+  

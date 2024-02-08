@@ -4,8 +4,8 @@ import '../resources/css/BookingPage.css';
 const BookingPage = () => {
     return (
       <div>
-        <h2 className="book-heading book-margin">Book your tickets</h2>
-        <section className="book-margin">
+        <h2 className="page-heading margin-align">Book your tickets</h2>
+        <section className="margin-align">
           <form>
             <label for="name">Name</label>
             <input type="text" name="customer-name" id="name" required minLength="5" />

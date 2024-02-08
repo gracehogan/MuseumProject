@@ -6,7 +6,7 @@
 .heading {
     color: rgb(223, 200, 173);
     font-family: "Normal";
-    font-size: 50px;
+    font-size: 40px;
     font-style: normal;
     padding: 15px 0px;   
     margin: 0px; 
@@ -17,3 +17,14 @@
 .heading-box {
     background-color: #3f2b35;
 }
+
+/* Search bar component*/
+.search-container {
+    margin-top: 15px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center; 
+}
+
