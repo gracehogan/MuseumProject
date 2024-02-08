@@ -67,12 +67,21 @@
     border: 1px solid #000000 !important;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.language-button:hover {
-    background-color: #0056b3 !important;
-}
-
-.map-container {
-    padding: 20px 20px;
-}
+  }
+  
+  .language-button:hover {
+    background-color: #579de9 !important;
+  }
+  
+  .clicked-button {
+    padding: 3px 8px;
+    font-size: 14px;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(169, 168, 168) !important; /* Change the background color to grey */
+  }
+  
+  
+  

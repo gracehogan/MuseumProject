@@ -8,10 +8,7 @@ import { Link } from 'react-router-dom';
 function ContactPage() {
   const { t } = useTranslation();
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng); // Use the changeLanguage function from the i18n instance
-  };
-
+  const [activeLanguage, setActiveLanguage] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,11 +22,14 @@ function ContactPage() {
     });
   };
 
+  const handleButtonClick = (lng) => {
+    setActiveLanguage(lng);
+    i18n.changeLanguage(lng);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
     console.log(formData);
-
     alert(t('Confirmation'));
     setFormData({
       name: '',
@@ -42,18 +42,18 @@ function ContactPage() {
     <div>
       <div className='heading-container'>
         <div className="language-buttons">
-          <button onClick={() => changeLanguage('en')} className="language-button">English</button>
-          <button onClick={() => changeLanguage('fr')} className="language-button">French</button>
-          <button onClick={() => changeLanguage('ca')} className="language-button">Catalan</button>
-          <button onClick={() => changeLanguage('hi')} className="language-button">Hindi</button>
-          <button onClick={() => changeLanguage('es')} className="language-button">Spanish</button>
+          <button onClick={() => handleButtonClick('en')} className={activeLanguage === 'en' ? 'clicked-button' : 'language-button'}>English</button>
+          <button onClick={() => handleButtonClick('fr')} className={activeLanguage === 'fr' ? 'clicked-button' : 'language-button'}>French</button>
+          <button onClick={() => handleButtonClick('ca')} className={activeLanguage === 'ca' ? 'clicked-button' : 'language-button'}>Catalan</button>
+          <button onClick={() => handleButtonClick('hi')} className={activeLanguage === 'hi' ? 'clicked-button' : 'language-button'}>Hindi</button>
+          <button onClick={() => handleButtonClick('es')} className={activeLanguage === 'es' ? 'clicked-button' : 'language-button'}>Spanish</button>
         </div>
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
-              <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-              <li className="breadcrumb-item"><Link to="/help/contact-us">Contact us</Link></li>
+            <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+            <li className="breadcrumb-item"><Link to="/help/contact-us">Contact us</Link></li>
           </ol>
-      </nav>
+        </nav>
         <h2>{t('GetInTouch')}</h2>
       </div>
       <div className='enquiry-container'>
@@ -79,7 +79,12 @@ function ContactPage() {
               <textarea id='enquiry' name='enquiry' value={formData.enquiry} onChange={handleChange} />
             </div>
           </div>
-          <button type='submit'><i className="fas fa-paper-plane"></i> {t('Submit')}</button>
+          <button 
+            type='submit' 
+            className='language-button'
+          >
+            <i className="fas fa-paper-plane"></i> {t('Submit')}
+          </button>
         </form>
       </div>
       <div className='heading-container'>
@@ -111,6 +116,6 @@ function ContactPage() {
       </div>
     </div>
   );
-};
+}
 
 export default ContactPage;
