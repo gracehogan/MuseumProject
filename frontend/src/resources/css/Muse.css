@@ -1,5 +1,3 @@
-/* Pages.css */
-
 @font-face {
     font-family: "Normal";
     src: url('../font-styles/Audrey-Normal.otf') format('opentype');
@@ -14,10 +12,6 @@
     margin: 0px;
     text-align: center;
     letter-spacing: 18px;
-}
-
-.muse-box {
-    background-color: #3f2b35;
 }
 
 .visit-container {
