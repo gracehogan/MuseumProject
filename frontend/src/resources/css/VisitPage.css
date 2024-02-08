@@ -1,26 +1,33 @@
-.booking-link-container {
-    text-align: center;
-    margin-top: 20px;
+@font-face {
+    font-family: "Normal";
+    src: url('../font-styles/Audrey-Normal.otf') format('opentype');
 }
 
-.booking-link {
-    border: 1px solid #3f2b35;
+p.link-container {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+.link-container {
+    margin-top: 10px;
+    padding: 0px 10px;
+}
+
+.booking-button {
+    text-align: center;
+    margin-top: 20px;
     padding: 20px 20px;
     text-decoration: none;
     color: #3f2b35;
 }
 
-.booking-link:hover {
-    background-color: #f0f0f0;
+.booking-button a {
+    color: #000 !important;
 }
 
 .exhibitions-container {
-    margin-top: 50px;
-    padding: 20px 30px; 
-}
-
-.heading-container {
-    margin-top: 50px;
+    margin-top: 15px;
     padding: 20px 30px; 
 }
 
@@ -28,5 +35,5 @@
     max-width: 10000px;
     margin: 0 auto;
     padding: 10 20px; 
-  }
+}
   

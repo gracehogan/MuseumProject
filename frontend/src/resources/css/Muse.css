@@ -35,3 +35,10 @@
 .arrow-link:hover {
     background-color: #f0f0f0;
 }
+
+
+.link-container {
+    margin-top: 10px;
+    padding: 0px 10px;
+}
+
