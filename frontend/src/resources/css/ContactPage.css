@@ -5,41 +5,46 @@
 }
 
 .enquiry-container {
-    padding: 10px 800px; 
-    background-color: rgba(109, 104, 104, 0.338); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh; /* Adjust the height as needed */
+    padding: 10px; /* Adjust as needed */
+    background-color: rgba(109, 104, 104, 0.338);
     border-radius: 10px;
     margin-top: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.text-container{
-    padding: 10px 30px; 
+.text-container {
+    padding: 10px 30px;
 }
 
-.enquiry-heading-container{
-    padding: 10px 0px; 
+.enquiry-heading-container {
+    text-align: center;
+    padding: 10px 0px;
 }
 
 .contact-info-and-opening-hours-container {
-    display: flex; 
-    justify-content: space-between; 
+    display: flex;
+    justify-content: space-between;
 }
 
 .contact-info-container,
 .opening-hour-container {
-    flex: 1; 
-    padding: 0px 30px; 
+    flex: 1;
+    padding: 10px 50px;
     background-color: rgba(228, 226, 226, 0.338);
     margin-top: 20px;
 }
 
-.contact-hours-container{
-    padding: 10px 30px; 
+.contact-hours-container {
+    padding: 10px 30px;
 }
 
 .image-container {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     padding: 10px 10px;
 }
@@ -47,27 +52,23 @@
 .language-buttons {
     position: absolute;
     top: 50%;
-    right: 20px; 
+    right: 20px;
     transform: translateY(-50%);
     display: flex;
-    flex-direction: row !important; 
-    gap: 5px; 
+    flex-direction: row !important;
+    gap: 5px;
 }
 
 .language-button {
     padding: 3px 8px;
-    font-size: 14px; 
-    background-color: #ffffff !important; 
-    color: #000000 !important; 
-    border: 1px solid #000000 !important; 
+    font-size: 14px;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
     border-radius: 5px;
     cursor: pointer;
 }
 
-
 .language-button:hover {
     background-color: #0056b3 !important;
 }
-
-
-

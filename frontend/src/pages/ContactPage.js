@@ -42,11 +42,11 @@ function ContactPage() {
     <div>
       <div className='heading-container'>
         <div className="language-buttons">
-          <button onClick={() => changeLanguage('en')}>English</button>
-          <button onClick={() => changeLanguage('fr')}>French</button>
-          <button onClick={() => changeLanguage('ca')}>Catalan</button>
-          <button onClick={() => changeLanguage('hi')}>Hindi</button>
-          <button onClick={() => changeLanguage('es')}>Spanish</button>
+          <button onClick={() => changeLanguage('en')} className="language-button">English</button>
+          <button onClick={() => changeLanguage('fr')} className="language-button">French</button>
+          <button onClick={() => changeLanguage('ca')} className="language-button">Catalan</button>
+          <button onClick={() => changeLanguage('hi')} className="language-button">Hindi</button>
+          <button onClick={() => changeLanguage('es')} className="language-button">Spanish</button>
         </div>
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
