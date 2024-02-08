@@ -6,6 +6,14 @@ import "../resources/css/BookingPage.css";
 const PagesMuseum = () => {
     return (
         <div>
+            <nav aria-label="breadcrumb">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                    <li className="breadcrumb-item"><Link to="/museums">Museums</Link></li>
+                    <li className="breadcrumb-item"><Link to="/museum/Pages">Pages</Link></li>
+                </ol>
+            </nav>
+
             <h2 className="page-heading margin-align">Pages Museum</h2>
             <section className="link-container">
             <div className="arrow-link">

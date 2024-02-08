@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import '../resources/css/FAQPage.css';
 import { FiPlus } from "react-icons/fi";
+import { Link } from 'react-router-dom';
 
 
 const FAQPage = () => {
@@ -93,6 +94,12 @@ const FAQPage = () => {
   
   return (
     <div className="heading-container">
+      <nav aria-label="breadcrumb">
+          <ol className="breadcrumb">
+              <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+              <li className="breadcrumb-item"><Link to="/help/faq">FAQs</Link></li>
+          </ol>
+      </nav>
       <h2>FAQs</h2>
       <div>
         <button

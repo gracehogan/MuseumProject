@@ -1,10 +1,18 @@
 import '../resources/css/MuseumsPage.css';
 import '../resources/css/BookingPage.css';
+import { Link } from 'react-router-dom';
 
 const MuseumPage = () => {
 
     return (
     <div>
+      <nav aria-label="breadcrumb">
+          <ol className="breadcrumb">
+              <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+              <li className="breadcrumb-item"><Link to="/museums">Museums</Link></li>
+          </ol>
+      </nav>
+
       <h2 className="page-heading margin-align">Museums</h2>
       <section className="margin-align flex-page">
         

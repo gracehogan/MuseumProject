@@ -1,10 +1,17 @@
 import React from 'react';
 import '../resources/css/AboutUs.css';
 import "../resources/css/BookingPage.css";
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
     return (
         <div>
+            <nav aria-label="breadcrumb">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                    <li className="breadcrumb-item"><Link to="/help/about-us">About us</Link></li>
+                </ol>
+            </nav>
             <div className="about-us-container">
                 <img src="/museum.jpg" alt="Museum" className="about-us-image" />
             <h1 className="overlay-text">About Us</h1>
