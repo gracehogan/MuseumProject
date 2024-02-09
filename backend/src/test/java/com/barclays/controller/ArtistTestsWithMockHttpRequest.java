@@ -1,5 +1,6 @@
 package com.barclays.controller;
 
+import com.barclays.dto.ArtistDTO;
 import com.barclays.model.Artist;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -43,7 +44,7 @@ class ArtistTestsWithMockHttpRequest {
 
         MvcResult result = resultActions.andReturn();
         String contentAsString = result.getResponse().getContentAsString();
-        Artist[] artists = mapper.readValue(contentAsString, Artist[].class);
+        ArtistDTO[] artists = mapper.readValue(contentAsString, ArtistDTO[].class);
 
         assertEquals(expectedLength, artists.length);
     }
@@ -60,7 +61,7 @@ class ArtistTestsWithMockHttpRequest {
         MvcResult result = resultActions.andReturn();
         String contentAsString = result.getResponse().getContentAsString();
 
-        Artist artist = mapper.readValue(contentAsString, Artist.class);
+        ArtistDTO artist = mapper.readValue(contentAsString, ArtistDTO.class);
 
         assertEquals("Leonardo Da Vinci", artist.getName());
         assertEquals(id, artist.getId());
