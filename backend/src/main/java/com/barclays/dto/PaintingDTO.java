@@ -17,12 +17,16 @@ public class PaintingDTO {
     private String style;
     private Long artistId;
     private String artistName;
+    private Long museumId;
+    private String museumName;
     private String src;
 
     public PaintingDTO(Painting painting) {
         BeanUtils.copyProperties(painting,this);
         this.artistId = painting.getArtist().getId();
         this.artistName = painting.getArtist().getName();
+        this.museumId = painting.getMuseum().getId();
+        this.museumName = painting.getMuseum().getName();
     }
 
 

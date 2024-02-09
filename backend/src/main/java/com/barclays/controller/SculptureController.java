@@ -1,6 +1,8 @@
 package com.barclays.controller;
 
+import com.barclays.dto.PaintingDTO;
 import com.barclays.dto.SculptureDTO;
+import com.barclays.model.Painting;
 import com.barclays.model.Sculpture;
 import com.barclays.service.SculptureService;
 import lombok.AllArgsConstructor;
@@ -52,6 +54,17 @@ public class SculptureController {
         log.debug("In the getSculptureByTitle method");
         Sculpture sculpture = sculptureService.findByTitle(title);
         return new SculptureDTO(sculpture);
+    }
+
+    @GetMapping("/sculptures/getByMuseum/{museum}")
+    public List<SculptureDTO> getSculptureByMuseum(@PathVariable String museum) {
+        log.debug("In the getSculptureByMuseum method");
+        List<Sculpture> sculptures = sculptureService.findByMuseum(museum);
+        List<SculptureDTO> dtos = new ArrayList<>();
+        for (Sculpture sculpture : sculptures) {
+            dtos.add(new SculptureDTO(sculpture));
+        }
+        return dtos;
     }
 
     @GetMapping("/sculptures/sortAllByTitle/{sort}")

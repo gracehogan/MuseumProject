@@ -37,13 +37,18 @@ public class PaintingServiceImpl implements PaintingService {
     }
 
     @Override
-    public List<Painting> findByMedium(String medium) {
-        return paintingRepository.findAllByMediumIgnoreCase(medium);
+    public List<Painting> findAllByMediumContainingIgnoreCase(String medium) {
+        return paintingRepository.findAllByMediumContainingIgnoreCase(medium);
     }
 
     @Override
-    public List<Painting> findByStyle(String style) {
-        return paintingRepository.findAllByStyleIgnoreCase(style);
+    public List<Painting> findAllByStyleContainingIgnoreCase(String style) {
+        return paintingRepository.findAllByStyleContainingIgnoreCase(style);
+    }
+
+    @Override
+    public List<Painting> findByMuseum(String museum) {
+        return paintingRepository.findAllByMuseumNameIgnoreCase(museum);
     }
 
     @Override
@@ -67,14 +72,8 @@ public class PaintingServiceImpl implements PaintingService {
     }
 
     @Override
-    public List<PaintingDTO> findByArtistName(List<PaintingDTO> paintings, String name) {
-        List<PaintingDTO> paintingsByArtistName = new ArrayList<>();
-        for(PaintingDTO painting : paintings) {
-            if (painting.getArtistName().equalsIgnoreCase(name)) {
-                paintingsByArtistName.add(painting);
-            }
-        }
-        return paintingsByArtistName;
+    public List<Painting> findByArtistNameContainingIgnoreCase(String artistName) {
+        return paintingRepository.findByArtistNameContainsIgnoreCase(artistName);
     }
 
     public List<Painting> sortListTitle(List<Painting> paintings, String sort) {

@@ -12,10 +12,11 @@ public interface PaintingService {
     List<Painting> findAll();
     Painting findById(Long id);
     Painting findByTitle(String title);
-    List<Painting> findByMedium(String medium);
-    List<Painting> findByStyle(String style);
+    List<Painting> findAllByMediumContainingIgnoreCase(String medium);
+    List<Painting> findAllByStyleContainingIgnoreCase(String style);
+    List<Painting> findByMuseum(String museum);
     List<Painting> sortAllByTitle(String sort);
-    List<PaintingDTO> findByArtistName(List<PaintingDTO> paintings, String name);
+    List<Painting> findByArtistNameContainingIgnoreCase(String artistName);
     Painting save(Painting p);
     void deletePaintingById(Long id);
     List<Painting> sortAllByYearCompleted( String sort);

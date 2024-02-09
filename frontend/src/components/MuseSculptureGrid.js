@@ -1,38 +1,14 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import '../resources/css/ImageGrid.css';
-import { SculptureButtonContext } from "./SculptureButtonContext";
 
-const SculptureGrid = () => {
+const MuseSculptureGrid = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [sculptureData, setSculptureData] = useState(null);
-  const {sculptureButtonClicked, setSculptureButtonClicked} = useContext(SculptureButtonContext);
-  const [url, setURL] = useState("http://localhost:8080/sculptures");
-
-  useEffect(() => {
-    const selectButton = () => {
-      if (sculptureButtonClicked === "title-asc") {
-        setURL("http://localhost:8080/sculptures/sortAllByTitle/asc");
-      }
-      else if (sculptureButtonClicked === "title-desc") {
-        setURL("http://localhost:8080/sculptures/sortAllByTitle/desc");
-      }
-      else if (sculptureButtonClicked === "year-asc") {
-        setURL("http://localhost:8080/sculptures/sortAllByYearCompleted/asc");
-      }
-      else if (sculptureButtonClicked === "year-desc") {
-        setURL("http://localhost:8080/sculptures/sortAllByYearCompleted/desc");
-      }
-      else if (sculptureButtonClicked === "sort-by") {
-        setURL("http://localhost:8080/sculptures");
-      }
-    };
-    selectButton();
-  }, [sculptureButtonClicked]); // Update URL when buttonClicked changes
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch("http://localhost:8080/sculptures/getByMuseum/muse");
         const data = await response.json();
         setSculptureData(data);
       } catch (error) {
@@ -40,7 +16,7 @@ const SculptureGrid = () => {
       }
     };
     fetchData();
-  }, [url]); // Only refetch data when URL changes
+  }, []);
 
 return (
     <div className="image-grid">
@@ -79,4 +55,4 @@ return (
   );
 };
 
-export default SculptureGrid;
+export default MuseSculptureGrid;

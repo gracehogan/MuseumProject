@@ -9,7 +9,9 @@ import java.util.List;
 
 @Repository
 public interface PaintingRepository extends JpaRepository<Painting, Long> {
-    List<Painting> findAllByMediumIgnoreCase(String medium);
-    List<Painting> findAllByStyleIgnoreCase(String style);
+    List<Painting> findAllByMediumContainingIgnoreCase(String medium);
+    List<Painting> findAllByStyleContainingIgnoreCase(String style);
+    List<Painting> findAllByMuseumNameIgnoreCase(String museum);
     Painting findByTitleContainingIgnoreCase(String title);
+    List<Painting> findByArtistNameContainsIgnoreCase(String artistName);
 }
