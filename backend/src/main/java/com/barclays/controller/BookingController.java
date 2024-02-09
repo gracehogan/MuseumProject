@@ -10,20 +10,29 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @AllArgsConstructor
 @Slf4j
+@CrossOrigin(origins = "http://localhost:3000")
 public class BookingController {
 
     private final BookingService bookingService;
 
-    @PostMapping("/estimateFee/{name}/{numberOfPersons}/{bookingType}/{email}/{bookedMuseum}/{bookingDate}")
-    public String estimateBookingFee(@PathVariable String name,@PathVariable int numberOfPersons,@PathVariable  String bookingType,
-                                     @PathVariable  String email,@PathVariable  String bookedMuseum,@PathVariable  String bookingDate) {
-        BookingDTO bookingDTO = bookingService.createBookingDTO(name,numberOfPersons, bookingType, email, bookedMuseum, bookingDate);
 
-      if (bookingService.calculateFee(bookingDTO)>0){
-          Booking newBooking =bookingService.Save(bookingDTO);
-          return String.valueOf(newBooking.getCost());
-      }
-        return ("Invalid booking!!");
+    @PostMapping("/saveBooking")
+    public Booking saveNewBooking(@RequestBody BookingDTO bookingDTO) {
+        return bookingService.save(bookingDTO);
+    }
+
+
+    @PostMapping("/estimateFee")
+    public double estimateBookingFee(@RequestBody BookingDTO bookingDTO) {
+        return bookingService.setFeeOfBooking(bookingDTO);
+    }
+
+
+
+    @DeleteMapping("/deleteBooking/{id}")
+    public void deleteBookingById(@PathVariable Long id) {
+        log.debug("deleteBookingById method logged");
+        bookingService.deleteById(id);
     }
 }
 
