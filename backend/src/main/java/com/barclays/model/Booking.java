@@ -22,16 +22,16 @@ public class Booking {
     private String name;
     @Column(nullable = false)
     private String email;
-    @Column(name = "numberOfPersons")
+
     private int numberOfPersons;
     @Enumerated(EnumType.STRING)
-    @Column(name = "bookedMuseum")
+
     private BookedMuseum bookedMuseum;
     @Enumerated(EnumType.STRING)
-    @Column(name = "bookingType")
+
     private BookingType bookingType;
 
-    @Column(name = "bookingDate",columnDefinition = "DATETIME")
+    @Column(columnDefinition = "DATETIME")
     private LocalDateTime bookingDate;
     private double cost;
     private String bookingSlot;

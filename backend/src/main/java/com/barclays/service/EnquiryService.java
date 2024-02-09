@@ -7,7 +7,7 @@ public interface EnquiryService {
 
     Enquiry findById(Long id);
     Enquiry save(EnquiryDTO enquiryDTO);
-    EnquiryDTO createEnquiryDTO(String name, String email, String enquiryType, String enquiryText);
+
 
     void deleteById(Long id);
 }

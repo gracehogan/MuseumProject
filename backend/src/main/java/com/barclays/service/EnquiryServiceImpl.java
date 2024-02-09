@@ -26,20 +26,10 @@ public class EnquiryServiceImpl implements EnquiryService {
         Enquiry enquiry = new Enquiry();
         enquiry.setName(enquiryDTO.getName());
         enquiry.setEmail(enquiryDTO.getEmail());
-        enquiry.setEnquiryText(enquiryDTO.getEnquiryText());
+        enquiry.setEnquiry(enquiryDTO.getEnquiry());
         enquiry.setEnquiryDate(enquiryDTO.getEnquiryDate());
-        enquiry.setEnquiryType(enquiryDTO.getEnquiryType());
+        enquiry.setEnquiryDate(LocalDateTime.now());
         return enquiryRepository.save(enquiry);
-    }
-    @Override
-    public EnquiryDTO createEnquiryDTO(String name, String email, String enquiryType, String enquiryText) {
-        EnquiryDTO enquiryDTO = new EnquiryDTO();
-        enquiryDTO.setName(name);
-        enquiryDTO.setEmail(email);
-        enquiryDTO.setEnquiryType(enquiryType);
-        enquiryDTO.setEnquiryText(enquiryText);
-        enquiryDTO.setEnquiryDate(LocalDateTime.now());
-        return enquiryDTO;
     }
 
     @Override
@@ -47,8 +37,4 @@ public class EnquiryServiceImpl implements EnquiryService {
         enquiryRepository.deleteById(id);
     }
 
-    public Boolean checkValidEmail(String email) {
-        final Pattern pattern = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$");
-        return pattern.matcher(email).matches();
-    }
 }

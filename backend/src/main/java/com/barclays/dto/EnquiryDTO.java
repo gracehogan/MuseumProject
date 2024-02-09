@@ -13,7 +13,6 @@ public class EnquiryDTO {
 
     private String name;
     private String email;
-    private String enquiryType;
-    private String enquiryText;
+    private String enquiry;
     private LocalDateTime enquiryDate;
 }

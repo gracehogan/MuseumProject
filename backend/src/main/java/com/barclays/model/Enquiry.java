@@ -21,9 +21,7 @@ public class Enquiry {
     @Column(nullable = false)
     private String email;
     @Column(nullable = false)
-    private String enquiryText;
-    @Column(nullable = false)
-    private String enquiryType;
+    private String enquiry;
     @Column(columnDefinition = "DATETIME")
     private LocalDateTime enquiryDate;
 

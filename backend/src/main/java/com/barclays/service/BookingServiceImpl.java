@@ -29,17 +29,17 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public Booking save(BookingDTO bookingDTO) {
-        Booking booking= new Booking();
+        Booking booking = new Booking();
         booking.setBookedMuseum(bookingDTO.getBookedMuseum());
         booking.setName(bookingDTO.getName());
-        booking.setBookingDate(bookingDTO.getBookingDate());
+        booking.setBookingDate(LocalDateTime.now());
         booking.setNumberOfPersons(bookingDTO.getNumberOfPersons());
         booking.setCost(calculateFee(bookingDTO));
         booking.setBookingSlot(bookingDTO.getBookingSlot());
         booking.setEmail(bookingDTO.getEmail());
-        booking.setBookingType(bookingDTO.getBookingType());
         return bookingRepository.save(booking);
     }
+
 
     @Override
     public double calculateFee(BookingDTO bookingDTO) {
@@ -48,28 +48,14 @@ public class BookingServiceImpl implements BookingService {
         return  bookingStrategy.calculateFee(bookingDTO);
     }
 
-    @Override
-    public BookingDTO createBookingDTO(String name,int number, String bookingType, String email, String bookedMuseum,String bookingSlot) {
 
-        BookingDTO bookingDTO= new BookingDTO();
-        bookingDTO.setNumberOfPersons(number);
-        bookingDTO.setBookingType(BookingType.valueOf(bookingType));
-        bookingDTO.setEmail(email);
-        bookingDTO.setBookingSlot(bookingSlot);
-        bookingDTO.setName(name);
-        bookingDTO.setBookedMuseum(BookedMuseum.valueOf(bookedMuseum));
+    @Override
+    public double setFeeOfBooking(BookingDTO bookingDTO) {
         bookingDTO.setBookingDate(LocalDateTime.now());
-        return bookingDTO;
-    }
-
-    @Override
-    public String setFeeOfBooking(BookingDTO bookingDTO) {
         double fee =this.calculateFee(bookingDTO);
-        if (fee>0){
             bookingDTO.setCost(fee);
-            return String.valueOf(bookingDTO.getCost());
-        }
-        return ("Invalid booking!!");
+          return bookingDTO.getCost();
+
     }
 
     @Override

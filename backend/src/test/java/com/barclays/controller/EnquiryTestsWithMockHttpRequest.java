@@ -31,17 +31,22 @@ public class EnquiryTestsWithMockHttpRequest {
     Enquiry enquiry;
     ObjectMapper mapper;
 
-
+    String content= "    {\n" +
+            "\t\"name\": \"edy\",\n" +
+            "\t\"email\": \"abc@gmail.com\",\n" +
+            "\t\"enquiry\": \"Hello\"\n" +
+            "}";
     @Test
     void testCreateEnquiry() throws Exception {
         enquiry= new Enquiry();
         mapper = new ObjectMapper();
-        String url="/sendEnquiry/edy/edy@gmail.com/Ticket-Enquiry/How much are single adult tickets?";
+        String url="/saveEnquiry";
         mapper.registerModule(new JavaTimeModule());
         String contentAsString = getContentAsString(mapper, enquiry,url);
         enquiry = mapper.readValue(contentAsString, Enquiry.class);
         assertEquals("edy", enquiry.getName());
         this.mockMvc.perform(MockMvcRequestBuilders.delete("/deleteEnquiry/" + enquiry.getId())
+                        .content(content)
                         .contentType(APPLICATION_JSON)
                         .accept(APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk());
@@ -50,7 +55,7 @@ public class EnquiryTestsWithMockHttpRequest {
 
     private String getContentAsString(ObjectMapper mapper, Enquiry enquiry,String url) throws Exception {
         resultActions = this.mockMvc.perform(MockMvcRequestBuilders.post(url)
-                        .content(mapper.writeValueAsString(enquiry))
+                        .content(content)
                         .contentType(APPLICATION_JSON)
                         .accept(APPLICATION_JSON))
                 .andExpect(status().isOk());

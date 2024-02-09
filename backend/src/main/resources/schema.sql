@@ -55,7 +55,6 @@ CREATE TABLE IF NOT EXISTS ENQUIRY(
     id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    enquiry_type VARCHAR(255) ,
-    enquiry_text VARCHAR(255),
+    enquiry VARCHAR(255),
     enquiry_date DATETIME
     );
