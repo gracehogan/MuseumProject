@@ -31,6 +31,7 @@ public class BookingServiceImpl implements BookingService {
     public Booking save(BookingDTO bookingDTO) {
         Booking booking = new Booking();
         booking.setBookedMuseum(bookingDTO.getBookedMuseum());
+        booking.setBookingType(bookingDTO.getBookingType());
         booking.setName(bookingDTO.getName());
         booking.setBookingDate(LocalDateTime.now());
         booking.setNumberOfPersons(bookingDTO.getNumberOfPersons());
