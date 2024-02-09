@@ -10,7 +10,8 @@ import java.util.List;
 
 @Repository
 public interface SculptureRepository extends CrudRepository<Sculpture, Long> {
-    List<Sculpture> findAllByMediumIgnoreCase(String medium);
+    List<Sculpture> findAllByMediumContainingIgnoreCase(String medium);
     List<Sculpture> findAllByMuseumNameIgnoreCase(String museum);
     Sculpture findByTitleContainingIgnoreCase(String title);
+    List<Sculpture> findByArtistNameContainingIgnoreCase(String name);
 }

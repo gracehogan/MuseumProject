@@ -50,7 +50,7 @@ public class SculptureServiceImpl implements SculptureService {
 
     @Override
     public List<Sculpture> findByMedium(String medium) {
-        return sculptureRepository.findAllByMediumIgnoreCase(medium);
+        return sculptureRepository.findAllByMediumContainingIgnoreCase(medium);
     }
 
     @Override
@@ -69,14 +69,8 @@ public class SculptureServiceImpl implements SculptureService {
     }
 
     @Override
-    public List<SculptureDTO> findByArtistName(List<SculptureDTO> sculptures, String name) {
-        List<SculptureDTO> sculpturesByArtistName = new ArrayList<>();
-        for(SculptureDTO sculpture : sculptures) {
-            if (sculpture.getArtistName().equalsIgnoreCase(name)) {
-                sculpturesByArtistName.add(sculpture);
-            }
-        }
-        return sculpturesByArtistName;
+    public List<Sculpture> findByArtistNameContainingIgnoreCase(String name) {
+        return sculptureRepository.findByArtistNameContainingIgnoreCase(name);
     }
 
     public List<Sculpture> sortListTitle(List<Sculpture> sculptures, String sort) {
