@@ -1,5 +1,6 @@
 package com.barclays.controller;
 
+import com.barclays.dto.SculptureDTO;
 import com.barclays.model.Sculpture;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -41,7 +42,7 @@ class SculptureTestsWithMockHttpRequest {
         MvcResult result = resultActions.andReturn();
         String contentAsString = result.getResponse().getContentAsString();
 
-        Sculpture[] sculptures = mapper.readValue(contentAsString, Sculpture[].class);
+        SculptureDTO[] sculptures = mapper.readValue(contentAsString, SculptureDTO[].class);
 
         assertEquals(expectedLength, sculptures.length);
 
@@ -59,7 +60,7 @@ class SculptureTestsWithMockHttpRequest {
         MvcResult result = resultActions.andReturn();
         String contentAsString = result.getResponse().getContentAsString();
 
-        Sculpture sculpture = mapper.readValue(contentAsString, Sculpture.class);
+        SculptureDTO sculpture = mapper.readValue(contentAsString, SculptureDTO.class);
 
         assertEquals("David", sculpture.getTitle());
     }

@@ -1,6 +1,7 @@
 package com.barclays.controller;
 
 
+import com.barclays.dto.MuseumDTO;
 import com.barclays.model.Museum;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -43,7 +44,7 @@ class MuseumTestsWithMockHttpRequest {
 
         MvcResult result = resultActions.andReturn();
         String contentAsString = result.getResponse().getContentAsString();
-        Museum[] museums = mapper.readValue(contentAsString, Museum[].class);
+        MuseumDTO[] museums = mapper.readValue(contentAsString, MuseumDTO[].class);
 
         assertEquals(expectedLength, museums.length);
     }
@@ -60,7 +61,7 @@ class MuseumTestsWithMockHttpRequest {
         MvcResult result = resultActions.andReturn();
         String contentAsString = result.getResponse().getContentAsString();
 
-        Museum museum = mapper.readValue(contentAsString, Museum.class);
+        MuseumDTO museum = mapper.readValue(contentAsString, MuseumDTO.class);
 
         assertEquals("PAGES", museum.getName());
         assertEquals(id, museum.getId());

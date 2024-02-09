@@ -1,5 +1,6 @@
 package com.barclays.controller;
 
+import com.barclays.dto.PaintingDTO;
 import com.barclays.model.Painting;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -39,7 +40,7 @@ class PaintingTestsWithMockHttpRequest {
                 .andExpect(MockMvcResultMatchers.status().isOk());
         MvcResult result = resultActions.andReturn();
         String contentAsString = result.getResponse().getContentAsString();
-        Painting[] paintings = mapper.readValue(contentAsString, Painting[].class);
+        PaintingDTO[] paintings = mapper.readValue(contentAsString, PaintingDTO[].class);
 
         assertEquals(expectedLength, paintings.length);
 
@@ -56,7 +57,7 @@ class PaintingTestsWithMockHttpRequest {
         MvcResult result = resultActions.andReturn();
         String contentAsString = result.getResponse().getContentAsString();
 
-        Painting painting = mapper.readValue(contentAsString, Painting.class);
+        PaintingDTO painting = mapper.readValue(contentAsString, PaintingDTO.class);
 
         assertAll("Mock Http Request Testing GET",
                 () -> assertEquals("Shona Lisa", painting.getTitle()),
