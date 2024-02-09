@@ -112,9 +112,9 @@ const MuseumPage = () => {
             <br/>
             <SculptureSortByDropdown/> 
             <br/>
+            <SculptureSearchBar/>
             <SculptureGrid/>
             <br/>
-            <SculptureSearchBar/>
           </div>
           </SculptureButtonProvider>
         </SculptureSearchBarProvider>

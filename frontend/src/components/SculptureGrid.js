@@ -15,7 +15,7 @@ const SculptureGrid = () => {
     const filterSearch = () => {
       console.log(sculptureSearchBarContents);
       if (sculptureSearchBarContents === "") {
-        setURL("http://localhost:8080/psculptures");
+        setURL("http://localhost:8080/sculptures");
       }
       else {
         setURL("http://localhost:8080/sculptures/getByAllFields/" + sculptureSearchBarContents);
@@ -60,7 +60,7 @@ const SculptureGrid = () => {
 
 return (
     <div className="image-grid">
-      {sculptureData && sculptureData.map((sculpture, index) => {
+      {sculptureData && Array.isArray(sculptureData) && sculptureData.map((sculpture, index) => {
         return (
           <div
             key={index}
