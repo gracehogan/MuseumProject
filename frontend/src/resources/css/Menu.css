@@ -87,16 +87,12 @@ nav ul li a {
 div.dropbtn:hover {
     color: #3f2b35;
 }
-
-
   
   /* Change the background color of the page-link li 
   when the link is hovered */
 .dropdown:hover .dropbtn {
     color: black;
-    background-color: rgb(223, 200, 173);
 }
 
-  /* Breadcrumb */
   
   

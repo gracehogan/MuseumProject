@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
 import '../resources/css/FAQPage.css';
+import '../resources/css/BookingPage.css';
+import React, { useState, useRef, useEffect } from "react";
 import { FiPlus } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 
@@ -100,7 +101,7 @@ const FAQPage = () => {
               <li className="breadcrumb-item"><Link to="/help/faq">FAQs</Link></li>
           </ol>
       </nav>
-      <h2>FAQs</h2>
+      <h2 className="page-heading">Frequently asked questions</h2>
       <div>
         <button
           className={`question-section ${active3 ? 'active' : ''}`}
