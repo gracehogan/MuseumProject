@@ -28,11 +28,6 @@ public class ArtistController {
         return artistService.findAllArtists();
     }
 
-//    @GetMapping("/artist/{id}")
-//    public Artist getArtistById(@PathVariable Long id) {
-//        log.debug("In the getArtistById method: "+id);
-//        return artistService.findArtistById(id);
-//    }
     @GetMapping("/artist/{id}")
     public ArtistDTO getArtistById(@PathVariable long id) {
         log.debug("In the getArtistById method");
