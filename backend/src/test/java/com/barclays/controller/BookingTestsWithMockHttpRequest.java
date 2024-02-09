@@ -40,31 +40,31 @@ public class BookingTestsWithMockHttpRequest {
            "\t\"bookingSlot\": \"xyz\"\n" +
            "}";
 
-//    @Test
-//    void testCreateBooking() throws Exception {
-//        booking = new Booking();
-//        mapper = new ObjectMapper();
-//        String url="/saveBooking";
-//        mapper.registerModule(new JavaTimeModule());
-//        String contentAsString = getContentAsString(mapper, booking,url);
-//        booking = mapper.readValue(contentAsString, Booking.class);
-//        assertEquals("eddy", booking.getName());
-//        this.mockMvc.perform(MockMvcRequestBuilders.delete("/deleteBooking/" + booking.getId())
-//                        .contentType(APPLICATION_JSON)
-//                        .accept(APPLICATION_JSON))
-//                .andExpect(status().isOk());
-//    }
-//
-//    private String getContentAsString(ObjectMapper mapper, Booking booking,String url) throws Exception {
-//        resultActions = this.mockMvc.perform(MockMvcRequestBuilders.post(url)
-//                        .content(content)
-//                        .contentType(APPLICATION_JSON)
-//                        .accept(APPLICATION_JSON))
-//                .andExpect(status().isOk());
-//        MvcResult result = resultActions.andReturn();
-//        String contentAsString = result.getResponse().getContentAsString();
-//        return contentAsString;
-//    }
+    @Test
+    void testCreateBooking() throws Exception {
+        booking = new Booking();
+        mapper = new ObjectMapper();
+        String url="/saveBooking";
+        mapper.registerModule(new JavaTimeModule());
+        String contentAsString = getContentAsString(mapper, booking,url);
+        booking = mapper.readValue(contentAsString, Booking.class);
+        assertEquals("eddy", booking.getName());
+        this.mockMvc.perform(MockMvcRequestBuilders.delete("/deleteBooking/" + booking.getId())
+                        .contentType(APPLICATION_JSON)
+                        .accept(APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
+    private String getContentAsString(ObjectMapper mapper, Booking booking,String url) throws Exception {
+        resultActions = this.mockMvc.perform(MockMvcRequestBuilders.post(url)
+                        .content(content)
+                        .contentType(APPLICATION_JSON)
+                        .accept(APPLICATION_JSON))
+                .andExpect(status().isOk());
+        MvcResult result = resultActions.andReturn();
+        String contentAsString = result.getResponse().getContentAsString();
+        return contentAsString;
+    }
 
     @Test
     void testCalculateBookingFee() throws Exception {
