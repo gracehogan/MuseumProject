@@ -4,6 +4,7 @@ import i18n from '../i18n';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../resources/css/ContactPage.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function ContactPage() {
   const { t } = useTranslation();
@@ -22,15 +23,27 @@ function ContactPage() {
     });
   };
 
+
   const handleButtonClick = (lng) => {
     setActiveLanguage(lng);
     i18n.changeLanguage(lng);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  
+
+  const handleSubmit = async(e) => {
+  e.preventDefault();
+try {
+    const response = await axios.post('http://localhost:8080/saveEnquiry', formData);
+    console.log('Enquiry saved successfully:', response.data);
+  } catch (error) {
+    console.error('Error saving enquiry:', error);
+  }
+
     console.log(formData);
-    alert(t('Email confirmation sent'));
+
+    alert(t('Enquiry Sent 🙂'));
+
     setFormData({
       name: '',
       email: '',

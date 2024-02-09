@@ -28,37 +28,40 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public Booking Save(BookingDTO bookingDTO) {
-        Booking booking= new Booking();
+    public Booking save(BookingDTO bookingDTO) {
+        Booking booking = new Booking();
         booking.setBookedMuseum(bookingDTO.getBookedMuseum());
+        booking.setBookingType(bookingDTO.getBookingType());
         booking.setName(bookingDTO.getName());
-        booking.setBookingDate(bookingDTO.getBookingDate());
+        booking.setBookingDate(LocalDateTime.now());
         booking.setNumberOfPersons(bookingDTO.getNumberOfPersons());
         booking.setCost(calculateFee(bookingDTO));
+        booking.setBookingSlot(bookingDTO.getBookingSlot());
         booking.setEmail(bookingDTO.getEmail());
-        booking.setBookingType(bookingDTO.getBookingType());
         return bookingRepository.save(booking);
     }
+
 
     @Override
     public double calculateFee(BookingDTO bookingDTO) {
 
-            BookingStrategy bookingStrategy= BookingStrategyFactory.getBookingStrategy(bookingDTO);
-          return  bookingStrategy.calculateFee(bookingDTO);
-        }
+        BookingStrategy bookingStrategy= BookingStrategyFactory.getBookingStrategy(bookingDTO);
+        return  bookingStrategy.calculateFee(bookingDTO);
+    }
+
 
     @Override
-    public BookingDTO createBookingDTO(String name,int number, String bookingType, String email, String bookedMuseum, String date) {
+    public double setFeeOfBooking(BookingDTO bookingDTO) {
+        bookingDTO.setBookingDate(LocalDateTime.now());
+        double fee =this.calculateFee(bookingDTO);
+            bookingDTO.setCost(fee);
+          return bookingDTO.getCost();
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        BookingDTO bookingDTO= new BookingDTO();
-        bookingDTO.setNumberOfPersons(number);
-        bookingDTO.setBookingType(BookingType.valueOf(bookingType));
-        bookingDTO.setEmail(email);
-        bookingDTO.setName(name);
-        bookingDTO.setBookedMuseum(BookedMuseum.valueOf(bookedMuseum));
-        bookingDTO.setBookingDate(LocalDateTime.parse(date,formatter));
-        return bookingDTO;
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        bookingRepository.deleteById(id);
     }
 
 

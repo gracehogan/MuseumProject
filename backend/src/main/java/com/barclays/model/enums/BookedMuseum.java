@@ -7,6 +7,15 @@ public enum BookedMuseum {
     MUSE("MUSE"),
     INNOVATION("Innovation Gallery"),
     BLOB("B.L.O.B");
+    private double fee;
+
+    public double getFee() {
+        return fee;
+    }
+
+    public void setFee(double fee) {
+        this.fee = fee;
+    }
 
     private final String name;
     BookedMuseum(String name) {
