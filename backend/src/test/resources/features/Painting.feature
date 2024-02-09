@@ -46,3 +46,27 @@ Feature: I want to be able to test the get mappings of different Painting Spring
       | Title               | Year_Completed | Artist_Name                 | Index  |
       | "Whistler's Mother" | 1871           |  "James McNeill Whistler"   | 0      |
       | "Water Lilies"      | 1916           |  "Claude Monet"             | 1      |
+
+
+  Scenario Outline: Sort paintings by year completed asc endpoint
+    Given I have a sort paintings by year completed asc Spring endpoint
+    When I call the sort paintings by year completed asc endpoint
+    Then I should get back a list of paintings sorted by year completed asc
+    And each item should returned in ascending year completed order and contain the <Title>, <Year_Completed> and <Artist_Name> of the paintings at a given <Index>
+
+    Examples:
+      | Title               | Year_Completed | Artist_Name            | Index  |
+      | "The Birth of Venus"| 1486           |  "Sandro Botticelli"   | 0      |
+      | "Shona Lisa"        | 1519           |  "Leonardo Da Vinci"   | 1      |
+
+
+  Scenario Outline: Sort paintings by year completed desc endpoint
+    Given I have a sort paintings by year completed desc Spring endpoint
+    When I call the sort paintings by year completed desc endpoint
+    Then I should get back a list of paintings sorted by year completed desc
+    And each item should returned in descending year completed order and contain the <Title>, <Year_Completed> and <Artist_Name> of the paintings at a given <Index>
+
+    Examples:
+      | Title                      | Year_Completed | Artist_Name        | Index  |
+      | "The Persistence of Memory"| 1931           |  "Salvador Dali"   | 0      |
+      | "Water Lilies"             | 1916           |  "Claude Monet"    | 1      |
