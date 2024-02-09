@@ -12,7 +12,8 @@ const BookingPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    bookingDate: '',
+    bookingSlot: '',
+    bookingType: '',
     bookedMuseum: '',
     cost:'',
   });
@@ -57,11 +58,12 @@ const BookingPage = () => {
   
       console.log(formData);
   
-      alert(t('Booking was successful 🙂'));
+      alert(t('Booking was successful 🙂 '));
       setFormData({
         name: '',
         email: '',
-        bookingDate: '',
+        bookingSlot: '',
+        bookingType: '',
         bookedMuseum: '',
         cost:'',
       });
@@ -79,8 +81,8 @@ const BookingPage = () => {
           <input type="text" name="email" id="email" required minLength="9" value={formData.email} onChange={handleChange}/>
           <br />
 
-          <label htmlFor="bookingDate">Date</label>
-          <input type="datetime-local" name="bookingDate" id="bookingDate" value={formData.bookingDate} onChange={handleChange}/>
+          <label htmlFor="bookingSlot">Date</label>
+          <input type="datetime-local" name="bookingSlot" id="bookingSlot" value={formData.bookingSlot} onChange={handleChange}/>
           <br />
 
           <label>Museum</label>
@@ -107,12 +109,7 @@ const BookingPage = () => {
             <br />
             <label for="numberOfPersons">How many people are in your group?</label>
             <input type="number" name="numberOfPersons" id="numberOfPersons" step="1" min="1" value={formData['numberOfPersons']} onChange={handleNumberChange}/>
-
             <br />
-
-            <label for="total">Total</label>
-            <br />            
-
           <input type="submit" value="Book"/>
         </form>
       </section>
