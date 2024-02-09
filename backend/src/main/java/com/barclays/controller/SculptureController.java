@@ -67,6 +67,33 @@ public class SculptureController {
         return dtos;
     }
 
+    @GetMapping("/sculptures/getByAllFields/{search}")
+    List<SculptureDTO> getByAllFields(@PathVariable String search) {
+        log.debug("In the getSculpturesByAllFields method");
+        List<Sculpture> sculptures = new ArrayList<>();
+
+        Sculpture byTitle = sculptureService.findByTitle(search);
+        if (byTitle != null) {
+            sculptures.add(byTitle);
+        }
+
+        List<Sculpture> byArtistName = sculptureService.findByArtistNameContainingIgnoreCase(search);
+        if (byArtistName != null) {
+            sculptures.addAll(byArtistName);
+        }
+
+        List<Sculpture> byMedium = sculptureService.findByMedium(search);
+        if (byMedium != null) {
+            sculptures.addAll(byMedium);
+        }
+
+        List<SculptureDTO> dtos = new ArrayList<>();
+        for (Sculpture sculpture : sculptures) {
+            dtos.add(new SculptureDTO(sculpture));
+        }
+        return dtos;
+    }
+
     @GetMapping("/sculptures/sortAllByTitle/{sort}")
     List<SculptureDTO> sortAllByTitle(@PathVariable String sort) {
         log.debug("In the sortSculpturesByTitle method");
@@ -81,12 +108,11 @@ public class SculptureController {
     @GetMapping("/sculptures/getByArtistName/{artistName}")
     List<SculptureDTO> getByArtistName(@PathVariable String artistName) {
         log.debug("In the getSculpturesByArtistName method");
-        List<Sculpture> sculptures = sculptureService.findAll();
+        List<Sculpture> sculptures = sculptureService.findByArtistNameContainingIgnoreCase(artistName);
         List<SculptureDTO> dtos = new ArrayList<>();
         for (Sculpture sculpture : sculptures) {
             dtos.add(new SculptureDTO(sculpture));
         }
-        dtos = sculptureService.findByArtistName(dtos, artistName);
         return dtos;
     }
 

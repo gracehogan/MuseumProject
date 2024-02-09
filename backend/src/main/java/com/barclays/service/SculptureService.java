@@ -25,7 +25,7 @@ public interface SculptureService {
 
     List<Sculpture> findByMuseum(String museum);
 
-    List<SculptureDTO> findByArtistName(List<SculptureDTO> sculptures, String name);
+    List<Sculpture> findByArtistNameContainingIgnoreCase(String name);
 
     List<Sculpture> sortAllByYearCompleted(String sort);
 

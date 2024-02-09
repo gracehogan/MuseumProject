@@ -1,12 +1,28 @@
 import React, { useEffect, useState, useContext } from "react";
 import '../resources/css/ImageGrid.css';
 import { SculptureButtonContext } from "./SculptureButtonContext";
+import { SculptureSearchBarContext } from "./SculptureSearchBarContext";
 
 const SculptureGrid = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [sculptureData, setSculptureData] = useState(null);
   const {sculptureButtonClicked, setSculptureButtonClicked} = useContext(SculptureButtonContext);
+  const {sculptureSearchBarContents, setSculptureSearchBarContents} = useContext(SculptureSearchBarContext);
   const [url, setURL] = useState("http://localhost:8080/sculptures");
+
+  
+  useEffect(() => {
+    const filterSearch = () => {
+      console.log(sculptureSearchBarContents);
+      if (sculptureSearchBarContents === "") {
+        setURL("http://localhost:8080/sculptures");
+      }
+      else {
+        setURL("http://localhost:8080/sculptures/getByAllFields/" + sculptureSearchBarContents);
+      }
+    }
+    filterSearch();
+  }, [sculptureSearchBarContents]);
 
   useEffect(() => {
     const selectButton = () => {
@@ -44,7 +60,7 @@ const SculptureGrid = () => {
 
 return (
     <div className="image-grid">
-      {sculptureData && sculptureData.map((sculpture, index) => {
+      {sculptureData && Array.isArray(sculptureData) && sculptureData.map((sculpture, index) => {
         return (
           <div
             key={index}
