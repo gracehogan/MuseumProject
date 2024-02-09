@@ -89,17 +89,21 @@ const MuseumPage = () => {
           </div>
         </section>
       </section>
-
-        <div>
-        <PaintingSearchBarProvider>
+      
+      <PaintingSearchBarProvider>
           <PaintingButtonProvider> 
-          <PaintingSearchBar/>
-            <h2 className="page-heading margin-align">Our Paintings</h2>
-            <PaintingSortByDropdown/>
+           <div class="flexbox-container">
+              <h2 className="page-heading margin-align">Our Paintings</h2>
+              <br/>
+              <PaintingSortByDropdown/>
+              <br/>
+              <PaintingSearchBar/>
             <PaintingGrid/>
-          </PaintingButtonProvider>
-          </PaintingSearchBarProvider>
-
+      </div>
+      </PaintingButtonProvider>
+        </PaintingSearchBarProvider>
+        
+        <div>
           <SculptureButtonProvider>
             <h2 className="page-heading margin-align">Our Sculptures</h2>
             <SculptureSortByDropdown/> 
