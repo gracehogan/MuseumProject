@@ -37,13 +37,13 @@ public class PaintingServiceImpl implements PaintingService {
     }
 
     @Override
-    public List<Painting> findByMedium(String medium) {
-        return paintingRepository.findAllByMediumIgnoreCase(medium);
+    public List<Painting> findAllByMediumContainingIgnoreCase(String medium) {
+        return paintingRepository.findAllByMediumContainingIgnoreCase(medium);
     }
 
     @Override
-    public List<Painting> findByStyle(String style) {
-        return paintingRepository.findAllByStyleIgnoreCase(style);
+    public List<Painting> findAllByStyleContainingIgnoreCase(String style) {
+        return paintingRepository.findAllByStyleContainingIgnoreCase(style);
     }
 
     @Override

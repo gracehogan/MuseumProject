@@ -13,7 +13,12 @@ const PaintingGrid = () => {
   useEffect(() => {
     const filterSearch = () => {
       console.log(paintingSearchBarContents);
-      setURL("http://localhost:8080/paintings/getByArtistName/" + paintingSearchBarContents);
+      if (paintingSearchBarContents === "") {
+        setURL("http://localhost:8080/paintings");
+      }
+      else {
+        setURL("http://localhost:8080/paintings/getByAllFields/" + paintingSearchBarContents);
+      }
     }
     filterSearch();
   }, [paintingSearchBarContents]);
@@ -55,7 +60,7 @@ const PaintingGrid = () => {
 
   return (
     <div className="image-grid">
-      {paintingData && paintingData.map((painting, index) => {
+      {paintingData && Array.isArray(paintingData) && paintingData.map((painting, index) => {
         return (
           <div
             key={index}
@@ -90,6 +95,7 @@ const PaintingGrid = () => {
       })}
     </div>
   );
+  
 };
 
 export default PaintingGrid;

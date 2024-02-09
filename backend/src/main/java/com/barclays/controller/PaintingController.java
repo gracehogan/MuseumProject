@@ -45,7 +45,7 @@ public class PaintingController {
     @GetMapping("/paintings/getByStyle/{style}")
     public List<PaintingDTO> getPaintingByStyle(@PathVariable String style) {
         log.debug("In the getPaintingByStyle method");
-        List<Painting> paintings = paintingService.findByStyle(style);
+        List<Painting> paintings = paintingService.findAllByStyleContainingIgnoreCase(style);
         List<PaintingDTO> dtos = new ArrayList<>();
         for (Painting painting : paintings) {
             dtos.add(new PaintingDTO(painting));
@@ -67,7 +67,7 @@ public class PaintingController {
     @GetMapping("/paintings/getByMedium/{medium}")
     public List<PaintingDTO> getPaintingByMedium(@PathVariable String medium) {
         log.debug("In the getPaintingByMedium method");
-        List<Painting> paintings = paintingService.findByMedium(medium);
+        List<Painting> paintings = paintingService.findAllByMediumContainingIgnoreCase(medium);
         List<PaintingDTO> dtos = new ArrayList<>();
         for (Painting painting : paintings) {
             dtos.add(new PaintingDTO(painting));
@@ -96,6 +96,39 @@ public class PaintingController {
         }
         return dtos;
     }
+
+    @GetMapping("/paintings/getByAllFields/{search}")
+    List<PaintingDTO> getByAllFields(@PathVariable String search) {
+        log.debug("In the getPaintingsByAllFields method");
+        List<Painting> paintings = new ArrayList<>();
+
+        Painting byTitle = paintingService.findByTitle(search);
+        if (byTitle != null) {
+            paintings.add(byTitle);
+        }
+
+        List<Painting> byArtistName = paintingService.findByArtistNameContainingIgnoreCase(search);
+        if (byArtistName != null) {
+            paintings.addAll(byArtistName);
+        }
+
+        List<Painting> byStyle = paintingService.findAllByStyleContainingIgnoreCase(search);
+        if (byStyle != null) {
+            paintings.addAll(byStyle);
+        }
+
+        List<Painting> byMedium = paintingService.findAllByMediumContainingIgnoreCase(search);
+        if (byMedium != null) {
+            paintings.addAll(byMedium);
+        }
+
+        List<PaintingDTO> dtos = new ArrayList<>();
+        for (Painting painting : paintings) {
+            dtos.add(new PaintingDTO(painting));
+        }
+        return dtos;
+    }
+
 
     @GetMapping("/paintings/sortAllByYearCompleted/{sort}")
     List<PaintingDTO> sortAllByYearCompleted(@PathVariable String sort) {
