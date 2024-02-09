@@ -10,18 +10,26 @@ const SculptureSortByDropdown = () => {
     };
 
     return (
-        <div className="dropdown">
+      <div className="dropdown">
+          <li className="list-inline-item dropbtn">
+            <button className="dropbtn" id="sort-by" onClick={() => handleButtonClick("sort-by")}>Sort By</button>
+          </li>
+          <div className="dropdown-content">
             <li className="list-inline-item dropbtn">
-              <button id="sort-by" onClick={() => handleButtonClick("sort-by")}>Sort By</button>
+              <button className="dropbtn" id="title-asc" onClick={() => handleButtonClick("title-asc")}>Title (A-Z)</button>
             </li>
-            <div className="dropdown-content">
-              <button id="title-asc" onClick={() => handleButtonClick("title-asc")}>Title (asc)</button>
-              <button id="title-desc" onClick={() => handleButtonClick("title-desc")}>Title (desc)</button>
-              <button id="year-asc" onClick={() => handleButtonClick("year-asc")}>Year Completed (asc)</button>
-              <button id="year-desc" onClick={() => handleButtonClick("year-desc")}>Year Completed (desc)</button>
-            </div>
-        </div>
-    );
+            <li className="list-inline-item dropbtn">
+            <button className="dropbtn" id="title-desc" onClick={() => handleButtonClick("title-desc")}>Title (Z-A)</button>
+            </li>
+            <li className="list-inline-item dropbtn">
+            <button className="dropbtn" id="year-asc" onClick={() => handleButtonClick("year-asc")}>Year Completed (asc)</button>
+            </li>
+            <li className="list-inline-item dropbtn">
+            <button className="dropbtn" id="year-desc" onClick={() => handleButtonClick("year-desc")}>Year Completed (desc)</button>
+            </li>
+          </div>
+      </div>
+  );
 };
 
 export default SculptureSortByDropdown;

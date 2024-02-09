@@ -10,6 +10,8 @@ import { PaintingButtonProvider } from '../components/PaintingButtonContext';
 import { SculptureButtonProvider } from '../components/SculptureButtonContext';
 import PaintingSearchBar from '../components/PaintingSearchBar';
 import { PaintingSearchBarProvider } from '../components/PaintingSearchBarContext';
+import { SculptureSearchBarProvider } from '../components/SculptureSearchBarContext';
+import SculptureSearchBar from '../components/SculptureSearchBar';
 
 const MuseumPage = () => {
 
@@ -89,23 +91,33 @@ const MuseumPage = () => {
           </div>
         </section>
       </section>
-
-        <div>
-        <PaintingSearchBarProvider>
+      
+      <PaintingSearchBarProvider>
           <PaintingButtonProvider> 
-          <PaintingSearchBar/>
-            <h2 className="page-heading margin-align">Our Paintings</h2>
-            <PaintingSortByDropdown/>
+           <div class="flexbox-container">
+              <h2 className="page-heading margin-align">Our Paintings</h2>
+              <br/>
+              <PaintingSortByDropdown/>
+              <br/>
+              <PaintingSearchBar/>
             <PaintingGrid/>
+            </div>
           </PaintingButtonProvider>
-          </PaintingSearchBarProvider>
-
+      </PaintingSearchBarProvider>
+        
+        <SculptureSearchBarProvider>
           <SculptureButtonProvider>
+          <div class="flexbox-container">
             <h2 className="page-heading margin-align">Our Sculptures</h2>
+            <br/>
             <SculptureSortByDropdown/> 
+            <br/>
+            <SculptureSearchBar/>
             <SculptureGrid/>
+            <br/>
+          </div>
           </SculptureButtonProvider>
-        </div>
+        </SculptureSearchBarProvider>
       <br/>
     </div>
   );

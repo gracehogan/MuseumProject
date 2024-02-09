@@ -11,33 +11,34 @@ import org.springframework.web.client.RestClient;
 
 import java.util.List;
 
-public class SortPaintingsByTitleDescStepdefs {
+public class SortPaintingsByYearCompletedAscStepdefs {
+
     RestClient restClient;
 
     String uriBase;
 
     List<PaintingDTO> paintings;
-    @Given("I have a sort paintings by title desc Spring endpoint")
-    public void iHaveASortPaintingsByTitleDescSpringEndpoint() {
+    @Given("I have a sort paintings by year completed asc Spring endpoint")
+    public void iHaveASortPaintingsByYearCompletedAscSpringEndpoint() {
         uriBase = "http://localhost:8080";
         restClient = RestClient.create();
     }
 
-    @When("I call the sort paintings by title desc endpoint")
-    public void iCallTheSortPaintingsByTitleDescEndpoint() {
+    @When("I call the sort paintings by year completed asc endpoint")
+    public void iCallTheSortPaintingsByYearCompletedAscEndpoint() {
         paintings = restClient.get()
-                .uri(uriBase + "/paintings/sortAllByTitle/desc")
+                .uri(uriBase + "/paintings/sortAllByYearCompleted/asc")
                 .retrieve()
                 .body(new ParameterizedTypeReference<List<PaintingDTO>>() {});
     }
 
-    @Then("I should get back a list of paintings sorted by title desc")
-    public void iShouldGetBackAListOfPaintingsSortedByTitleDesc() {
+    @Then("I should get back a list of paintings sorted by year completed asc")
+    public void iShouldGetBackAListOfPaintingsSortedByYearCompletedAsc() {
         Assertions.assertNotNull(paintings);
     }
 
-    @And("each item should returned in descending title order and contain the {string}, {int} and {string} of the paintings at a given {int}")
-    public void eachItemShouldReturnedInDescendingTitleOrderAndContainTheTitleYear_CompletedAndArtist_NameOfThePaintingsAtAGivenIndex(String title, int yearCompleted, String artistName, int index) {
+    @And("each item should returned in ascending year completed order and contain the {string}, {int} and {string} of the paintings at a given {int}")
+    public void eachItemShouldReturnedInAscendingYearCompletedOrderAndContainTheTitleYear_CompletedAndArtist_NameOfThePaintingsAtAGivenIndex(String title, int yearCompleted, String artistName, int index) {
         Assertions.assertAll("Testing painting information retrieval",
                 () -> Assertions.assertEquals(title, paintings.get(index).getTitle()),
                 () -> Assertions.assertEquals(yearCompleted, paintings.get(index).getYearCompleted()),
