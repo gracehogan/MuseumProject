@@ -16,10 +16,10 @@ const PaintingSortByDropdown = () => {
             </li>
             <div className="dropdown-content">
               <li className="list-inline-item dropbtn">
-                <button className="dropbtn" id="title-asc" onClick={() => handleButtonClick("title-asc")}>Title (asc)</button>
+                <button className="dropbtn" id="title-asc" onClick={() => handleButtonClick("title-asc")}>Title (A-Z)</button>
               </li>
               <li className="list-inline-item dropbtn">
-              <button className="dropbtn" id="title-desc" onClick={() => handleButtonClick("title-desc")}>Title (desc)</button>
+              <button className="dropbtn" id="title-desc" onClick={() => handleButtonClick("title-desc")}>Title (Z-A)</button>
               </li>
               <li className="list-inline-item dropbtn">
               <button className="dropbtn" id="year-asc" onClick={() => handleButtonClick("year-asc")}>Year Completed (asc)</button>

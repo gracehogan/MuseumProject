@@ -37,6 +37,33 @@
   font-family: "Normal";
 }
   
+.question-section {
+  background: transparent;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  cursor: pointer;
+  width: 92vw;
+}
+
+.question-align {
+  align-items: center;
+  display: flex;
+  min-height: 10px;
+  text-align: left;
+  padding: 25px 50px; 
+}
+
+.question-align h4 {
+  margin-left: 8px;
+}
+
+.question-styling {
+  font-size: 17px;
+  width: 100%;
+}
+
 .question-icon {
   background: none;
   border: none;
@@ -70,4 +97,3 @@
   margin-top: 8px;
   font-size: 18px;
 }
-  
