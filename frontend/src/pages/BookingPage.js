@@ -78,7 +78,7 @@ const BookingPage = () => {
       });
     };
   return (
-    <div className='enquiry-container'  >
+    <div className='booking-container'  >
       <h2 className="page-heading margin-align">Book your tickets</h2>
       <section className="margin-align">
         <form onSubmit={handleSubmit}>
@@ -86,7 +86,7 @@ const BookingPage = () => {
           <input type="text" name="name" id="name" required minLength="5" value={formData.name} onChange={handleChange} />
           <br />
 
-          <label htmlFor="email" className='label'>Email address</label>
+          <label htmlFor="email" className='label'>Email</label>
           <input type="text" name="email" id="email" required minLength="9" value={formData.email} onChange={handleChange}/>
           <br />
 
@@ -107,17 +107,18 @@ const BookingPage = () => {
 
           
           <label className='label'>Ticket type </label>
-            <input type="radio" name="bookingType" value="GROUP_ADULT" id="adult" checked={selectedTicket === 'GROUP_ADULT'} onChange={handleTicketChange}/>
+            <input className='label' type="radio" name="bookingType" value="GROUP_ADULT" id="adult" checked={selectedTicket === 'GROUP_ADULT'} onChange={handleTicketChange}/>
             <label className='label'>Group Adult (>4 Adults)</label>
-            <input type="radio" name="bookingType" value="SINGLE_ADULT" id="adult"checked={selectedTicket === 'SINGLE_ADULT'} onChange={handleTicketChange} />
+            <input  className='label' type="radio" name="bookingType" value="SINGLE_ADULT" id="adult"checked={selectedTicket === 'SINGLE_ADULT'} onChange={handleTicketChange} />
             <label className='label'>Single Adult (18+)</label>
-            <input type="radio" name="bookingType" value="GROUP_ADULT" id="adult" checked={selectedTicket === 'GROUP_ADULT'} onChange={handleTicketChange}/>
+            <input type="radio" name="bookingType" value="SINGLE_CHILD" id="child" checked={selectedTicket === 'GROUP_ADULT'} onChange={handleTicketChange}/>
             <label className='label'>Single Child</label>
-            <input type="radio" name="bookingType" value="GROUP_CHILD" id="child" checked={selectedTicket === 'GROUP_CHILD'} onChange={handleTicketChange}/>
+            <input className='label' type="radio" name="bookingType" value="GROUP_CHILD" id="child" checked={selectedTicket === 'GROUP_CHILD'} onChange={handleTicketChange}/>
             <label className='label'>Group Child(>4 Kids)</label>
             <br />
-            <label className='label' for="numberOfPersons">How many people are in your group?</label>
+            <label className='label' for="numberOfPersons">How many people?</label>
             <input type="number" name="numberOfPersons" id="numberOfPersons" step="1" min="1" value={formData['numberOfPersons']} onChange={handleNumberChange}/>
+            <br />
             <br />
           <input type="submit" value="Book"/>
         </form>

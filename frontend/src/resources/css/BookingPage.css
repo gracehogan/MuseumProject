@@ -9,7 +9,8 @@
     font-size: 35px;
     padding: 15px 0px;
     font-weight: bolder;
-    margin-top: 15px;
+    
+
 }
 
 .margin-align {
@@ -24,4 +25,16 @@
 
 .booking{
     text-align: center;
+}
+.booking-container {
+    
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh; 
+    padding: 10px; 
+    background-color: rgba(109, 104, 104, 0.338);
+    border-radius: px;
+    margin-top: 150px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
